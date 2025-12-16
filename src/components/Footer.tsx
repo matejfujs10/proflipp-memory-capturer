@@ -26,7 +26,7 @@ export function Footer() {
       <div className="container-wide section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <Link to="/" className="font-display text-3xl font-semibold text-card">Proflipp</Link>
+            <Link to="/" className="font-display text-3xl font-semibold text-card tracking-wider">PROFLIPP</Link>
             <p className="text-card/70 mt-4 mb-6 max-w-sm">
               We Create Emotions! Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni.
             </p>

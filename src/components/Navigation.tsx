@@ -21,8 +21,8 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border/50">
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-display text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors">
-            Proflipp
+          <Link to="/" className="font-display text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors tracking-wider">
+            PROFLIPP
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
