@@ -4,6 +4,12 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import eventsHero from "@/assets/wedding-toast.jpg";
+import eventDog from "@/assets/event-dog.jpg";
+import eventHorse from "@/assets/event-horse.jpg";
+import eventParty from "@/assets/event-party.jpg";
+import eventDog2 from "@/assets/event-dog2.jpg";
+import eventBw from "@/assets/event-bw.jpg";
+import eventCake from "@/assets/event-cake.jpg";
 
 const packages = [
   { name: "MINI PRO", price: "196", duration: "2 uri prisotnosti", description: "Hitra, učinkovita pokritost dogodka.", features: ["Reportažne fotografije dogajanja", "Ključni kadri", "Ekspresna obdelava"] },
@@ -15,6 +21,15 @@ const videoPackages = [
   { name: "EVENTvideo START", price: "450", duration: "Do 4 ure", description: "Za krajše dogodke.", features: ["60–120 s 'after movie'", "Osnovna montaža"] },
   { name: "EVENTvideo PRO", price: "730", duration: "Do 8 ur", description: "Za konference in večje evente.", features: ["2–3 min 'after movie'", "'Brand' občutek"] },
   { name: "EVENTvideo MAX", price: "1.030", duration: "Do 10 ur", description: "Celodnevni event.", features: ["3–5 min 'after movie'", "Več 'B-roll' materiala"] },
+];
+
+const galleryImages = [
+  { src: eventParty, alt: "Zabava na dogodku" },
+  { src: eventCake, alt: "Rezanje torte" },
+  { src: eventDog, alt: "Pes na dogodku" },
+  { src: eventHorse, alt: "Konj" },
+  { src: eventDog2, alt: "Pes s pentljo" },
+  { src: eventBw, alt: "Druženje na zabavi" },
 ];
 
 export default function Dogodki() {
@@ -36,6 +51,35 @@ export default function Dogodki() {
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
             Dobro fotografijo dogodka naredi trenutek – in fotograf, ki je točno tam, kjer mora biti.
           </p>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="section-padding bg-cream">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <span className="text-primary font-medium text-sm tracking-wider uppercase">Galerija</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">Utrinki z dogodkov</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {galleryImages.map((image, index) => (
+              <div
+                key={index}
+                className={`relative overflow-hidden rounded-xl group cursor-pointer ${
+                  index === 0 ? "md:col-span-2 md:row-span-2" : ""
+                }`}
+              >
+                <div className={`${index === 0 ? "aspect-square" : "aspect-[4/3]"}`}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
