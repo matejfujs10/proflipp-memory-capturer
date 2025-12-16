@@ -9,6 +9,7 @@ import Dogodki from "./pages/Dogodki";
 import { Druzine, Novorojencki, Potovanja } from "./pages/ServicePages";
 import ONas from "./pages/ONas";
 import Kontakt from "./pages/Kontakt";
+import SplosniPogoji from "./pages/SplosniPogoji";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/potovanja" element={<Potovanja />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/splosni-pogoji" element={<SplosniPogoji />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
