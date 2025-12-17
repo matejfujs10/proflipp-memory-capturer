@@ -10,6 +10,9 @@ import { Druzine, Novorojencki, Potovanja } from "./pages/ServicePages";
 import ONas from "./pages/ONas";
 import Kontakt from "./pages/Kontakt";
 import SplosniPogoji from "./pages/SplosniPogoji";
+import Piskotki from "./pages/Piskotki";
+import PolitikaZasebnosti from "./pages/PolitikaZasebnosti";
+import AvtorskePravice from "./pages/AvtorskePravice";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/splosni-pogoji" element={<SplosniPogoji />} />
+          <Route path="/piskotki" element={<Piskotki />} />
+          <Route path="/politika-zasebnosti" element={<PolitikaZasebnosti />} />
+          <Route path="/avtorske-pravice" element={<AvtorskePravice />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

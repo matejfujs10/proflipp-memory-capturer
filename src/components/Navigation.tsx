@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/proflipp-logo.png";
 
 const navItems = [
   { label: "O nas", href: "/o-nas" },
@@ -21,8 +22,8 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border/50">
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-display text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors tracking-wider">
-            PROFLIPP
+          <Link to="/" className="hover:opacity-80 transition-opacity">
+            <img src={logo} alt="PROFLIPP" className="h-12 md:h-14 w-auto" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">

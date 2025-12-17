@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
+import logo from "@/assets/proflipp-logo.png";
 
 const footerLinks = {
   storitve: [
@@ -17,6 +18,7 @@ const footerLinks = {
     { label: "Splošni pogoji", href: "/splosni-pogoji" },
     { label: "Politika zasebnosti", href: "/politika-zasebnosti" },
     { label: "Piškotki", href: "/piskotki" },
+    { label: "Avtorske pravice", href: "/avtorske-pravice" },
   ],
 };
 
@@ -26,7 +28,9 @@ export function Footer() {
       <div className="container-wide section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <Link to="/" className="font-display text-3xl font-semibold text-card tracking-wider">PROFLIPP</Link>
+            <Link to="/" className="hover:opacity-80 transition-opacity">
+              <img src={logo} alt="PROFLIPP" className="h-14 w-auto brightness-0 invert" />
+            </Link>
             <p className="text-card/70 mt-4 mb-6 max-w-sm">
               We Create Emotions! Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni.
             </p>

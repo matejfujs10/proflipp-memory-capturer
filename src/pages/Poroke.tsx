@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import weddingHero from "@/assets/wedding-ceremony.jpg";
+import weddingGame1 from "@/assets/wedding-game1.jpg";
+import weddingGame2 from "@/assets/wedding-game2.jpg";
 
 const packages = [
   {
@@ -85,8 +87,35 @@ export default function Poroke() {
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Video paketi</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Dodajte video k fotografiji za popolno zgodbo vajinega dne.</p>
           </div>
+          
+          {/* Video showcase */}
+          <div className="mb-12">
+            <video 
+              className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl" 
+              controls 
+              poster={weddingHero}
+            >
+              <source src="/videos/wedding-video.mp4" type="video/mp4" />
+              Vaš brskalnik ne podpira video predvajanja.
+            </video>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* Wedding Gallery */}
+      <section className="section-padding bg-background">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija porok</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Poglejte naše poročne fotografije.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <img src={weddingGame1} alt="Poročna fotografija" className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow" />
+            <img src={weddingGame2} alt="Poročna fotografija" className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow" />
           </div>
         </div>
       </section>
