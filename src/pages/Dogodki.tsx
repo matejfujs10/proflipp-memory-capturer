@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
+import { EventGalleryCard } from "@/components/EventGalleryCard";
 import eventsHero from "@/assets/wedding-toast.jpg";
 import eventDog from "@/assets/event-dog.jpg";
 import eventHorse from "@/assets/event-horse.jpg";
@@ -10,6 +11,20 @@ import eventParty from "@/assets/event-party.jpg";
 import eventDog2 from "@/assets/event-dog2.jpg";
 import eventBw from "@/assets/event-bw.jpg";
 import eventCake from "@/assets/event-cake.jpg";
+
+// Festival Koper images
+import festivalKoper1 from "@/assets/festival-koper-1.jpg";
+import festivalKoper2 from "@/assets/festival-koper-2.jpg";
+import festivalKoper3 from "@/assets/festival-koper-3.jpg";
+import festivalKoper4 from "@/assets/festival-koper-4.jpg";
+import festivalKoper5 from "@/assets/festival-koper-5.jpg";
+import festivalKoper6 from "@/assets/festival-koper-6.jpg";
+import festivalKoper7 from "@/assets/festival-koper-7.jpg";
+
+// Martur images
+import martur1 from "@/assets/martur-1.jpg";
+import martur2 from "@/assets/martur-2.jpg";
+import martur3 from "@/assets/martur-3.jpg";
 
 const packages = [
   { name: "MINI PRO", price: "196", duration: "2 uri prisotnosti", description: "Hitra, učinkovita pokritost dogodka.", features: ["Reportažne fotografije dogajanja", "Ključni kadri", "Ekspresna obdelava"] },
@@ -32,6 +47,22 @@ const galleryImages = [
   { src: eventBw, alt: "Druženje na zabavi" },
 ];
 
+const festivalKoperImages = [
+  { src: festivalKoper1, alt: "Festival Koper 1" },
+  { src: festivalKoper2, alt: "Festival Koper 2" },
+  { src: festivalKoper3, alt: "Festival Koper 3" },
+  { src: festivalKoper4, alt: "Festival Koper 4" },
+  { src: festivalKoper5, alt: "Festival Koper 5" },
+  { src: festivalKoper6, alt: "Festival Koper 6" },
+  { src: festivalKoper7, alt: "Festival Koper 7" },
+];
+
+const marturImages = [
+  { src: martur1, alt: "Martur obletnica 1" },
+  { src: martur2, alt: "Martur obletnica 2" },
+  { src: martur3, alt: "Martur obletnica 3" },
+];
+
 export default function Dogodki() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -51,6 +82,28 @@ export default function Dogodki() {
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
             Dobro fotografijo dogodka naredi trenutek – in fotograf, ki je točno tam, kjer mora biti.
           </p>
+        </div>
+      </section>
+
+      {/* Event Galleries Section */}
+      <section className="section-padding bg-background">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <span className="text-primary font-medium text-sm tracking-wider uppercase">Pretekli dogodki</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">Naše reference</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <EventGalleryCard
+              title="3. Mednarodni festival žganje kuha Koper 2025"
+              coverImage={festivalKoper1}
+              images={festivalKoperImages}
+            />
+            <EventGalleryCard
+              title="3 Obletnica Martur 17.10.2024"
+              coverImage={martur1}
+              images={marturImages}
+            />
+          </div>
         </div>
       </section>
 

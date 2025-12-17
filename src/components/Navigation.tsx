@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/proflipp-logo.png";
 
 const navItems = [
   { label: "O nas", href: "/o-nas" },
@@ -12,18 +11,36 @@ const navItems = [
   { label: "Družine", href: "/druzine" },
   { label: "Novorojenčki", href: "/novorojencki" },
   { label: "Potovanja", href: "/potovanja" },
+  { label: "Mnenja", href: "/mnenja" },
 ];
+
+type Language = 'si' | 'en' | 'de';
+
+const translations: Record<Language, Record<string, string>> = {
+  si: {
+    contact: "Kontaktirajte nas",
+  },
+  en: {
+    contact: "Contact us",
+  },
+  de: {
+    contact: "Kontaktieren Sie uns",
+  },
+};
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState<Language>('si');
   const location = useLocation();
+
+  const t = translations[language];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border/50">
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <img src={logo} alt="PROFLIPP" className="h-12 md:h-14 w-auto" />
+            <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">PROFLIPP</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -44,12 +61,52 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 mr-2">
+              <button
+                onClick={() => setLanguage('en')}
+                className={cn(
+                  "text-xs font-medium px-2 py-1 rounded transition-colors",
+                  language === 'en' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLanguage('de')}
+                className={cn(
+                  "text-xs font-medium px-2 py-1 rounded transition-colors",
+                  language === 'de' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                DE
+              </button>
+            </div>
+
+            {/* Social Icons */}
+            <a
+              href="https://www.instagram.com/proflippcom/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/proflippfotovideo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+
             <a href="tel:+38668169430" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone className="w-4 h-4" />
               <span className="hidden xl:inline">+386 68 169 430</span>
             </a>
             <Button asChild>
-              <Link to="/kontakt">Kontaktirajte nas</Link>
+              <Link to="/kontakt">{t.contact}</Link>
             </Button>
           </div>
 
@@ -76,9 +133,30 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center gap-2 px-4 py-3">
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={cn(
+                    "text-sm font-medium px-3 py-1 rounded transition-colors",
+                    language === 'en' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground border border-border"
+                  )}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLanguage('de')}
+                  className={cn(
+                    "text-sm font-medium px-3 py-1 rounded transition-colors",
+                    language === 'de' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground border border-border"
+                  )}
+                >
+                  DE
+                </button>
+              </div>
               <div className="pt-4 px-4">
                 <Button asChild className="w-full">
-                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>Kontaktirajte nas</Link>
+                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>{t.contact}</Link>
                 </Button>
               </div>
             </div>
