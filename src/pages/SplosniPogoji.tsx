@@ -18,7 +18,6 @@ export default function SplosniPogoji() {
           <div className="prose prose-lg max-w-none text-foreground">
             <p className="text-muted-foreground mb-8">
               <strong>Ponudnik:</strong> PROFLIPP (izdajatelj: SF TEAM MARATONEC)<br />
-              <strong>Sedež:</strong> 9201 Puconci<br />
               <strong>E-pošta / tel.:</strong> info@proflipp.com / +386 68 169 430<br />
               <strong>Spletna stran:</strong> www.proflipp.si / www.proflipp.com<br />
               <strong>Veljavnost od:</strong> 16. 12. 2025
