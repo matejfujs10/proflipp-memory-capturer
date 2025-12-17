@@ -35,10 +35,10 @@ export function Footer() {
               We Create Emotions! Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni.
             </p>
             <div className="flex gap-4">
-              <a href="https://instagram.com/proflipp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/proflippcom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com/proflipp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/proflippfotovideo/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="mailto:info@proflipp.com" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
