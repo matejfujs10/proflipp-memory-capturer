@@ -3,9 +3,21 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
+import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import weddingHero from "@/assets/wedding-ceremony.jpg";
-import weddingGame1 from "@/assets/wedding-game1.jpg";
-import weddingGame2 from "@/assets/wedding-game2.jpg";
+
+// R & L Vrhnika wedding images
+import weddingCeremony from "@/assets/wedding-ceremony.jpg";
+import weddingVeil from "@/assets/wedding-veil.jpg";
+import weddingKiss from "@/assets/wedding-kiss.jpg";
+import weddingRings from "@/assets/wedding-rings.jpg";
+import weddingEmotion from "@/assets/wedding-emotion.jpg";
+import weddingConfetti from "@/assets/wedding-confetti.jpg";
+import weddingFun from "@/assets/wedding-fun.jpg";
+import weddingBridge from "@/assets/wedding-bridge.jpg";
+import weddingToast from "@/assets/wedding-toast.jpg";
+import weddingDetails from "@/assets/wedding-details.jpg";
 
 const packages = [
   {
@@ -46,8 +58,28 @@ const videoPackages = [
   { name: "FLIPPvideo PREMIUM", price: "850", duration: "Do 13 ur prisotnosti", description: "Ko želiš več dinamike in bolj 'filmski' občutek.", features: ["Kreativni film (15–25 min)", "Snemanje v 4K", "Naprednejši 'grading'"] },
 ];
 
+const weddingGalleries = [
+  {
+    title: "R & L Vrhnika 2025",
+    coverImage: weddingCeremony,
+    images: [
+      weddingCeremony,
+      weddingVeil,
+      weddingKiss,
+      weddingRings,
+      weddingEmotion,
+      weddingConfetti,
+      weddingFun,
+      weddingBridge,
+      weddingToast,
+      weddingDetails,
+    ],
+  },
+];
+
 export default function Poroke() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen">
@@ -60,11 +92,10 @@ export default function Poroke() {
         </div>
         
         <div className="container-wide relative z-10 pt-20 pb-32">
-          <span className="text-gold font-medium text-sm tracking-wider uppercase">Storitve</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">Poročna fotografija</h1>
+          <span className="text-gold font-medium text-sm tracking-wider uppercase">{t('weddings.services')}</span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">{t('weddings.title')}</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
-            Ljubezen je v drobnih stvareh: pogledih, dotikih, nasmehih in tistih čisto vajinih trenutkih. 
-            Na poročni dan sta v ospredju vidva – mi pa ujamemo zgodbo tako, da bodo fotografije pristne, vesele in polne čustev.
+            {t('weddings.description')}
           </p>
         </div>
       </section>
@@ -72,8 +103,8 @@ export default function Poroke() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Izberita paket</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Izberita paket, ki najbolj ustreza vajinemu dnevu.</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.choose_package')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.choose_desc')}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
@@ -84,8 +115,8 @@ export default function Poroke() {
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Video paketi</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Dodajte video k fotografiji za popolno zgodbo vajinega dne.</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.video_packages')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.video_desc')}</p>
           </div>
           
           {/* Video showcase */}
@@ -110,12 +141,18 @@ export default function Poroke() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija porok</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Poglejte naše poročne fotografije.</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.gallery')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.gallery_desc')}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <img src={weddingGame1} alt="Poročna fotografija" className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow" />
-            <img src={weddingGame2} alt="Poročna fotografija" className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {weddingGalleries.map((gallery) => (
+              <WeddingGalleryCard
+                key={gallery.title}
+                title={gallery.title}
+                coverImage={gallery.coverImage}
+                images={gallery.images}
+              />
+            ))}
           </div>
         </div>
       </section>
