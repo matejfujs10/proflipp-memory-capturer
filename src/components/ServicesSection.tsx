@@ -3,39 +3,42 @@ import { ArrowRight } from "lucide-react";
 import weddingImage from "@/assets/wedding-bridge.jpg";
 import eventsImage from "@/assets/wedding-toast.jpg";
 import familyImage from "@/assets/wedding-fun.jpg";
-
-const services = [
-  {
-    title: "Poroke",
-    description: "Pristne, vesele fotografije, ujete v najbolj pomembnih trenutkih vajinega dne.",
-    image: weddingImage,
-    href: "/poroke",
-  },
-  {
-    title: "Dogodki",
-    description: "Neopazna ekipa, pravi trenutek ob pravem času, profesionalne fotografije z zgodbo.",
-    image: eventsImage,
-    href: "/dogodki",
-  },
-  {
-    title: "Družine",
-    description: "Sproščeni sessioni za pristne spomine – vi uživate, mi ujamemo zgodbo.",
-    image: familyImage,
-    href: "/druzine",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ServicesSection() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t('services.weddings'),
+      description: t('services.weddings_desc'),
+      image: weddingImage,
+      href: "/poroke",
+    },
+    {
+      title: t('services.events'),
+      description: t('services.events_desc'),
+      image: eventsImage,
+      href: "/dogodki",
+    },
+    {
+      title: t('services.families'),
+      description: t('services.families_desc'),
+      image: familyImage,
+      href: "/druzine",
+    },
+  ];
+
   return (
     <section className="section-padding bg-background">
       <div className="container-wide">
         <div className="text-center mb-16">
-          <span className="text-primary font-medium text-sm tracking-wider uppercase">Naše storitve</span>
+          <span className="text-primary font-medium text-sm tracking-wider uppercase">{t('services.title')}</span>
           <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mt-3 mb-4">
-            Fotografija za vsak trenutek
+            {t('services.heading')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Od porok do družinskih portretov – ujamemo čustva, ki ostanejo za vedno.
+            {t('services.description')}
           </p>
         </div>
 
@@ -54,7 +57,7 @@ export function ServicesSection() {
                 <h3 className="font-display text-2xl lg:text-3xl font-semibold text-card mb-2">{service.title}</h3>
                 <p className="text-card/80 text-sm mb-4 line-clamp-2">{service.description}</p>
                 <div className="flex items-center gap-2 text-gold font-medium text-sm group-hover:gap-3 transition-all">
-                  <span>Več informacij</span>
+                  <span>{t('services.more')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>

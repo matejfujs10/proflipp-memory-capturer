@@ -3,37 +3,22 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "O nas", href: "/o-nas" },
-  { label: "Poroke", href: "/poroke" },
-  { label: "Dogodki", href: "/dogodki" },
-  { label: "Družine", href: "/druzine" },
-  { label: "Novorojenčki", href: "/novorojencki" },
-  { label: "Potovanja", href: "/potovanja" },
-  { label: "Mnenja", href: "/mnenja" },
-];
-
-type Language = 'si' | 'en' | 'de';
-
-const translations: Record<Language, Record<string, string>> = {
-  si: {
-    contact: "Kontaktirajte nas",
-  },
-  en: {
-    contact: "Contact us",
-  },
-  de: {
-    contact: "Kontaktieren Sie uns",
-  },
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState<Language>('si');
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  const t = translations[language];
+  const navItems = [
+    { label: t('nav.about'), href: "/o-nas" },
+    { label: t('nav.weddings'), href: "/poroke" },
+    { label: t('nav.events'), href: "/dogodki" },
+    { label: t('nav.families'), href: "/druzine" },
+    { label: t('nav.newborns'), href: "/novorojencki" },
+    { label: t('nav.travels'), href: "/potovanja" },
+    { label: t('nav.reviews'), href: "/mnenja" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border/50">
@@ -63,6 +48,15 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-3">
             {/* Language Switcher */}
             <div className="flex items-center gap-1 mr-2">
+              <button
+                onClick={() => setLanguage('si')}
+                className={cn(
+                  "text-xs font-medium px-2 py-1 rounded transition-colors",
+                  language === 'si' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                SI
+              </button>
               <button
                 onClick={() => setLanguage('en')}
                 className={cn(
@@ -106,7 +100,7 @@ export function Navigation() {
               <span className="hidden xl:inline">+386 68 169 430</span>
             </a>
             <Button asChild>
-              <Link to="/kontakt">{t.contact}</Link>
+              <Link to="/kontakt">{t('nav.contact')}</Link>
             </Button>
           </div>
 
@@ -136,6 +130,15 @@ export function Navigation() {
               {/* Mobile Language Switcher */}
               <div className="flex items-center gap-2 px-4 py-3">
                 <button
+                  onClick={() => setLanguage('si')}
+                  className={cn(
+                    "text-sm font-medium px-3 py-1 rounded transition-colors",
+                    language === 'si' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground border border-border"
+                  )}
+                >
+                  SI
+                </button>
+                <button
                   onClick={() => setLanguage('en')}
                   className={cn(
                     "text-sm font-medium px-3 py-1 rounded transition-colors",
@@ -156,7 +159,7 @@ export function Navigation() {
               </div>
               <div className="pt-4 px-4">
                 <Button asChild className="w-full">
-                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>{t.contact}</Link>
+                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
                 </Button>
               </div>
             </div>
