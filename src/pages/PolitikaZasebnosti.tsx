@@ -1,7 +1,53 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const content = {
+  si: {
+    title: "Politika zasebnosti",
+    intro: "Ta politika zasebnosti se nanaša na spletno stran www.proflipp.com in opisuje, kako upravljavec obdeluje osebne podatke uporabnikov v skladu z GDPR in veljavno slovensko zakonodajo.",
+    sections: [
+      { title: "1. Upravljavec osebnih podatkov", text: "Proflipp\nE-pošta: info@proflipp.com" },
+      { title: "2. Vrste osebnih podatkov", text: "Upravljavec lahko obdeluje: ime in priimek, elektronski naslov, telefonsko številko, naslov, IP naslov, podatke o uporabi spletne strani." },
+      { title: "3. Nameni obdelave", text: "Osebni podatki se obdelujejo za: izvedbo naročil, odgovarjanje na povpraševanja, pošiljanje novic, izboljševanje delovanja spletne strani." },
+      { title: "4. Hramba podatkov", text: "Osebni podatki se hranijo do izpolnitve namena ali do preklica privolitve." },
+      { title: "5. Varnost podatkov", text: "Upravljavec uporablja ustrezne tehnične in organizacijske ukrepe za zaščito osebnih podatkov." },
+      { title: "6. Pravice posameznikov", text: "Posameznik ima pravico do dostopa, popravka, izbrisa, omejitve obdelave in prenosljivosti podatkov. Zahteve: info@proflipp.com" },
+      { title: "7. Kontakt", text: "Za vsa vprašanja: info@proflipp.com" },
+    ],
+  },
+  en: {
+    title: "Privacy Policy",
+    intro: "This privacy policy applies to the website www.proflipp.com and describes how the controller processes users' personal data in accordance with GDPR and applicable Slovenian legislation.",
+    sections: [
+      { title: "1. Data Controller", text: "Proflipp\nEmail: info@proflipp.com" },
+      { title: "2. Types of Personal Data", text: "The controller may process: name and surname, email address, phone number, address, IP address, website usage data." },
+      { title: "3. Processing Purposes", text: "Personal data is processed for: order execution, responding to inquiries, sending newsletters, improving website functionality." },
+      { title: "4. Data Retention", text: "Personal data is retained until the purpose is fulfilled or consent is withdrawn." },
+      { title: "5. Data Security", text: "The controller uses appropriate technical and organizational measures to protect personal data." },
+      { title: "6. Individual Rights", text: "Individuals have the right to access, rectification, erasure, restriction of processing and data portability. Requests: info@proflipp.com" },
+      { title: "7. Contact", text: "For all questions: info@proflipp.com" },
+    ],
+  },
+  de: {
+    title: "Datenschutzrichtlinie",
+    intro: "Diese Datenschutzrichtlinie gilt für die Website www.proflipp.com und beschreibt, wie der Verantwortliche personenbezogene Daten der Nutzer gemäß DSGVO und geltendem slowenischen Recht verarbeitet.",
+    sections: [
+      { title: "1. Verantwortlicher", text: "Proflipp\nE-Mail: info@proflipp.com" },
+      { title: "2. Arten personenbezogener Daten", text: "Der Verantwortliche kann verarbeiten: Vor- und Nachname, E-Mail-Adresse, Telefonnummer, Adresse, IP-Adresse, Website-Nutzungsdaten." },
+      { title: "3. Verarbeitungszwecke", text: "Personenbezogene Daten werden verarbeitet für: Auftragsabwicklung, Beantwortung von Anfragen, Versand von Newslettern, Verbesserung der Website-Funktionalität." },
+      { title: "4. Datenspeicherung", text: "Personenbezogene Daten werden aufbewahrt, bis der Zweck erfüllt ist oder die Einwilligung widerrufen wird." },
+      { title: "5. Datensicherheit", text: "Der Verantwortliche verwendet angemessene technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten." },
+      { title: "6. Rechte der Betroffenen", text: "Betroffene haben das Recht auf Zugang, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Anfragen: info@proflipp.com" },
+      { title: "7. Kontakt", text: "Für alle Fragen: info@proflipp.com" },
+    ],
+  },
+};
 
 export default function PolitikaZasebnosti() {
+  const { language } = useLanguage();
+  const c = content[language];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -10,120 +56,18 @@ export default function PolitikaZasebnosti() {
       <section className="section-padding bg-background">
         <div className="container-narrow">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-8">
-            Politika zasebnosti
+            {c.title}
           </h1>
           
           <div className="prose prose-lg max-w-none text-foreground">
-            <p className="text-muted-foreground mb-8">
-              Ta politika zasebnosti se nanaša na spletno stran www.proflipp.com (v nadaljevanju: spletna stran) in opisuje, kako upravljavec obdeluje osebne podatke uporabnikov v skladu z Uredbo (EU) 2016/679 (GDPR) in veljavno slovensko zakonodajo.
-            </p>
+            <p className="text-muted-foreground mb-8">{c.intro}</p>
 
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">1. Upravljavec osebnih podatkov</h2>
-            <p className="text-muted-foreground">
-              Proflipp<br />
-              E-pošta: info@proflipp.com<br />
-              (Upravljavec bo po potrebi dopolnil podatke o sedežu, matični številki ipd.)
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">2. Vrste osebnih podatkov</h2>
-            <p className="text-muted-foreground mb-2">Upravljavec lahko obdeluje naslednje osebne podatke:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>ime in priimek,</li>
-              <li>elektronski naslov,</li>
-              <li>telefonsko številko,</li>
-              <li>naslov,</li>
-              <li>IP naslov,</li>
-              <li>podatke o uporabi spletne strani (ogledi strani, čas obiska ipd.),</li>
-              <li>druge podatke, ki jih uporabnik prostovoljno posreduje prek obrazcev.</li>
-            </ul>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">3. Nameni in pravne podlage obdelave</h2>
-            <p className="text-muted-foreground mb-2">Osebni podatki se obdelujejo za naslednje namene:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>izvedba naročil in komunikacija s strankami (izvajanje pogodbe),</li>
-              <li>odgovarjanje na povpraševanja (zakoniti interes ali privolitev),</li>
-              <li>pošiljanje novic in obvestil (privolitev),</li>
-              <li>izboljševanje delovanja spletne strani in analitika obiska (zakoniti interes),</li>
-              <li>izpolnjevanje zakonskih obveznosti.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">
-              Podatki se obdelujejo izključno v obsegu, ki je potreben za dosego posameznega namena.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">4. Hramba osebnih podatkov</h2>
-            <p className="text-muted-foreground mb-2">Osebni podatki se hranijo:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>do izpolnitve namena, za katerega so bili zbrani,</li>
-              <li>do preklica privolitve (kadar obdelava temelji na privolitvi),</li>
-              <li>v skladu z zakonskimi roki hrambe.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">
-              Po preteku obdobja hrambe se podatki trajno izbrišejo ali anonimizirajo.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">5. Posredovanje podatkov tretjim osebam</h2>
-            <p className="text-muted-foreground mb-2">Upravljavec osebnih podatkov ne posreduje tretjim osebam, razen:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>pogodbenim obdelovalcem (npr. ponudniki gostovanja, e-poštnih storitev),</li>
-              <li>kadar to zahteva zakon.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">
-              Vsi pogodbeni obdelovalci zagotavljajo ustrezno raven varstva osebnih podatkov.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">6. Varnost osebnih podatkov</h2>
-            <p className="text-muted-foreground">
-              Upravljavec uporablja ustrezne tehnične in organizacijske ukrepe za zaščito osebnih podatkov pred izgubo, zlorabo, nepooblaščenim dostopom ali razkritjem.
-            </p>
-            <p className="text-muted-foreground mt-4">
-              Uporabnik je sam odgovoren za varovanje svojih dostopnih podatkov.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">7. Piškotki in samodejno beleženje podatkov</h2>
-            <p className="text-muted-foreground mb-2">Spletna stran uporablja piškotke in podobne tehnologije za:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>delovanje spletne strani,</li>
-              <li>statistiko obiska,</li>
-              <li>izboljšanje uporabniške izkušnje.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">
-              Podrobnosti o uporabi piškotkov so opredeljene v <a href="/piskotki" className="text-primary hover:underline">Politiki piškotkov</a>.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">8. Pravice posameznikov</h2>
-            <p className="text-muted-foreground mb-2">Posameznik ima v skladu z GDPR naslednje pravice:</p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>pravico do dostopa do osebnih podatkov,</li>
-              <li>pravico do popravka netočnih podatkov,</li>
-              <li>pravico do izbrisa (pravica do pozabe),</li>
-              <li>pravico do omejitve obdelave,</li>
-              <li>pravico do prenosljivosti podatkov,</li>
-              <li>pravico do ugovora obdelavi,</li>
-              <li>pravico do preklica privolitve.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">
-              Zahteve se pošljejo na: info@proflipp.com
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">9. Obdelava podatkov mladoletnih oseb</h2>
-            <p className="text-muted-foreground">
-              Spletna stran ni namenjena mladoletnim osebam. Upravljavec zavestno ne zbira osebnih podatkov oseb, mlajših od 16 let, brez soglasja staršev ali skrbnikov.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">10. Povezave do drugih spletnih strani</h2>
-            <p className="text-muted-foreground">
-              Spletna stran lahko vsebuje povezave do drugih spletnih mest. Upravljavec ne prevzema odgovornosti za politike zasebnosti teh spletnih mest.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">11. Spremembe politike zasebnosti</h2>
-            <p className="text-muted-foreground">
-              Upravljavec si pridržuje pravico do spremembe politike zasebnosti. Spremembe bodo objavljene na spletni strani.
-            </p>
-
-            <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">12. Kontakt</h2>
-            <p className="text-muted-foreground">
-              Za vsa vprašanja v zvezi z varstvom osebnih podatkov se obrnite na: info@proflipp.com
-            </p>
+            {c.sections.map((section, idx) => (
+              <div key={idx}>
+                <h2 className="font-display text-2xl font-semibold text-foreground mt-10 mb-4">{section.title}</h2>
+                <p className="text-muted-foreground whitespace-pre-line">{section.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

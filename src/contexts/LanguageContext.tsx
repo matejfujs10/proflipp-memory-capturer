@@ -50,6 +50,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.contact': 'Kontakt',
     'footer.rights': 'Vse pravice pridržane.',
     'footer.tagline': 'We Create Emotions! Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni.',
+    'footer.terms': 'Splošni pogoji',
+    'footer.privacy': 'Politika zasebnosti',
+    'footer.cookies': 'Piškotki',
+    'footer.copyright': 'Avtorske pravice',
     
     // Poroke page
     'weddings.services': 'Storitve',
@@ -61,6 +65,13 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.video_desc': 'Dodajte video k fotografiji za popolno zgodbo vajinega dne.',
     'weddings.gallery': 'Galerija porok',
     'weddings.gallery_desc': 'Poglejte naše poročne fotografije.',
+    'weddings.photos': 'fotografij',
+    
+    // Legal pages
+    'legal.terms_title': 'Splošni pogoji poslovanja',
+    'legal.cookies_title': 'Politika piškotkov',
+    'legal.privacy_title': 'Politika zasebnosti',
+    'legal.copyright_title': 'Pravilnik o avtorskih pravicah in uporabi vsebin',
   },
   en: {
     // Navigation
@@ -103,6 +114,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved.',
     'footer.tagline': 'We Create Emotions! We capture emotions, laughter, tears, touches – so your memories last forever.',
+    'footer.terms': 'Terms & Conditions',
+    'footer.privacy': 'Privacy Policy',
+    'footer.cookies': 'Cookies',
+    'footer.copyright': 'Copyright',
     
     // Poroke page
     'weddings.services': 'Services',
@@ -114,6 +129,13 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.video_desc': 'Add video to photography for the complete story of your day.',
     'weddings.gallery': 'Wedding gallery',
     'weddings.gallery_desc': 'View our wedding photos.',
+    'weddings.photos': 'photos',
+    
+    // Legal pages
+    'legal.terms_title': 'General Terms and Conditions',
+    'legal.cookies_title': 'Cookie Policy',
+    'legal.privacy_title': 'Privacy Policy',
+    'legal.copyright_title': 'Copyright and Content Usage Policy',
   },
   de: {
     // Navigation
@@ -156,6 +178,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.contact': 'Kontakt',
     'footer.rights': 'Alle Rechte vorbehalten.',
     'footer.tagline': 'We Create Emotions! Wir fangen Emotionen, Lachen, Tränen, Berührungen ein – damit Ihre Erinnerungen ewig bleiben.',
+    'footer.terms': 'AGB',
+    'footer.privacy': 'Datenschutz',
+    'footer.cookies': 'Cookies',
+    'footer.copyright': 'Urheberrecht',
     
     // Poroke page
     'weddings.services': 'Leistungen',
@@ -167,6 +193,13 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.video_desc': 'Fügen Sie Video zur Fotografie hinzu für die vollständige Geschichte Ihres Tages.',
     'weddings.gallery': 'Hochzeitsgalerie',
     'weddings.gallery_desc': 'Sehen Sie sich unsere Hochzeitsfotos an.',
+    'weddings.photos': 'Fotos',
+    
+    // Legal pages
+    'legal.terms_title': 'Allgemeine Geschäftsbedingungen',
+    'legal.cookies_title': 'Cookie-Richtlinie',
+    'legal.privacy_title': 'Datenschutzrichtlinie',
+    'legal.copyright_title': 'Urheberrecht und Nutzungsbedingungen',
   },
 };
 

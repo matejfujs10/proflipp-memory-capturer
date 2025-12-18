@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface WeddingGalleryCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface WeddingGalleryCardProps {
 export function WeddingGalleryCard({ title, coverImage, images }: WeddingGalleryCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);

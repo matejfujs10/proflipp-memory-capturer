@@ -18,10 +18,10 @@ export function Footer() {
       { label: t('nav.contact'), href: "/kontakt" },
     ],
     pravno: [
-      { label: "Splošni pogoji", href: "/splosni-pogoji" },
-      { label: "Politika zasebnosti", href: "/politika-zasebnosti" },
-      { label: "Piškotki", href: "/piskotki" },
-      { label: "Avtorske pravice", href: "/avtorske-pravice" },
+      { label: t('footer.terms'), href: "/splosni-pogoji" },
+      { label: t('footer.privacy'), href: "/politika-zasebnosti" },
+      { label: t('footer.cookies'), href: "/piskotki" },
+      { label: t('footer.copyright'), href: "/avtorske-pravice" },
     ],
   };
 
