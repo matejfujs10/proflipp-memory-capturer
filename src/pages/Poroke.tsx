@@ -19,6 +19,18 @@ import weddingBridge from "@/assets/wedding-bridge.jpg";
 import weddingToast from "@/assets/wedding-toast.jpg";
 import weddingDetails from "@/assets/wedding-details.jpg";
 
+// K & A Murska Sobota wedding images
+import msWedding1 from "@/assets/ms-wedding-1.jpg";
+import msWedding2 from "@/assets/ms-wedding-2.jpg";
+import msWedding3 from "@/assets/ms-wedding-3.jpg";
+import msWedding4 from "@/assets/ms-wedding-4.jpg";
+import msWedding5 from "@/assets/ms-wedding-5.jpg";
+import msWedding6 from "@/assets/ms-wedding-6.jpg";
+import msWedding7 from "@/assets/ms-wedding-7.jpg";
+import msWedding8 from "@/assets/ms-wedding-8.jpg";
+import msWedding9 from "@/assets/ms-wedding-9.jpg";
+import msWedding10 from "@/assets/ms-wedding-10.jpg";
+
 const packages = [
   {
     name: "FLIPPmikro",
@@ -59,6 +71,22 @@ const videoPackages = [
 ];
 
 const weddingGalleries = [
+  {
+    title: "K & A Murska Sobota 2025",
+    coverImage: msWedding1,
+    images: [
+      msWedding1,
+      msWedding2,
+      msWedding3,
+      msWedding4,
+      msWedding5,
+      msWedding6,
+      msWedding7,
+      msWedding8,
+      msWedding9,
+      msWedding10,
+    ],
+  },
   {
     title: "R & L Vrhnika 2025",
     coverImage: weddingCeremony,
