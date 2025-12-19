@@ -94,12 +94,12 @@ export default function Dogodki() {
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <EventGalleryCard
-              title="3. Mednarodni festival žganje kuha Koper 2025"
+              title="3. Mednarodni festival Žganje kuha Koper 2025"
               coverImage={festivalKoper1}
               images={festivalKoperImages}
             />
             <EventGalleryCard
-              title="3 Obletnica Martur 17.10.2024"
+              title="3. obletnica Martur 17. 10. 2024"
               coverImage={martur1}
               images={marturImages}
             />
