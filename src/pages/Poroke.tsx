@@ -31,6 +31,18 @@ import msWedding8 from "@/assets/ms-wedding-8.jpg";
 import msWedding9 from "@/assets/ms-wedding-9.jpg";
 import msWedding10 from "@/assets/ms-wedding-10.jpg";
 
+// I & J Trebnje wedding images
+import trebnjeWedding1 from "@/assets/trebnje-wedding-1.jpg";
+import trebnjeWedding2 from "@/assets/trebnje-wedding-2.jpg";
+import trebnjeWedding3 from "@/assets/trebnje-wedding-3.jpg";
+import trebnjeWedding4 from "@/assets/trebnje-wedding-4.jpg";
+import trebnjeWedding5 from "@/assets/trebnje-wedding-5.jpg";
+import trebnjeWedding6 from "@/assets/trebnje-wedding-6.jpg";
+import trebnjeWedding7 from "@/assets/trebnje-wedding-7.jpg";
+import trebnjeWedding8 from "@/assets/trebnje-wedding-8.jpg";
+import trebnjeWedding9 from "@/assets/trebnje-wedding-9.jpg";
+import trebnjeWedding10 from "@/assets/trebnje-wedding-10.jpg";
+
 const packages = [
   {
     name: "FLIPPmikro",
@@ -71,6 +83,22 @@ const videoPackages = [
 ];
 
 const weddingGalleries = [
+  {
+    title: "I & J Trebnje 2025",
+    coverImage: trebnjeWedding1,
+    images: [
+      trebnjeWedding1,
+      trebnjeWedding2,
+      trebnjeWedding3,
+      trebnjeWedding4,
+      trebnjeWedding5,
+      trebnjeWedding6,
+      trebnjeWedding7,
+      trebnjeWedding8,
+      trebnjeWedding9,
+      trebnjeWedding10,
+    ],
+  },
   {
     title: "K & A Murska Sobota 2025",
     coverImage: msWedding1,
