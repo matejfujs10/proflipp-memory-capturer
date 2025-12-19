@@ -25,7 +25,10 @@ export function Navigation() {
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">PROFLIPP</span>
+            <div className="flex flex-col items-start">
+              <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">PROFLIPP</span>
+              <span className="text-[10px] md:text-xs text-muted-foreground italic tracking-wide">We Create Emotions!</span>
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -95,9 +98,9 @@ export function Navigation() {
               <Facebook className="w-5 h-5" />
             </a>
 
-            <a href="tel:+38668169430" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:+38668169430" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium tabular-nums">
               <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">+386 68 169 430</span>
+              <span className="hidden xl:inline tracking-wide">+386 68 169 430</span>
             </a>
             <Button asChild>
               <Link to="/kontakt">{t('nav.contact')}</Link>
