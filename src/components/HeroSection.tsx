@@ -1,11 +1,44 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Camera, Smile } from "lucide-react";
-import heroImage from "@/assets/hero-wedding.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState, useEffect } from "react";
+
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
+import heroSlide4 from "@/assets/hero-slide-4.jpg";
+import heroSlide5 from "@/assets/hero-slide-5.jpg";
+import heroSlide6 from "@/assets/hero-slide-6.jpg";
+import heroSlide7 from "@/assets/hero-slide-7.jpg";
+import heroSlide8 from "@/assets/hero-slide-8.jpg";
+import heroSlide9 from "@/assets/hero-slide-9.jpg";
+import heroSlide10 from "@/assets/hero-slide-10.jpg";
+
+const heroImages = [
+  heroSlide1,
+  heroSlide2,
+  heroSlide3,
+  heroSlide4,
+  heroSlide5,
+  heroSlide6,
+  heroSlide7,
+  heroSlide8,
+  heroSlide9,
+  heroSlide10,
+];
 
 export function HeroSection() {
   const { t } = useLanguage();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const features = [
     { icon: Heart, text: t('hero.emotions_text') },
@@ -16,7 +49,16 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Poročna fotografija - par ob sončnem zahodu" className="w-full h-full object-cover" />
+        {heroImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Poročna fotografija ${index + 1}`}
+            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent" />
       </div>
@@ -59,6 +101,20 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-gold w-6" : "bg-card/50 hover:bg-card/70"
+            }`}
+            aria-label={`Pojdi na sliko ${index + 1}`}
+          />
+        ))}
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
