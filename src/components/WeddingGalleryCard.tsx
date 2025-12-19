@@ -13,13 +13,9 @@ interface WeddingGalleryCardProps {
 export function WeddingGalleryCard({ title, coverImage, images, description }: WeddingGalleryCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   
-  const defaultDescription = language === 'en' 
-    ? "Selected photos from the gallery. More photos available on Facebook PROFLIPP and Instagram."
-    : language === 'de'
-    ? "Ausgewählte Fotos aus der Galerie. Weitere Fotos auf Facebook PROFLIPP und Instagram."
-    : "Izbrane fotografije iz galerije. Več fotografij si lahko ogledate na FB PROFLIPP in Instagramu.";
+  const defaultDescription = t('weddings.gallery_note');
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -45,7 +41,7 @@ export function WeddingGalleryCard({ title, coverImage, images, description }: W
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h3 className="font-display text-xl md:text-2xl font-semibold text-card">{title}</h3>
-          <p className="text-card/70 text-sm mt-1">{images.length} {language === 'en' ? 'photos' : language === 'de' ? 'Fotos' : 'fotografij'}</p>
+          <p className="text-card/70 text-sm mt-1">{images.length} {t('weddings.photos')}</p>
         </div>
       </div>
       <p className="text-muted-foreground text-sm mt-3 px-1">{description || defaultDescription}</p>

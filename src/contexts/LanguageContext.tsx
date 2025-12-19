@@ -61,11 +61,14 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.description': 'Ljubezen je v drobnih stvareh: pogledih, dotikih, nasmehih in tistih čisto vajinih trenutkih. Na poročni dan sta v ospredju vidva – mi pa ujamemo zgodbo tako, da bodo fotografije pristne, vesele in polne čustev.',
     'weddings.choose_package': 'Izberita paket',
     'weddings.choose_desc': 'Izberita paket, ki najbolj ustreza vajinemu dnevu.',
+    'weddings.pricing_note': 'Cene se razlikujejo glede na želje mladoporočencev. Pripravimo vam personalizirano ponudbo.',
+    'weddings.follow_promo': 'Sledite nam na Facebook in Instagram za aktualne akcije in posebne ponudbe!',
     'weddings.video_packages': 'Video paketi',
     'weddings.video_desc': 'Dodajte video k fotografiji za popolno zgodbo vajinega dne.',
     'weddings.gallery': 'Galerija porok',
     'weddings.gallery_desc': 'Poglejte naše poročne fotografije.',
     'weddings.photos': 'fotografij',
+    'weddings.gallery_note': 'Prikazane so le izbrane fotografije. Več fotografij si lahko ogledate na našem Facebook in Instagram profilu.',
     
     // Legal pages
     'legal.terms_title': 'Splošni pogoji poslovanja',
@@ -125,11 +128,14 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.description': 'Love is in the small things: glances, touches, smiles and those purely yours moments. On your wedding day, you are in the spotlight – and we capture the story so that the photos are authentic, joyful and full of emotions.',
     'weddings.choose_package': 'Choose a package',
     'weddings.choose_desc': 'Choose the package that best suits your day.',
+    'weddings.pricing_note': 'Prices vary based on the couple\'s wishes. We prepare a personalized offer for you.',
+    'weddings.follow_promo': 'Follow us on Facebook and Instagram for current promotions and special offers!',
     'weddings.video_packages': 'Video packages',
     'weddings.video_desc': 'Add video to photography for the complete story of your day.',
     'weddings.gallery': 'Wedding gallery',
     'weddings.gallery_desc': 'View our wedding photos.',
     'weddings.photos': 'photos',
+    'weddings.gallery_note': 'Only selected photos are shown. You can view more photos on our Facebook and Instagram profile.',
     
     // Legal pages
     'legal.terms_title': 'General Terms and Conditions',
@@ -189,11 +195,14 @@ const translations: Record<Language, Record<string, string>> = {
     'weddings.description': 'Liebe steckt in den kleinen Dingen: Blicken, Berührungen, Lächeln und diesen ganz eigenen Momenten. An Ihrem Hochzeitstag stehen Sie im Mittelpunkt – und wir halten die Geschichte so fest, dass die Fotos authentisch, fröhlich und voller Emotionen sind.',
     'weddings.choose_package': 'Paket wählen',
     'weddings.choose_desc': 'Wählen Sie das Paket, das am besten zu Ihrem Tag passt.',
+    'weddings.pricing_note': 'Die Preise variieren je nach den Wünschen des Brautpaares. Wir erstellen für Sie ein personalisiertes Angebot.',
+    'weddings.follow_promo': 'Folgen Sie uns auf Facebook und Instagram für aktuelle Aktionen und Sonderangebote!',
     'weddings.video_packages': 'Videopakete',
     'weddings.video_desc': 'Fügen Sie Video zur Fotografie hinzu für die vollständige Geschichte Ihres Tages.',
     'weddings.gallery': 'Hochzeitsgalerie',
     'weddings.gallery_desc': 'Sehen Sie sich unsere Hochzeitsfotos an.',
     'weddings.photos': 'Fotos',
+    'weddings.gallery_note': 'Es werden nur ausgewählte Fotos angezeigt. Weitere Fotos können Sie auf unserem Facebook- und Instagram-Profil ansehen.',
     
     // Legal pages
     'legal.terms_title': 'Allgemeine Geschäftsbedingungen',

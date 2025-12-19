@@ -43,6 +43,18 @@ import trebnjeWedding8 from "@/assets/trebnje-wedding-8.jpg";
 import trebnjeWedding9 from "@/assets/trebnje-wedding-9.jpg";
 import trebnjeWedding10 from "@/assets/trebnje-wedding-10.jpg";
 
+// P & D Murska Sobota wedding images
+import pdWedding1 from "@/assets/pd-wedding-1.jpg";
+import pdWedding2 from "@/assets/pd-wedding-2.jpg";
+import pdWedding3 from "@/assets/pd-wedding-3.jpg";
+import pdWedding4 from "@/assets/pd-wedding-4.jpg";
+import pdWedding5 from "@/assets/pd-wedding-5.jpg";
+import pdWedding6 from "@/assets/pd-wedding-6.jpg";
+import pdWedding7 from "@/assets/pd-wedding-7.jpg";
+import pdWedding8 from "@/assets/pd-wedding-8.jpg";
+import pdWedding9 from "@/assets/pd-wedding-9.jpg";
+import pdWedding10 from "@/assets/pd-wedding-10.jpg";
+
 const packages = [
   {
     name: "FLIPPmikro",
@@ -83,6 +95,22 @@ const videoPackages = [
 ];
 
 const weddingGalleries = [
+  {
+    title: "P & D Murska Sobota 2025",
+    coverImage: pdWedding1,
+    images: [
+      pdWedding1,
+      pdWedding2,
+      pdWedding3,
+      pdWedding4,
+      pdWedding5,
+      pdWedding6,
+      pdWedding7,
+      pdWedding8,
+      pdWedding9,
+      pdWedding10,
+    ],
+  },
   {
     title: "I & J Trebnje 2025",
     coverImage: trebnjeWedding1,
@@ -161,6 +189,12 @@ export default function Poroke() {
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.choose_package')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.choose_desc')}</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-sm">
+              {t('weddings.pricing_note')}
+            </p>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-2 text-sm">
+              {t('weddings.follow_promo')}
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
