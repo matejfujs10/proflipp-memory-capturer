@@ -4,6 +4,10 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import familyHero from "@/assets/wedding-fun.jpg";
+import family1 from "@/assets/family-1.jpg";
+import family2 from "@/assets/family-2.jpg";
+import family3 from "@/assets/family-3.jpg";
+import family4 from "@/assets/family-4.jpg";
 
 const packages = [
   { name: "MINI PRO", price: "150", duration: "1 ura fotografiranja", description: "Kratek, sproščen session za naravne trenutke.", features: ["Vodeno, a naravno", "Izbor najboljših fotografij", "Digitalna dostava"] },
@@ -11,14 +15,19 @@ const packages = [
   { name: "DIAMANT PRO", price: "274", duration: "3 ure fotografiranja", description: "Bogat nabor spominov.", features: ["Več lokacij", "Največ raznolikosti", "Premium obdelava"] },
 ];
 
+const familyGalleryImages = [family1, family2, family3, family4];
+
 interface ServicePageProps {
   title: string;
   subtitle: string;
   description: string;
+  showGallery?: boolean;
+  galleryImages?: string[];
 }
 
-function ServicePage({ title, subtitle, description }: ServicePageProps) {
+function ServicePage({ title, subtitle, description, showGallery, galleryImages }: ServicePageProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen">
@@ -49,6 +58,46 @@ function ServicePage({ title, subtitle, description }: ServicePageProps) {
         </div>
       </section>
 
+      {showGallery && galleryImages && galleryImages.length > 0 && (
+        <section className="section-padding bg-cream">
+          <div className="container-wide">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Poglejte si nekaj naših družinskih fotografij.</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {galleryImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img 
+                    src={image} 
+                    alt={`Družinska fotografija ${index + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Lightbox */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img 
+            src={selectedImage} 
+            alt="Povečana fotografija" 
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      )}
+
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
@@ -56,7 +105,13 @@ function ServicePage({ title, subtitle, description }: ServicePageProps) {
 }
 
 export function Druzine() {
-  return <ServicePage title="Družinsko fotografiranje" subtitle="Storitve" description="Sproščen pristop za naravne družinske trenutke. Vsak session prilagodimo vam." />;
+  return <ServicePage 
+    title="Družinsko fotografiranje" 
+    subtitle="Storitve" 
+    description="Sproščen pristop za naravne družinske trenutke. Vsak session prilagodimo vam."
+    showGallery={true}
+    galleryImages={familyGalleryImages}
+  />;
 }
 
 export function Novorojencki() {
