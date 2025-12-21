@@ -13,6 +13,7 @@ export function Navigation() {
   const navItems = [
     { label: t('nav.about'), href: "/o-nas" },
     { label: t('nav.weddings'), href: "/poroke" },
+    { label: t('nav.baptism') || "Krst", href: "/krst" },
     { label: t('nav.events'), href: "/dogodki" },
     { label: t('nav.families'), href: "/druzine" },
     { label: t('nav.newborns'), href: "/novorojencki" },
