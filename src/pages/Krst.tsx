@@ -35,6 +35,8 @@ const packages = [
       "Portretno fotografiranje z družino in botri",
       "80–120 profesionalno obdelanih fotografij",
       "USB ali spletna galerija",
+      "Izdelava online fotoknjige idealna za deljenje",
+      "10x printane fotografije 10×15",
     ],
     popular: true,
   },
@@ -48,6 +50,9 @@ const packages = [
       "120+ obdelanih fotografij",
       "USB ključek + mini foto knjiga",
       "Potni stroški do ~50 km vključeni",
+      "Izdelava online fotoknjige idealna za deljenje",
+      "20x printane fotografije 10×15",
+      "Kratki event content videji (2–5 videjev)",
     ],
   },
 ];
@@ -140,9 +145,6 @@ export default function Krst() {
                 </div>
               ))}
             </div>
-            <p className="text-muted-foreground text-sm mt-6 italic">
-              Cene dodatkov se razlikujejo po ponudnikih.
-            </p>
           </div>
         </div>
       </section>
