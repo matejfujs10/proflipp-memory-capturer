@@ -227,6 +227,45 @@ export default function Poroke() {
         </div>
       </section>
 
+      {/* Why Choose PROFLIPP Section */}
+      <section className="section-padding bg-cream">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6 text-center">
+              Zakaj izbrati ekipo PROFLIPP
+            </h2>
+            <div className="prose prose-lg">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Poroka ni le dogodek – je zgodba, polna čustev, pristnih trenutkov in neponovljivih detajlov. Pri PROFLIPP verjamemo, da si zasluži biti ujeta iskreno, estetsko in brez vsiljivosti.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Smo uigrana ekipa fotografa in videografa, ki deluje sproščeno, zanesljivo in profesionalno. Naši pari pravijo o nas, da že pred poročnim dnem ustvarimo občutek zaupanja, saj svetujemo, kako naj sestavijo časovnico, da bo dovolj časa za vse, da bo umirjeno in potekalo vse brez skrbi, kar bo omogočilo, da se na svoj dan resnično sprostijo in uživajo. Naredimo tudi predporočno pogodbo. To vse se odraža tudi v številnih odličnih ocenah in priporočilih zadovoljnih parov.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4 font-medium">
+                Delamo premišljeno, s poudarkom na:
+              </p>
+              <ul className="text-muted-foreground space-y-2 mb-6 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Pristnih trenutkih – vodimo obred, postavljamo svate, svetujemo, poziranja</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Jasni komunikaciji in dobri pripravi</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Celostni zgodbi poročnega dne, od jutranjih priprav do večernega slavja</span>
+                </li>
+              </ul>
+              <p className="text-muted-foreground leading-relaxed">
+                Rezultat so brezčasne fotografije in video vsebine, ki ne sledijo kratkoročnim trendom, temveč vaši zgodbi. Naš cilj ni le končni izdelek, temveč celotna izkušnja – takšna, zaradi katere se svojega poročnega dne spominjate z nasmehom in brez skrbi. <span className="font-medium text-primary">Ustvarjamo čustveno fotografijo.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Wedding Gallery */}
       <section className="section-padding bg-background">
         <div className="container-wide">
