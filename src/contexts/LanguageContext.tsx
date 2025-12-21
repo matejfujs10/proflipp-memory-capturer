@@ -13,12 +13,17 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.about': 'O nas',
     'nav.weddings': 'Poroke',
+    'nav.baptism': 'Krst',
     'nav.events': 'Dogodki',
     'nav.families': 'Družine',
     'nav.newborns': 'Novorojenčki',
     'nav.travels': 'Potovanja',
     'nav.reviews': 'Mnenja',
     'nav.contact': 'Kontaktirajte nas',
+    
+    // Baptism page
+    'baptism.title': 'Fotografiranje krsta',
+    'baptism.packages': 'Izberite paket',
     
     // Hero Section
     'hero.tagline': 'Poročna & družinska fotografija',
@@ -80,12 +85,17 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.about': 'About us',
     'nav.weddings': 'Weddings',
+    'nav.baptism': 'Baptism',
     'nav.events': 'Events',
     'nav.families': 'Families',
     'nav.newborns': 'Newborns',
     'nav.travels': 'Travel',
     'nav.reviews': 'Reviews',
     'nav.contact': 'Contact us',
+    
+    // Baptism page
+    'baptism.title': 'Baptism photography',
+    'baptism.packages': 'Choose a package',
     
     // Hero Section
     'hero.tagline': 'Wedding & family photography',
@@ -147,12 +157,17 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.about': 'Über uns',
     'nav.weddings': 'Hochzeiten',
+    'nav.baptism': 'Taufe',
     'nav.events': 'Veranstaltungen',
     'nav.families': 'Familien',
     'nav.newborns': 'Neugeborene',
     'nav.travels': 'Reisen',
     'nav.reviews': 'Bewertungen',
     'nav.contact': 'Kontaktieren Sie uns',
+    
+    // Baptism page
+    'baptism.title': 'Tauffotografie',
+    'baptism.packages': 'Paket wählen',
     
     // Hero Section
     'hero.tagline': 'Hochzeits- & Familienfotografie',
