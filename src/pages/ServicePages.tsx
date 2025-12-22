@@ -9,13 +9,66 @@ import family2 from "@/assets/family-2.jpg";
 import family3 from "@/assets/family-3.jpg";
 import family4 from "@/assets/family-4.jpg";
 
-const packages = [
+const defaultPackages = [
   { name: "MINI PRO", price: "150", duration: "1 ura fotografiranja", description: "Kratek, sproščen session za naravne trenutke.", features: ["Vodeno, a naravno", "Izbor najboljših fotografij", "Digitalna dostava"] },
   { name: "GOLD PRO", price: "196", duration: "2 uri fotografiranja", description: "Več časa, več raznolikih kadrov.", features: ["Več kombinacij", "Sproščeno v vašem ritmu", "Online fotoknjiga"], popular: true },
   { name: "DIAMANT PRO", price: "274", duration: "3 ure fotografiranja", description: "Bogat nabor spominov.", features: ["Več lokacij", "Največ raznolikosti", "Premium obdelava"] },
 ];
 
+const travelPackages = [
+  { 
+    name: "KRATEK IZLET", 
+    price: "450", 
+    duration: "Do 6 ur fotografiranja", 
+    description: "Idealno za krajše enodnevne dogodivščine.", 
+    features: [
+      "150+ profesionalno obdelanih fotografij",
+      "Osnovna barvna korekcija in stilizacija",
+      "Spletna galerija za prenos in deljenje",
+      "Licenca za osebno in promocijsko uporabo"
+    ] 
+  },
+  { 
+    name: "DALJŠI IZLET", 
+    price: "850", 
+    duration: "Do 10 ur fotografiranja", 
+    description: "Popolno za daljše izlete z video vsebino.", 
+    features: [
+      "300+ profesionalno obdelanih fotografij",
+      "EVENT CONTENT VIDEO (30–60 s)",
+      "Primerno za Instagram Reels / TikTok / Shorts",
+      "Dinamična montaža + color grading",
+      "Spletna galerija + video prenos",
+      "Licenca za komercialno uporabo"
+    ],
+    popular: true 
+  },
+  { 
+    name: "CELODNEVNI IZLET", 
+    price: "1600", 
+    duration: "Do 24 ur prisotnosti", 
+    description: "Fleksibilno fotografiranje za celodnevne projekte.", 
+    features: [
+      "600+ profesionalno obdelanih fotografij",
+      "EVENT CONTENT VIDEO – RAZŠIRJEN (60–90 s)",
+      "2–3 kratki social media klipi",
+      "Napredna montaža + color grading",
+      "Premium spletna galerija",
+      "Polna komercialna licenca"
+    ] 
+  },
+];
+
 const familyGalleryImages = [family1, family2, family3, family4];
+
+interface PackageType {
+  name: string;
+  price: string;
+  duration: string;
+  description: string;
+  features: string[];
+  popular?: boolean;
+}
 
 interface ServicePageProps {
   title: string;
@@ -23,11 +76,14 @@ interface ServicePageProps {
   description: string;
   showGallery?: boolean;
   galleryImages?: string[];
+  customPackages?: PackageType[];
+  additionalInfo?: string[];
 }
 
-function ServicePage({ title, subtitle, description, showGallery, galleryImages }: ServicePageProps) {
+function ServicePage({ title, subtitle, description, showGallery, galleryImages, customPackages, additionalInfo }: ServicePageProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const packages = customPackages || defaultPackages;
 
   return (
     <div className="min-h-screen">
@@ -52,9 +108,23 @@ function ServicePage({ title, subtitle, description, showGallery, galleryImages 
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Izberite paket</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Sproščeni sessioni za pristne spomine.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
           </div>
+          
+          {additionalInfo && additionalInfo.length > 0 && (
+            <div className="mt-12 max-w-2xl mx-auto">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-4 text-center">Dodatne informacije</h3>
+              <ul className="space-y-2">
+                {additionalInfo.map((info, index) => (
+                  <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-gold mt-1">•</span>
+                    <span>{info}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 
@@ -119,5 +189,20 @@ export function Novorojencki() {
 }
 
 export function Potovanja() {
-  return <ServicePage title="Potovalno fotografiranje" subtitle="Potovanje mine. Fotografije ostanejo." description="Potovanja in doživetja so neponovljiva — in ravno zato si zaslužijo fotografije, ki jih boste z veseljem podoživljali." />;
+  const additionalInfo = [
+    "Potni stroški niso vključeni v ceno",
+    "Nočitve pri večdnevnih projektih niso vključene",
+    "Hitra dostava (48 h): +150 €",
+    "Možnost foto-knjige ali dodatnih video vsebin po dogovoru"
+  ];
+  
+  return (
+    <ServicePage 
+      title="Potovalno fotografiranje" 
+      subtitle="Potovanje mine. Fotografije ostanejo." 
+      description="Potovanja in doživetja so neponovljiva — in ravno zato si zaslužijo fotografije, ki jih boste z veseljem podoživljali."
+      customPackages={travelPackages}
+      additionalInfo={additionalInfo}
+    />
+  );
 }
