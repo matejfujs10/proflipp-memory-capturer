@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
 import { useLanguage } from "@/contexts/LanguageContext";
-import weddingHero from "@/assets/wedding-ceremony.jpg";
+
+// Hero slideshow images
+import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
+import weddingCollage2 from "@/assets/wedding-collage-2.png";
+
+// Gallery collage images
+import weddingCollage3 from "@/assets/wedding-collage-3.png";
+import weddingCollage4 from "@/assets/wedding-collage-4.png";
 
 // R & L Vrhnika wedding images
 import weddingCeremony from "@/assets/wedding-ceremony.jpg";
@@ -161,9 +168,20 @@ const weddingGalleries = [
   },
 ];
 
+const heroSlideImages = [weddingCollage1, weddingCollage2];
+
 export default function Poroke() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useLanguage();
+
+  // Hero slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlideImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -171,7 +189,16 @@ export default function Poroke() {
       
       <section className="relative pt-20">
         <div className="absolute inset-0 h-[50vh]">
-          <img src={weddingHero} alt="Poročna fotografija" className="w-full h-full object-cover" />
+          {heroSlideImages.map((image, index) => (
+            <img 
+              key={index}
+              src={image} 
+              alt={`Poročna fotografija ${index + 1}`} 
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
@@ -214,11 +241,21 @@ export default function Poroke() {
             <video 
               className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl" 
               controls 
-              poster={weddingHero}
+              poster={weddingCollage1}
             >
               <source src="/videos/wedding-video.mp4" type="video/mp4" />
               Vaš brskalnik ne podpira video predvajanja.
             </video>
+          </div>
+          
+          {/* Collage gallery */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="overflow-hidden rounded-xl shadow-lg">
+              <img src={weddingCollage3} alt="Poročni kolaž" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="overflow-hidden rounded-xl shadow-lg">
+              <img src={weddingCollage4} alt="Poročni kolaž" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
