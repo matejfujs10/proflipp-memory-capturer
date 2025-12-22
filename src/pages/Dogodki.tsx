@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { EventGalleryCard } from "@/components/EventGalleryCard";
-import eventsHero from "@/assets/wedding-toast.jpg";
+import eventsHero from "@/assets/forestland-hero.jpg";
 import eventDog from "@/assets/event-dog.jpg";
 import eventHorse from "@/assets/event-horse.jpg";
 import eventParty from "@/assets/event-party.jpg";
@@ -25,6 +25,19 @@ import festivalKoper7 from "@/assets/festival-koper-7.jpg";
 import martur1 from "@/assets/martur-1.jpg";
 import martur2 from "@/assets/martur-2.jpg";
 import martur3 from "@/assets/martur-3.jpg";
+
+// Forestland images
+import forestland1 from "@/assets/forestland-1.jpg";
+import forestland2 from "@/assets/forestland-2.jpg";
+import forestland3 from "@/assets/forestland-3.jpg";
+import forestland4 from "@/assets/forestland-4.jpg";
+import forestland5 from "@/assets/forestland-5.jpg";
+import forestland6 from "@/assets/forestland-6.jpg";
+
+// Gasilci images
+import gasilci1 from "@/assets/gasilci-1.jpg";
+import gasilci2 from "@/assets/gasilci-2.jpg";
+import gasilci3 from "@/assets/gasilci-3.jpg";
 
 const packages = [
   { name: "MINI PRO", price: "196", duration: "2 uri prisotnosti", description: "Hitra, učinkovita pokritost dogodka.", features: ["Reportažne fotografije dogajanja", "Ključni kadri", "Ekspresna obdelava"] },
@@ -63,6 +76,21 @@ const marturImages = [
   { src: martur3, alt: "Martur obletnica 3" },
 ];
 
+const forestlandImages = [
+  { src: forestland1, alt: "Forestland festival" },
+  { src: forestland2, alt: "Forestland DJ" },
+  { src: forestland3, alt: "Forestland tehnik" },
+  { src: forestland4, alt: "Forestland koncert" },
+  { src: forestland5, alt: "Forestland zabava" },
+  { src: forestland6, alt: "Forestland luna" },
+];
+
+const gasilciImages = [
+  { src: gasilci1, alt: "Gasilska tekmovanje ekipa" },
+  { src: gasilci2, alt: "Gasilska tekmovanje" },
+  { src: gasilci3, alt: "Gasilska tekmovanje skok" },
+];
+
 export default function Dogodki() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -92,7 +120,17 @@ export default function Dogodki() {
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Pretekli dogodki</span>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">Naše reference</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <EventGalleryCard
+              title="Forestland festival"
+              coverImage={forestland1}
+              images={forestlandImages}
+            />
+            <EventGalleryCard
+              title="Gasilsko tekmovanje"
+              coverImage={gasilci1}
+              images={gasilciImages}
+            />
             <EventGalleryCard
               title="3. Mednarodni festival Žganje kuha Koper 2025"
               coverImage={festivalKoper1}
