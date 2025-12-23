@@ -20,6 +20,8 @@ import krst11 from "@/assets/krst-11.jpg";
 import krst12 from "@/assets/krst-12.jpg";
 import krst13 from "@/assets/krst-13.jpg";
 import krst14 from "@/assets/krst-14.jpg";
+import krst15 from "@/assets/krst-15.jpg";
+import krst16 from "@/assets/krst-16.jpg";
 
 const packages = [
   {
@@ -74,7 +76,7 @@ const additionalOptions = [
   "Ekspresna obdelava fotografij",
 ];
 
-const galleryImages = [krst1, krst2, krst3, krst4, krst5, krst6, krst7, krst8, krst9, krst10, krst11, krst12, krst13, krst14];
+const galleryImages = [krst1, krst2, krst3, krst4, krst5, krst6, krst7, krst8, krst9, krst10, krst11, krst12, krst13, krst14, krst15, krst16];
 
 export default function Krst() {
   const [isModalOpen, setIsModalOpen] = useState(false);
