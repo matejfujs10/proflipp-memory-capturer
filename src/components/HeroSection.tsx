@@ -20,6 +20,16 @@ import heroSlide13 from "@/assets/hero-slide-13.jpg";
 import heroSlide14 from "@/assets/hero-slide-14.jpg";
 import heroSlide15 from "@/assets/hero-slide-15.jpg";
 import heroSlide16 from "@/assets/hero-slide-16.jpg";
+import heroSlide17 from "@/assets/hero-slide-17.jpg";
+import heroSlide18 from "@/assets/hero-slide-18.jpg";
+import heroSlide19 from "@/assets/hero-slide-19.jpg";
+import heroSlide20 from "@/assets/hero-slide-20.jpg";
+import heroSlide21 from "@/assets/hero-slide-21.jpg";
+import heroSlide22 from "@/assets/hero-slide-22.jpg";
+import heroSlide23 from "@/assets/hero-slide-23.jpg";
+import heroSlide24 from "@/assets/hero-slide-24.jpg";
+import heroSlide25 from "@/assets/hero-slide-25.jpg";
+import heroSlide26 from "@/assets/hero-slide-26.jpg";
 
 const heroImages = [
   heroSlide1,
@@ -38,6 +48,16 @@ const heroImages = [
   heroSlide14,
   heroSlide15,
   heroSlide16,
+  heroSlide17,
+  heroSlide18,
+  heroSlide19,
+  heroSlide20,
+  heroSlide21,
+  heroSlide22,
+  heroSlide23,
+  heroSlide24,
+  heroSlide25,
+  heroSlide26,
 ];
 
 export function HeroSection() {
