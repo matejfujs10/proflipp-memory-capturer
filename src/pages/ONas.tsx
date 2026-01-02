@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Heart, Camera, Users } from "lucide-react";
+import { Heart, Camera, Users, Phone } from "lucide-react";
 import weddingVeil from "@/assets/wedding-veil.jpg";
 import weddingBridge from "@/assets/wedding-bridge.jpg";
 
@@ -19,6 +19,14 @@ export default function ONas() {
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Proflipp</span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">O nas</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">We Create Emotions!</p>
+          
+          <a 
+            href="tel:+38668169430" 
+            className="inline-flex items-center gap-3 mt-6 px-6 py-3 bg-gold/90 hover:bg-gold text-foreground rounded-lg transition-colors font-medium"
+          >
+            <Phone className="w-5 h-5" />
+            <span className="tracking-wide">+386 68 169 430</span>
+          </a>
         </div>
       </section>
 

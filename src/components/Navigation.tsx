@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -99,10 +99,6 @@ export function Navigation() {
               <Facebook className="w-5 h-5" />
             </a>
 
-            <a href="tel:+38668169430" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium tabular-nums">
-              <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline tracking-wide">+386 68 169 430</span>
-            </a>
             <Button asChild>
               <Link to="/kontakt">{t('nav.contact')}</Link>
             </Button>
