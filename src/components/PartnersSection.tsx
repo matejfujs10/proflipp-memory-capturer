@@ -10,6 +10,12 @@ import partnerPerunika from "@/assets/partner-perunika.png";
 import partnerRclTeh from "@/assets/partner-rcl-teh.jpg";
 import partnerSobotainfo from "@/assets/partner-sobotainfo.png";
 import partnerUniMaribor from "@/assets/partner-uni-maribor.png";
+import partnerProflippRent from "@/assets/partner-proflipp-rent.jpg";
+import partnerLaVita from "@/assets/partner-lavita.png";
+import partnerGasilci from "@/assets/partner-gasilci.jpg";
+import partnerMartur from "@/assets/partner-martur.jpg";
+import partnerMaliRaj from "@/assets/partner-mali-raj.jpg";
+import partnerMaratonec from "@/assets/partner-maratonec.png";
 
 const partners = [
   { name: "Bled Film Festival", logo: partnerBledFilm },
@@ -22,6 +28,12 @@ const partners = [
   { name: "RCL TEH d.o.o", logo: partnerRclTeh },
   { name: "Sobotainfo", logo: partnerSobotainfo },
   { name: "Univerza v Mariboru", logo: partnerUniMaribor },
+  { name: "Proflipp Rent Kombi & Camper", logo: partnerProflippRent },
+  { name: "La Vita Terme 3000", logo: partnerLaVita },
+  { name: "Gasilska Zveza Slovenije", logo: partnerGasilci },
+  { name: "Kozmetika Martur", logo: partnerMartur },
+  { name: "Kmetija Mali Raj", logo: partnerMaliRaj },
+  { name: "SF Team Maratonec", logo: partnerMaratonec },
 ];
 
 export function PartnersSection() {
