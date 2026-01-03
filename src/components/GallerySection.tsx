@@ -1,4 +1,7 @@
 // Spontane, ujete trenutke iz različnih galerij
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide7 from "@/assets/hero-slide-7.jpg";
 import heroSlide12 from "@/assets/hero-slide-12.jpg";
@@ -28,6 +31,23 @@ const images = [
 ];
 
 export function GallerySection() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setSelectedIndex(index);
+  const closeLightbox = () => setSelectedIndex(null);
+  
+  const nextImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % images.length);
+    }
+  };
+  
+  const prevImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+    }
+  };
+
   return (
     <section className="section-padding bg-cream">
       <div className="container-wide">
@@ -45,6 +65,7 @@ export function GallerySection() {
           {images.map((image, index) => (
             <div
               key={index}
+              onClick={() => openLightbox(index)}
               className={`relative overflow-hidden rounded-xl group cursor-pointer ${
                 index === 0 ? "md:col-span-2 md:row-span-2" : ""
               }`}
@@ -56,6 +77,46 @@ export function GallerySection() {
             </div>
           ))}
         </div>
+
+        {/* Lightbox */}
+        <Dialog open={selectedIndex !== null} onOpenChange={closeLightbox}>
+          <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none">
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+            
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            >
+              <ChevronLeft className="w-8 h-8 text-white" />
+            </button>
+            
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            >
+              <ChevronRight className="w-8 h-8 text-white" />
+            </button>
+            
+            {selectedIndex !== null && (
+              <div className="flex items-center justify-center w-full h-[90vh]">
+                <img
+                  src={images[selectedIndex].src}
+                  alt={images[selectedIndex].alt}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            )}
+            
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm">
+              {selectedIndex !== null && `${selectedIndex + 1} / ${images.length}`}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
