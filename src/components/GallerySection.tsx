@@ -1,17 +1,30 @@
-import weddingVeil from "@/assets/wedding-veil.jpg";
-import weddingCeremony from "@/assets/wedding-ceremony.jpg";
-import weddingConfetti from "@/assets/wedding-confetti.jpg";
-import weddingDetails from "@/assets/wedding-details.jpg";
-import weddingEmotion from "@/assets/wedding-emotion.jpg";
-import weddingKiss from "@/assets/wedding-kiss.jpg";
+// Spontane, ujete trenutke iz različnih galerij
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
+import heroSlide7 from "@/assets/hero-slide-7.jpg";
+import heroSlide12 from "@/assets/hero-slide-12.jpg";
+import heroSlide15 from "@/assets/hero-slide-15.jpg";
+import heroSlide18 from "@/assets/hero-slide-18.jpg";
+import heroSlide21 from "@/assets/hero-slide-21.jpg";
+import eventDog from "@/assets/event-dog.jpg";
+import eventParty from "@/assets/event-party.jpg";
+import family3 from "@/assets/family-3.jpg";
+import family7 from "@/assets/family-7.jpg";
+import newborn1 from "@/assets/newborn-1.jpg";
+import newborn5 from "@/assets/newborn-5.jpg";
 
 const images = [
-  { src: weddingCeremony, alt: "Poročni obred na prostem" },
-  { src: weddingVeil, alt: "Srečen poročni par" },
-  { src: weddingConfetti, alt: "Mladoporočenca s konfeti" },
-  { src: weddingDetails, alt: "Poročni detajli" },
-  { src: weddingEmotion, alt: "Čustveni trenutki" },
-  { src: weddingKiss, alt: "Romantičen poljub" },
+  { src: heroSlide21, alt: "Spontan smeh na poroki" },
+  { src: eventDog, alt: "Pes na dogodku" },
+  { src: family7, alt: "Družinski trenutek" },
+  { src: heroSlide3, alt: "Čustveni trenutek" },
+  { src: newborn5, alt: "Novorojenček v objemu" },
+  { src: eventParty, alt: "Veselje na zabavi" },
+  { src: heroSlide12, alt: "Naravni pogled" },
+  { src: family3, alt: "Igriva družina" },
+  { src: heroSlide15, alt: "Pristen smeh" },
+  { src: newborn1, alt: "Nežni dotik" },
+  { src: heroSlide7, alt: "Spontana radost" },
+  { src: heroSlide18, alt: "Ujet trenutek" },
 ];
 
 export function GallerySection() {
@@ -28,7 +41,7 @@ export function GallerySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
