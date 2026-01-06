@@ -62,6 +62,18 @@ import pdWedding8 from "@/assets/pd-wedding-8.jpg";
 import pdWedding9 from "@/assets/pd-wedding-9.jpg";
 import pdWedding10 from "@/assets/pd-wedding-10.jpg";
 
+// K & A Portorož wedding images
+import kaWedding1 from "@/assets/ka-wedding-1.jpg";
+import kaWedding2 from "@/assets/ka-wedding-2.jpg";
+import kaWedding3 from "@/assets/ka-wedding-3.jpg";
+import kaWedding4 from "@/assets/ka-wedding-4.jpg";
+import kaWedding5 from "@/assets/ka-wedding-5.jpg";
+import kaWedding6 from "@/assets/ka-wedding-6.jpg";
+import kaWedding7 from "@/assets/ka-wedding-7.jpg";
+import kaWedding8 from "@/assets/ka-wedding-8.jpg";
+import kaWedding9 from "@/assets/ka-wedding-9.jpg";
+import kaWedding10 from "@/assets/ka-wedding-10.jpg";
+
 const packages = [
   {
     name: "FLIPPmikro",
@@ -102,6 +114,22 @@ const videoPackages = [
 ];
 
 const weddingGalleries = [
+  {
+    title: "K & A Portorož 2025",
+    coverImage: kaWedding1,
+    images: [
+      kaWedding1,
+      kaWedding2,
+      kaWedding3,
+      kaWedding4,
+      kaWedding5,
+      kaWedding6,
+      kaWedding7,
+      kaWedding8,
+      kaWedding9,
+      kaWedding10,
+    ],
+  },
   {
     title: "P & D Murska Sobota 2025",
     coverImage: pdWedding1,
