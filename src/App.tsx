@@ -11,6 +11,7 @@ import Dogodki from "./pages/Dogodki";
 import { Potovanja } from "./pages/ServicePages";
 import Novorojencki from "./pages/Novorojencki";
 import { Druzine } from "./pages/Druzine";
+import Studio from "./pages/Studio";
 import ONas from "./pages/ONas";
 import Kontakt from "./pages/Kontakt";
 import SplosniPogoji from "./pages/SplosniPogoji";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/dogodki" element={<Dogodki />} />
             <Route path="/druzine" element={<Druzine />} />
             <Route path="/novorojencki" element={<Novorojencki />} />
+            <Route path="/studio" element={<Studio />} />
             <Route path="/potovanja" element={<Potovanja />} />
             <Route path="/o-nas" element={<ONas />} />
             <Route path="/kontakt" element={<Kontakt />} />
