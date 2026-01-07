@@ -17,6 +17,18 @@ import studio8 from "@/assets/studio-8.jpg";
 import studio9 from "@/assets/studio-9.jpg";
 import studio10 from "@/assets/studio-10.jpg";
 
+// New studio images
+import studioHeroNew from "@/assets/studio-hero-new.png";
+import studioBand1 from "@/assets/studio-band-1.png";
+import studioBand2 from "@/assets/studio-band-2.png";
+import studioBand3 from "@/assets/studio-band-3.png";
+import studioBand4 from "@/assets/studio-band-4.png";
+import studioBand5 from "@/assets/studio-band-5.png";
+import studioBand6 from "@/assets/studio-band-6.png";
+import studioPortrait1 from "@/assets/studio-portrait-1.jpg";
+import studioPortrait2 from "@/assets/studio-portrait-2.jpg";
+import studioPortrait3 from "@/assets/studio-portrait-3.jpg";
+
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -158,6 +170,83 @@ const services = [
   "Vsebine za socialna omrežja in oglaševalske kampanje"
 ];
 
+// Gift Voucher Component
+const GiftVoucher = () => (
+  <motion.div 
+    className="mt-8 mb-4"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+  >
+    <div className="bg-gradient-to-br from-primary via-primary to-sky-dark rounded-2xl p-1 shadow-glow">
+      <div className="bg-foreground rounded-xl p-6 relative overflow-hidden">
+        {/* Yellow decorative lines */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-accent" />
+        <div className="absolute top-0 left-0 h-full w-1 bg-accent" />
+        <div className="absolute top-0 right-0 h-full w-1 bg-accent" />
+        
+        {/* Diagonal yellow lines */}
+        <div className="absolute top-4 left-4 w-16 h-0.5 bg-accent rotate-45 origin-left" />
+        <div className="absolute top-4 right-4 w-16 h-0.5 bg-accent -rotate-45 origin-right" />
+        <div className="absolute bottom-4 left-4 w-16 h-0.5 bg-accent -rotate-45 origin-left" />
+        <div className="absolute bottom-4 right-4 w-16 h-0.5 bg-accent rotate-45 origin-right" />
+        
+        <div className="text-center relative z-10">
+          <div className="mb-3">
+            <span className="text-primary font-display text-2xl font-bold tracking-wider">PROFLIPP</span>
+            <p className="text-card text-xs italic mt-1">We Create Emotions!</p>
+          </div>
+          
+          <div className="border-y border-accent/50 py-4 my-4">
+            <h3 className="text-card font-display text-xl md:text-2xl font-semibold mb-2">
+              DARILNI BON
+            </h3>
+            <p className="text-card/80 text-sm">
+              Za studijsko fotografiranje
+            </p>
+          </div>
+          
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <div className="h-px w-12 bg-accent" />
+            <Gift className="w-8 h-8 text-primary" />
+            <div className="h-px w-12 bg-accent" />
+          </div>
+          
+          <p className="text-card/70 text-xs max-w-xs mx-auto">
+            Vrednost: _________________ €
+          </p>
+          <p className="text-card/70 text-xs mt-2">
+            Veljavnost: 12 mesecev od izdaje
+          </p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
+
+// Gift voucher text component
+const GiftVoucherText = () => (
+  <motion.div 
+    className="mt-8 p-6 bg-primary/10 rounded-xl border border-primary/30 text-center"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+  >
+    <Gift className="w-10 h-10 text-primary mx-auto mb-3" />
+    <h4 className="font-display text-lg font-semibold text-foreground mb-2">
+      Darilni bon
+    </h4>
+    <p className="text-muted-foreground text-sm">
+      Možnost nakupa darilnega bona, ki ga lahko podarite prijateljem, znancem ali sorodnikom 
+      ob različnih priložnostih – rojstni dan, obletnica, poroka, novoletna darilo ali kaj povsem drugega!
+    </p>
+    <GiftVoucher />
+  </motion.div>
+);
+
 export default function Studio() {
   return (
     <div className="min-h-screen bg-background">
@@ -167,7 +256,7 @@ export default function Studio() {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={studio1} 
+            src={studioHeroNew} 
             alt="PROFLIPP Studio" 
             className="w-full h-full object-cover"
           />
@@ -179,6 +268,9 @@ export default function Studio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <p className="text-primary font-medium text-sm tracking-wider uppercase mb-2">
+            PROFLIPP We Create Emotions!
+          </p>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-card mb-4">
             Studijsko fotografiranje
           </h1>
@@ -213,7 +305,7 @@ export default function Studio() {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               <img 
-                src={studio2} 
+                src={studioPortrait1} 
                 alt="Studio PROFLIPP" 
                 className="rounded-2xl shadow-card w-full"
               />
@@ -241,13 +333,13 @@ export default function Studio() {
               {...staggerContainer}
             >
               <motion.img 
-                src={studio3} 
+                src={studioPortrait2} 
                 alt="Studio work" 
                 className="rounded-xl shadow-card w-full aspect-[3/4] object-cover"
                 {...fadeInUp}
               />
               <motion.img 
-                src={studio4} 
+                src={studioPortrait3} 
                 alt="Studio work" 
                 className="rounded-xl shadow-card w-full aspect-[3/4] object-cover mt-8"
                 {...fadeInUp}
@@ -274,15 +366,15 @@ export default function Studio() {
         </div>
       </section>
 
-      {/* Image Break */}
+      {/* Band/Group Gallery */}
       <motion.section 
         className="py-0"
         {...fadeInUp}
       >
         <div className="grid grid-cols-3 gap-2">
-          <img src={studio5} alt="Studio work" className="w-full aspect-square object-cover" />
-          <img src={studio6} alt="Studio work" className="w-full aspect-square object-cover" />
-          <img src={studio7} alt="Studio work" className="w-full aspect-square object-cover" />
+          <img src={studioBand1} alt="Band photography" className="w-full aspect-square object-cover" />
+          <img src={studioBand2} alt="Band photography" className="w-full aspect-square object-cover" />
+          <img src={studioBand3} alt="Band photography" className="w-full aspect-square object-cover" />
         </div>
       </motion.section>
 
@@ -331,8 +423,23 @@ export default function Studio() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Gift Voucher Section for Main Packages */}
+          <GiftVoucherText />
         </div>
       </section>
+
+      {/* More Band Images */}
+      <motion.section 
+        className="py-0"
+        {...fadeInUp}
+      >
+        <div className="grid grid-cols-3 gap-2">
+          <img src={studioBand4} alt="Band photography" className="w-full aspect-square object-cover" />
+          <img src={studioBand5} alt="Band photography" className="w-full aspect-square object-cover" />
+          <img src={studioBand6} alt="Band photography" className="w-full aspect-square object-cover" />
+        </div>
+      </motion.section>
 
       {/* Commercial Packages */}
       <section className="section-padding bg-muted/30">
@@ -370,6 +477,9 @@ export default function Studio() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Gift Voucher Section for Commercial */}
+              <GiftVoucherText />
             </motion.div>
             
             <motion.div 
@@ -423,6 +533,9 @@ export default function Studio() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Gift Voucher Section for Additional Services */}
+          <GiftVoucherText />
         </div>
       </section>
 
@@ -431,9 +544,11 @@ export default function Studio() {
         className="py-0"
         {...fadeInUp}
       >
-        <div className="grid grid-cols-2 gap-2">
-          <img src={studio9} alt="Studio work" className="w-full aspect-[4/3] object-cover" />
-          <img src={studio10} alt="Studio work" className="w-full aspect-[4/3] object-cover" />
+        <div className="grid grid-cols-4 gap-2">
+          <img src={studio1} alt="Studio work" className="w-full aspect-square object-cover" />
+          <img src={studio2} alt="Studio work" className="w-full aspect-square object-cover" />
+          <img src={studio9} alt="Studio work" className="w-full aspect-square object-cover" />
+          <img src={studio10} alt="Studio work" className="w-full aspect-square object-cover" />
         </div>
       </motion.section>
 
