@@ -17,6 +17,7 @@ export function Navigation() {
     { label: t('nav.events'), href: "/dogodki" },
     { label: t('nav.families'), href: "/druzine" },
     { label: t('nav.newborns'), href: "/novorojencki" },
+    { label: "Studio", href: "/studio" },
     { label: t('nav.travels'), href: "/potovanja" },
     { label: t('nav.reviews'), href: "/mnenja" },
   ];
