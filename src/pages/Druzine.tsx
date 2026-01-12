@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { Lightbox } from "@/components/Lightbox";
 import { Check } from "lucide-react";
 
 // Hero image
@@ -38,7 +39,7 @@ const packages = [
     price: "196", 
     duration: "2 uri fotografiranja", 
     description: "Več časa, več raznolikih kadrov.", 
-    features: ["Več kombinacij", "Sproščeno v vašem ritmu", "Online fotoknjiga"], 
+    features: ["Več kombinacij", "Sproščeno v vašem ritmu", "Spletna fotoknjiga"], 
     popular: true 
   },
   { 
@@ -64,7 +65,13 @@ const whyChooseFeatures = [
 
 export function Druzine() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <div className="min-h-screen">
@@ -83,7 +90,7 @@ export function Druzine() {
             Družinsko fotografiranje
           </h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
-            Sproščen pristop za naravne družinske trenutke. Vsak session prilagodimo vam.
+            Sproščen pristop za naravne družinske trenutke. Vsako fotografiranje prilagodimo vam.
           </p>
         </div>
       </section>
@@ -151,7 +158,7 @@ export function Druzine() {
                 </p>
                 <p>
                   Fotografiranje je prilagojeno vašemu tempu, brez hitenja in brez pritiska. 
-                  Cilj je prijetna izkušnja za vso družino – tudi za tiste, ki pravijo, da "niso fotogenični".
+                  Cilj je prijetna izkušnja za vso družino – tudi za tiste, ki pravijo, da »niso fotogenični«.
                 </p>
               </div>
             </div>
@@ -167,7 +174,7 @@ export function Druzine() {
               Galerija
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Poglejte si nekaj naših družinskih fotografij.
+              Oglejte si nekaj naših družinskih fotografij.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -175,7 +182,7 @@ export function Druzine() {
               <div 
                 key={index} 
                 className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
-                onClick={() => setSelectedImage(image)}
+                onClick={() => openLightbox(index)}
               >
                 <img 
                   src={image} 
@@ -199,7 +206,7 @@ export function Druzine() {
               Izberite paket
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Sproščeni sessioni za pristne spomine.
+              Sproščeni fotografski sessioni za pristne spomine.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -240,26 +247,19 @@ export function Druzine() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={family14} alt="Družina s dežniki" className="w-full rounded-lg object-cover aspect-[3/4]" />
+              <img src={family14} alt="Družina z dežniki" className="w-full rounded-lg object-cover aspect-[3/4]" />
               <img src={family12} alt="Družinski ogenj" className="w-full rounded-lg object-cover aspect-[3/4]" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img 
-            src={selectedImage} 
-            alt="Povečana fotografija" 
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
+      <Lightbox 
+        images={galleryImages} 
+        initialIndex={lightboxIndex} 
+        isOpen={lightboxOpen} 
+        onClose={() => setLightboxOpen(false)} 
+      />
 
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

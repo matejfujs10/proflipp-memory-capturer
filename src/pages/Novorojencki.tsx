@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { Lightbox } from "@/components/Lightbox";
 import { Check } from "lucide-react";
 
 import newborn1 from "@/assets/newborn-1.jpg";
@@ -29,7 +30,7 @@ const packages = [
     price: "196", 
     duration: "2 uri fotografiranja", 
     description: "Več časa za popolne trenutke.", 
-    features: ["Prilagojeno ritmu dojenčka", "Vključeni starši in detajli", "Online fotoknjiga"], 
+    features: ["Prilagojeno ritmu dojenčka", "Vključeni starši in detajli", "Spletna fotoknjiga"], 
     popular: true 
   },
   { 
@@ -45,7 +46,13 @@ const galleryImages = [newborn1, newborn2, newborn3, newborn5, newborn6, newborn
 
 export default function Novorojencki() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <div className="min-h-screen">
@@ -164,7 +171,7 @@ export default function Novorojencki() {
               <div 
                 key={index} 
                 className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
-                onClick={() => setSelectedImage(img)}
+                onClick={() => openLightbox(index)}
               >
                 <img 
                   src={img} 
@@ -245,14 +252,14 @@ export default function Novorojencki() {
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Poglejte si nekaj naših fotografij novorojenčkov.</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Oglejte si nekaj naših fotografij novorojenčkov.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {galleryImages.map((image, index) => (
               <div 
                 key={index} 
                 className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
-                onClick={() => setSelectedImage(image)}
+                onClick={() => openLightbox(index)}
               >
                 <img 
                   src={image} 
@@ -268,19 +275,12 @@ export default function Novorojencki() {
         </div>
       </section>
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img 
-            src={selectedImage} 
-            alt="Povečana fotografija" 
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
+      <Lightbox 
+        images={galleryImages} 
+        initialIndex={lightboxIndex} 
+        isOpen={lightboxOpen} 
+        onClose={() => setLightboxOpen(false)} 
+      />
 
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
