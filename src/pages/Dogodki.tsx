@@ -5,6 +5,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { EventGalleryCard } from "@/components/EventGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { Lightbox } from "@/components/Lightbox";
 import eventsHero from "@/assets/forestland-hero.jpg";
 import eventDog from "@/assets/event-dog.jpg";
 import eventHorse from "@/assets/event-horse.jpg";
@@ -42,14 +43,14 @@ import gasilci3 from "@/assets/gasilci-3.jpg";
 
 const packages = [
   { name: "MINI PRO", price: "196", duration: "2 uri prisotnosti", description: "Hitra, učinkovita pokritost dogodka.", features: ["Reportažne fotografije dogajanja", "Ključni kadri", "Ekspresna obdelava"] },
-  { name: "GOLD PRO", price: "343", duration: "4 ure prisotnosti", description: "Najboljša izbira za večino dogodkov.", features: ["Širši zajem dogajanja", "'PR-ready' fotografije", "Urejena galerija"], popular: true },
-  { name: "DIAMANT PRO", price: "441", duration: "6 ur prisotnosti", description: "Za večje dogodke s celovitim vizualnim materialom.", features: ["Celovit reportažni pristop", "Premium izbor", "Kratki event content video"] },
+  { name: "GOLD PRO", price: "343", duration: "4 ure prisotnosti", description: "Najboljša izbira za večino dogodkov.", features: ["Širši zajem dogajanja", "»PR-ready« fotografije", "Urejena galerija"], popular: true },
+  { name: "DIAMANT PRO", price: "441", duration: "6 ur prisotnosti", description: "Za večje dogodke s celovitim vizualnim materialom.", features: ["Celovit reportažni pristop", "Premium izbor", "Kratki content video"] },
 ];
 
 const videoPackages = [
-  { name: "EVENTvideo START", price: "450", duration: "Do 4 ure", description: "Za krajše dogodke.", features: ["60–120 s 'after movie'", "Osnovna montaža"] },
-  { name: "EVENTvideo PRO", price: "730", duration: "Do 8 ur", description: "Za konference in večje evente.", features: ["2–3 min 'after movie'", "'Brand' občutek"] },
-  { name: "EVENTvideo MAX", price: "1.030", duration: "Do 10 ur", description: "Celodnevni event.", features: ["3–5 min 'after movie'", "Več 'B-roll' materiala"] },
+  { name: "EVENTvideo START", price: "450", duration: "Do 4 ure", description: "Za krajše dogodke.", features: ["60–120 s »after movie«", "Osnovna montaža"] },
+  { name: "EVENTvideo PRO", price: "730", duration: "Do 8 ur", description: "Za konference in večje dogodke.", features: ["2–3 min »after movie«", "»Brand« občutek"] },
+  { name: "EVENTvideo MAX", price: "1.030", duration: "Do 10 ur", description: "Celodnevni dogodek.", features: ["3–5 min »after movie«", "Več »B-roll« materiala"] },
 ];
 
 const galleryImages = [
@@ -87,13 +88,22 @@ const forestlandImages = [
 ];
 
 const gasilciImages = [
-  { src: gasilci1, alt: "Gasilska tekmovanje ekipa" },
-  { src: gasilci2, alt: "Gasilska tekmovanje" },
-  { src: gasilci3, alt: "Gasilska tekmovanje skok" },
+  { src: gasilci1, alt: "Gasilsko tekmovanje ekipa" },
+  { src: gasilci2, alt: "Gasilsko tekmovanje" },
+  { src: gasilci3, alt: "Gasilsko tekmovanje skok" },
 ];
 
 export default function Dogodki() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const allGalleryImagesSrc = galleryImages.map(img => img.src);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <div className="min-h-screen">
@@ -133,7 +143,7 @@ export default function Dogodki() {
               images={gasilciImages}
             />
             <EventGalleryCard
-              title="3. Mednarodni festival Žganje kuha Koper 2025"
+              title="3. mednarodni festival Žganje kuha Koper 2025"
               coverImage={festivalKoper1}
               images={festivalKoperImages}
             />
@@ -160,6 +170,7 @@ export default function Dogodki() {
                 className={`relative overflow-hidden rounded-xl group cursor-pointer ${
                   index === 0 ? "md:col-span-2 md:row-span-2" : ""
                 }`}
+                onClick={() => openLightbox(index)}
               >
                 <div className={`${index === 0 ? "aspect-square" : "aspect-[4/3]"}`}>
                   <img
@@ -192,13 +203,20 @@ export default function Dogodki() {
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Video paketi za dogodke</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Videopaketi za dogodke</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
           </div>
         </div>
       </section>
+
+      <Lightbox 
+        images={allGalleryImagesSrc} 
+        initialIndex={lightboxIndex} 
+        isOpen={lightboxOpen} 
+        onClose={() => setLightboxOpen(false)} 
+      />
 
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

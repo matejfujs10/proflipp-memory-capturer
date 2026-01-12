@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { Lightbox } from "@/components/Lightbox";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 import krstHero from "@/assets/krst-1.jpg";
@@ -48,8 +49,8 @@ const packages = [
       "Portretno fotografiranje z družino in botri",
       "80–120 profesionalno obdelanih fotografij",
       "USB ali spletna galerija",
-      "Izdelava online fotoknjige idealna za deljenje",
-      "10x printane fotografije 10×15",
+      "Izdelava spletne fotoknjige, idealne za deljenje",
+      "10x tiskane fotografije 10×15",
     ],
     popular: true,
   },
@@ -61,19 +62,19 @@ const packages = [
     features: [
       "Fotografiranje priprav + cerkvenega obreda + praznovanja",
       "120+ obdelanih fotografij",
-      "USB ključek + mini foto knjiga",
+      "USB ključek + mini fotoknjiga",
       "Potni stroški do ~50 km vključeni",
-      "Izdelava online fotoknjige idealna za deljenje",
-      "20x printane fotografije 10×15",
-      "Kratki event content videji (2–5 videjev)",
+      "Izdelava spletne fotoknjige, idealne za deljenje",
+      "20x tiskane fotografije 10×15",
+      "Kratki content videji (2–5 videjev)",
     ],
   },
 ];
 
 const additionalOptions = [
-  "Izdelava fotoknjige ali foto albuma (od ~60 €+)",
+  "Izdelava fotoknjige ali fotoalbuma (od ~60 €+)",
   "Tisk izbranih fotografij v velikostih 10×15 ali več",
-  "Portretna mini-seansa pred ali po obredu",
+  "Portretna mini seansa pred ali po obredu",
   "Ekspresna obdelava fotografij",
 ];
 
@@ -81,7 +82,14 @@ const galleryImages = [krst1, krst2, krst3, krst4, krst5, krst6, krst7, krst8, k
 
 export default function Krst() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const { t } = useLanguage();
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <div className="min-h-screen">
@@ -117,7 +125,7 @@ export default function Krst() {
                 👉 Fotografiranje poteka z diskretno prisotnostjo, spoštovanjem do obreda in z občutkom za detajle. Pred dogodkom se dogovorimo o poteku in vaših željah (lokacija, čas, posebne želje fotografiranja).
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                👉 Po obredu prejmete profesionalno obdelane fotografije v digitalni obliki preko spletne galerije ali USB ključka, dodatno po želji tudi foto knjigo ali tiskane fotografije.
+                👉 Po obredu prejmete profesionalno obdelane fotografije v digitalni obliki prek spletne galerije ali USB ključka, dodatno po želji tudi fotoknjigo ali tiskane fotografije.
               </p>
             </div>
           </div>
@@ -170,15 +178,19 @@ export default function Krst() {
               Galerija krstov
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Poglejte naše fotografije krstov.
+              Oglejte si naše fotografije krstov.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {galleryImages.map((image, index) => (
-              <div key={index} className="aspect-[4/3] overflow-hidden rounded-xl">
+              <div 
+                key={index} 
+                className="aspect-[4/3] overflow-hidden rounded-xl cursor-pointer group"
+                onClick={() => openLightbox(index)}
+              >
                 <img 
                   src={image} 
-                  alt={`Krst fotografija ${index + 1}`}
+                  alt={`Fotografija krsta ${index + 1}`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -189,6 +201,13 @@ export default function Krst() {
           <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
+
+      <Lightbox 
+        images={galleryImages} 
+        initialIndex={lightboxIndex} 
+        isOpen={lightboxOpen} 
+        onClose={() => setLightboxOpen(false)} 
+      />
 
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
