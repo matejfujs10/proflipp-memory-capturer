@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 import krstHero from "@/assets/krst-1.jpg";
@@ -183,6 +184,9 @@ export default function Krst() {
               </div>
             ))}
           </div>
+          
+          {/* Gift Voucher Section */}
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 

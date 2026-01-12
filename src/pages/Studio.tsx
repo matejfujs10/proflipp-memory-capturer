@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, Camera, Clock, Image, Gift, Scissors, Sparkles, Package } from "lucide-react";
 import { motion } from "framer-motion";
+import { ContactFormModal } from "@/components/ContactSection";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 
 // Studio images
 import studio1 from "@/assets/studio-1.jpg";
@@ -170,84 +173,9 @@ const services = [
   "Vsebine za socialna omrežja in oglaševalske kampanje"
 ];
 
-// Gift Voucher Component
-const GiftVoucher = () => (
-  <motion.div 
-    className="mt-8 mb-4"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-  >
-    <div className="bg-gradient-to-br from-primary via-primary to-sky-dark rounded-2xl p-1 shadow-glow">
-      <div className="bg-foreground rounded-xl p-6 relative overflow-hidden">
-        {/* Yellow decorative lines */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-accent" />
-        <div className="absolute top-0 left-0 h-full w-1 bg-accent" />
-        <div className="absolute top-0 right-0 h-full w-1 bg-accent" />
-        
-        {/* Diagonal yellow lines */}
-        <div className="absolute top-4 left-4 w-16 h-0.5 bg-accent rotate-45 origin-left" />
-        <div className="absolute top-4 right-4 w-16 h-0.5 bg-accent -rotate-45 origin-right" />
-        <div className="absolute bottom-4 left-4 w-16 h-0.5 bg-accent -rotate-45 origin-left" />
-        <div className="absolute bottom-4 right-4 w-16 h-0.5 bg-accent rotate-45 origin-right" />
-        
-        <div className="text-center relative z-10">
-          <div className="mb-3">
-            <span className="text-primary font-display text-2xl font-bold tracking-wider">PROFLIPP</span>
-            <p className="text-card text-xs italic mt-1">We Create Emotions!</p>
-          </div>
-          
-          <div className="border-y border-accent/50 py-4 my-4">
-            <h3 className="text-card font-display text-xl md:text-2xl font-semibold mb-2">
-              DARILNI BON
-            </h3>
-            <p className="text-card/80 text-sm">
-              Za studijsko fotografiranje
-            </p>
-          </div>
-          
-          <div className="flex justify-center items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-accent" />
-            <Gift className="w-8 h-8 text-primary" />
-            <div className="h-px w-12 bg-accent" />
-          </div>
-          
-          <p className="text-card/70 text-xs max-w-xs mx-auto">
-            Vrednost: _________________ €
-          </p>
-          <p className="text-card/70 text-xs mt-2">
-            Veljavnost: 12 mesecev od izdaje
-          </p>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-);
-
-// Gift voucher text component
-const GiftVoucherText = () => (
-  <motion.div 
-    className="mt-8 p-6 bg-primary/10 rounded-xl border border-primary/30 text-center"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-  >
-    <Gift className="w-10 h-10 text-primary mx-auto mb-3" />
-    <h4 className="font-display text-lg font-semibold text-foreground mb-2">
-      Darilni bon
-    </h4>
-    <p className="text-muted-foreground text-sm">
-      Možnost nakupa darilnega bona, ki ga lahko podarite prijateljem, znancem ali sorodnikom 
-      ob različnih priložnostih – rojstni dan, obletnica, poroka, novoletna darilo ali kaj povsem drugega!
-    </p>
-    <GiftVoucher />
-  </motion.div>
-);
-
 export default function Studio() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -425,7 +353,7 @@ export default function Studio() {
           </motion.div>
 
           {/* Gift Voucher Section for Main Packages */}
-          <GiftVoucherText />
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 
@@ -479,7 +407,7 @@ export default function Studio() {
               </div>
 
               {/* Gift Voucher Section for Commercial */}
-              <GiftVoucherText />
+              <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
             </motion.div>
             
             <motion.div 
@@ -535,7 +463,7 @@ export default function Studio() {
           </motion.div>
 
           {/* Gift Voucher Section for Additional Services */}
-          <GiftVoucherText />
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 
@@ -573,6 +501,7 @@ export default function Studio() {
       </section>
 
       <Footer />
+      <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

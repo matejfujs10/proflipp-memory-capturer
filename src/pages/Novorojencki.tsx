@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Check } from "lucide-react";
 
 import newborn1 from "@/assets/newborn-1.jpg";
@@ -261,6 +262,9 @@ export default function Novorojencki() {
               </div>
             ))}
           </div>
+          
+          {/* Gift Voucher Section */}
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 

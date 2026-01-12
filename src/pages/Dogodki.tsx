@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { EventGalleryCard } from "@/components/EventGalleryCard";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import eventsHero from "@/assets/forestland-hero.jpg";
 import eventDog from "@/assets/event-dog.jpg";
 import eventHorse from "@/assets/event-horse.jpg";
@@ -171,6 +172,9 @@ export default function Dogodki() {
               </div>
             ))}
           </div>
+          
+          {/* Gift Voucher Section */}
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 
