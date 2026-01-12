@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Hero slideshow images
@@ -348,6 +349,9 @@ export default function Poroke() {
               />
             ))}
           </div>
+          
+          {/* Gift Voucher Section */}
+          <GiftVoucherSection onReserve={() => setIsModalOpen(true)} />
         </div>
       </section>
 
