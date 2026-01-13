@@ -28,8 +28,14 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="hover:opacity-80 transition-opacity">
             <div className="flex flex-col items-start">
-              <span className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>PROFLIPP</span>
-              <span className="text-[10px] md:text-xs text-muted-foreground italic tracking-wide">We Create Emotions!</span>
+              <span className="text-2xl md:text-3xl font-extrabold tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                <span className="text-[#1a3a6e]">PROFLIPP</span>
+                <span className="text-gold">.</span>
+              </span>
+              <span className="text-[10px] md:text-xs font-semibold tracking-wide">
+                <span className="text-primary">We Create </span>
+                <span className="text-gold italic">Emotions!</span>
+              </span>
             </div>
           </Link>
 
