@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import proflippLogoCameraImg from "@/assets/proflipp-logo-camera.png";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -30,8 +31,13 @@ export function Footer() {
       <div className="container-wide section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <Link to="/" className="hover:opacity-80 transition-opacity">
-              <span className="text-2xl font-bold text-card tracking-tight">PROFLIPP</span>
+            <Link to="/" className="hover:opacity-80 transition-opacity inline-block">
+              <span className="text-2xl font-extrabold text-card tracking-tight block mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>PROFLIPP</span>
+              <img 
+                src={proflippLogoCameraImg} 
+                alt="PROFLIPP - We Create Emotions!" 
+                className="h-24 md:h-28 w-auto object-contain"
+              />
             </Link>
             <p className="text-card/70 mt-4 mb-6 max-w-sm">
               {t('footer.tagline')}

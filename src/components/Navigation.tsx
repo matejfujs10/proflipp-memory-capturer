@@ -28,7 +28,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="hover:opacity-80 transition-opacity">
             <div className="flex flex-col items-start">
-              <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">PROFLIPP</span>
+              <span className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>PROFLIPP</span>
               <span className="text-[10px] md:text-xs text-muted-foreground italic tracking-wide">We Create Emotions!</span>
             </div>
           </Link>
