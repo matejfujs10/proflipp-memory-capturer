@@ -20,7 +20,7 @@ const facebookReviews = [
   { name: "Danijel Josić", text: "Želim se iskreno zahvaliti našemu fantastičnemu fotografu, ki je s svojo neverjetno energijo in profesionalnostjo zajel vsak trenutek dogodka na najlepši možen način." },
   { name: "Davor Rojko", text: "Kvalitetno, ugodno in sproščeno fotografiranje v družbi osebe, katera se prilagodi potrebam ter raznim situacijam. Ob tem ne manjka dobre volje ter igrivosti." },
   { name: "Inga Inx", text: "Najboljši fotograf 😍 V svoji objektiv ujame ključne in zabavne trenutke ter naredi top fotografijo 🦋 Je unikaten - zato priporočam vsakomur, da ga ulovi in si iz fotografij večno zgodbo za spomin naredi ❣️‼️😉" },
-  { name: "Ana Breznik", text: "Super fotograf in res krasne slike! Toplo priporočam vsakomur, ki želi najpomembnejše trenutke imeti najlepše ovekovečene. Hvala Matej ter sigurno se slikamo znova! 👍😊" },
+  { name: "Ana Breznik", text: "Hvala za prekrasne fotke!! Definitivno priporočam naprej in se že veselim sodelovanja! 🤗😍 Super fotograf in res krasne slike! Toplo priporočam vsakomur, ki želi najpomembnejše trenutke imeti najlepše ovekovečene. Hvala Matej ter sigurno se slikamo znova! 👍😊" },
   { name: "Matic Skarlovnik", text: "Z Matejem sva skupaj snemala in fotografirala poroko. Iz prve roke sem videl, kako zelo prilagodljiv je in kako vedno išče rešitve, da ustreže željam strank. Z njim se je mogoče vse dogovoriti, tudi če pride do nepričakovanih sprememb." },
   { name: "Blaž Mernik", text: "Hvala Proflipu za odlične fotografije! Toplo priporočam res izvrstno." },
   { name: "Mernik Anja", text: "Super fotograf, neopazen.. zajame vse spontane trenutke ki so pomembni. Odličen odnos pred in po poroki." },
