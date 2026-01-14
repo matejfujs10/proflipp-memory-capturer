@@ -32,12 +32,11 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <Link to="/" className="hover:opacity-80 transition-opacity inline-block">
-              <span className="text-2xl font-extrabold tracking-tight block mb-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                <span className="text-[#4a9fe8]">PROFLIPP</span>
-                <span className="text-gold">.</span>
+              <span className="text-2xl font-extrabold tracking-tight block mb-1 text-[#4a9fe8]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                PROFLIPP
               </span>
               <span className="text-xs font-semibold tracking-wide block mb-3">
-                <span className="text-card">We Create </span>
+                <span className="text-[#4a9fe8]">We Create </span>
                 <span className="text-gold italic">Emotions!</span>
               </span>
               <img 
