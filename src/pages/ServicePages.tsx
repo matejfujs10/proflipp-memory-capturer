@@ -90,14 +90,14 @@ function ServicePage({ title, subtitle, description, showGallery, galleryImages,
       <Navigation />
       
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[50vh]">
+        <div className="absolute inset-0 h-[40vh]">
           <img src={familyHero} alt={title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-20 pb-32">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">{subtitle}</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">{title}</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">{title}</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">{description}</p>
         </div>
       </section>
@@ -204,15 +204,18 @@ export function Potovanja() {
       
       {/* Hero Section */}
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[50vh]">
+        <div className="absolute inset-0 h-[40vh]">
           <img src={familyHero} alt="Potovalno fotografiranje" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-20 pb-32">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Potovanje mine. Fotografije ostanejo.</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">Potovalno fotografiranje</h1>
-          <p className="text-gold text-xl font-semibold mt-4">We Create Emotions!</p>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Potovalno fotografiranje</h1>
+          <p className="text-xl font-semibold mt-4">
+            <span className="text-[#4a9fe8]">We Create </span>
+            <span className="text-gold italic">Emotions!</span>
+          </p>
         </div>
       </section>
 
@@ -268,7 +271,10 @@ export function Potovanja() {
                 <span className="text-gold">📍</span>
                 Izlet, avantura ali kulturni obisk – mi poskrbimo, da vaša zgodba dobi vizualno obliko, ki jo boste z veseljem delili in ohranili.
               </p>
-              <p className="text-gold text-xl font-semibold mt-4">We Create Emotions!</p>
+              <p className="text-xl font-semibold mt-4">
+                <span className="text-[#4a9fe8]">We Create </span>
+                <span className="text-gold italic">Emotions!</span>
+              </p>
             </div>
           </div>
         </div>

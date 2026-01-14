@@ -196,14 +196,16 @@ export default function Studio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-primary font-medium text-sm tracking-wider uppercase mb-2">
-            PROFLIPP We Create Emotions!
+          <p className="font-medium text-sm tracking-wider uppercase mb-2">
+            <span className="text-[#4a9fe8]">PROFLIPP </span>
+            <span className="text-gold italic">We Create Emotions!</span>
           </p>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-card mb-4">
             Studijsko fotografiranje
           </h1>
-          <p className="text-card/90 text-xl md:text-2xl max-w-2xl mx-auto">
-            PROFLIPP Studio
+          <p className="text-xl md:text-2xl">
+            <span className="text-[#4a9fe8]">PROFLIPP </span>
+            <span className="text-gold italic">Studio</span>
           </p>
         </motion.div>
       </section>
