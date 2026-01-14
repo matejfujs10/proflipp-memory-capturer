@@ -211,7 +211,7 @@ export default function Studio() {
       </section>
 
       {/* Intro Section */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -245,14 +245,14 @@ export default function Studio() {
       </section>
 
       {/* What We Photograph */}
-      <section className="section-padding bg-muted/30">
+      <section className="py-8 bg-muted/30">
         <div className="container-wide">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8"
             {...fadeInUp}
           >
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Naše storitve</span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2">
               Fotografiramo
             </h2>
           </motion.div>
@@ -309,14 +309,14 @@ export default function Studio() {
       </motion.section>
 
       {/* Main Packages */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8"
             {...fadeInUp}
           >
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Cenik</span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-3">
               Paketi studijskega fotografiranja
             </h2>
           </motion.div>
@@ -372,12 +372,12 @@ export default function Studio() {
       </motion.section>
 
       {/* Commercial Packages */}
-      <section className="section-padding bg-muted/30">
+      <section className="py-8 bg-muted/30">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
               <span className="text-primary font-medium text-sm tracking-wider uppercase">Za podjetja</span>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-8">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-6">
                 Komercialna fotografija
               </h2>
               
@@ -428,14 +428,14 @@ export default function Studio() {
       </section>
 
       {/* Additional Services */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8"
             {...fadeInUp}
           >
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Dodatne storitve</span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2">
               Dokup storitev
             </h2>
           </motion.div>

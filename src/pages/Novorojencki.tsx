@@ -60,14 +60,14 @@ export default function Novorojencki() {
       
       {/* Hero Section */}
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[60vh]">
+        <div className="absolute inset-0 h-[40vh]">
           <img src={newborn2} alt="Fotografiranje novorojenčkov" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-24 pb-36">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Prvi dnevi. Najlepši spomini.</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">Fotografiranje novorojenčkov</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Fotografiranje novorojenčkov</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
             Prihod dojenčka je enkraten trenutek. Ujemimo ga nežno in sproščeno.
           </p>
@@ -75,7 +75,7 @@ export default function Novorojencki() {
       </section>
 
       {/* Zakaj imeti fotografiranje novorojenčka? */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -127,7 +127,7 @@ export default function Novorojencki() {
       </section>
 
       {/* Kako poteka fotografiranje novorojenčka? */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
@@ -185,10 +185,10 @@ export default function Novorojencki() {
       </section>
 
       {/* Paketi */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Izberite paket</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">Izberite paket</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Nežni sessioni za prve spomine.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -200,7 +200,7 @@ export default function Novorojencki() {
       </section>
 
       {/* Zakaj izbrati Proflipp */}
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -233,7 +233,7 @@ export default function Novorojencki() {
                 Naš cilj ni le lepa fotografija, ampak spomin na občutek, ko je bil vaš otrok še čisto 
                 majhen – in vi popolnoma zaljubljeni.
               </p>
-              <p className="text-gold font-medium mt-4 text-lg">We Create Emotions!</p>
+              <p className="text-xl font-semibold mt-4"><span className="text-[#4a9fe8]">We Create </span><span className="text-gold italic">Emotions!</span></p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] overflow-hidden rounded-lg">
@@ -248,10 +248,10 @@ export default function Novorojencki() {
       </section>
 
       {/* Full gallery */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">Galerija</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Oglejte si nekaj naših fotografij novorojenčkov.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -110,14 +110,14 @@ export default function Dogodki() {
       <Navigation />
       
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[50vh]">
+        <div className="absolute inset-0 h-[40vh]">
           <img src={eventsHero} alt="Fotografiranje dogodkov" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-20 pb-32">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Storitve</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">Fotografiranje dogodkov</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Fotografiranje dogodkov</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
             Dobro fotografijo dogodka naredi trenutek – in fotograf, ki je točno tam, kjer mora biti.
           </p>
@@ -125,11 +125,11 @@ export default function Dogodki() {
       </section>
 
       {/* Event Galleries Section */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Pretekli dogodki</span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">Naše reference</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-3">Naše reference</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <EventGalleryCard
@@ -157,11 +157,11 @@ export default function Dogodki() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Galerija</span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-4">Utrinki z dogodkov</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-3">Utrinki z dogodkov</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {galleryImages.map((image, index) => (
@@ -189,10 +189,10 @@ export default function Dogodki() {
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Izberite paket</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">Izberite paket</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
@@ -200,10 +200,10 @@ export default function Dogodki() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Videopaketi za dogodke</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">Videopaketi za dogodke</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}

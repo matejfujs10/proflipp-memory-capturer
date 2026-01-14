@@ -21,14 +21,14 @@ export default function Mnenja() {
     <div className="min-h-screen">
       <Navigation />
       
-      <section className="pt-32 pb-16 bg-cream">
+      <section className="pt-24 pb-8 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <span className="text-primary font-medium text-sm tracking-wider uppercase">Mnenja strank</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mt-3 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mt-2 mb-4">
               Kaj pravijo naše stranke
             </h1>
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center justify-center gap-2">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-gold text-gold" />
@@ -42,7 +42,7 @@ export default function Mnenja() {
       </section>
 
       {/* Facebook Reviews Section */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
@@ -99,7 +99,7 @@ export default function Mnenja() {
       </section>
 
       {/* Omisli.si Reviews Section */}
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
