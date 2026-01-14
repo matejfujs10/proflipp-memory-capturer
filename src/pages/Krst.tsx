@@ -97,14 +97,14 @@ export default function Krst() {
       
       {/* Hero Section */}
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[50vh]">
+        <div className="absolute inset-0 h-[40vh]">
           <img src={krstHero} alt="Fotografiranje krsta" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-20 pb-32">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">{t('nav.baptism') || 'Storitve'}</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">
             {t('baptism.title') || 'Fotografiranje krsta'}
           </h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
@@ -114,7 +114,7 @@ export default function Krst() {
       </section>
 
       {/* Description Section */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg">
@@ -133,10 +133,10 @@ export default function Krst() {
       </section>
 
       {/* Packages Section */}
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">
               {t('baptism.packages') || 'Izberite paket'}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -152,10 +152,10 @@ export default function Krst() {
       </section>
 
       {/* Additional Options */}
-      <section className="section-padding bg-background">
+      <section className="py-8 bg-background">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
               Dodatne možnosti
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -171,10 +171,10 @@ export default function Krst() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-cream">
+      <section className="py-8 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">
               Galerija krstov
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">

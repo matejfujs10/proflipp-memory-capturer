@@ -217,7 +217,7 @@ export default function Poroke() {
       <Navigation />
       
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[50vh]">
+        <div className="absolute inset-0 h-[40vh]">
           {heroSlideImages.map((image, index) => (
             <img 
               key={index}
@@ -231,21 +231,21 @@ export default function Poroke() {
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-20 pb-32">
+        <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">{t('weddings.services')}</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">{t('weddings.title')}</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">{t('weddings.title')}</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
             {t('weddings.description')}
           </p>
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="py-10 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.choose_package')}</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.choose_package')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.choose_desc')}</p>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-sm">
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-3 text-sm">
               {t('weddings.pricing_note')}
             </p>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-2 text-sm">
@@ -258,10 +258,10 @@ export default function Poroke() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="py-10 bg-cream">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.video_packages')}</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.video_packages')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.video_desc')}</p>
           </div>
           
@@ -294,7 +294,7 @@ export default function Poroke() {
       </section>
 
       {/* Why Choose PROFLIPP Section */}
-      <section className="section-padding bg-cream">
+      <section className="py-10 bg-cream">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6 text-center">
@@ -333,10 +333,10 @@ export default function Poroke() {
       </section>
 
       {/* Wedding Gallery */}
-      <section className="section-padding bg-background">
+      <section className="py-10 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">{t('weddings.gallery')}</h2>
+          <div className="text-center mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.gallery')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.gallery_desc')}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
