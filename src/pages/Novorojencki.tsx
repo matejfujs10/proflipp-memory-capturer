@@ -68,7 +68,7 @@ export default function Novorojencki() {
         <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Prvi dnevi. Najlepši spomini.</span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Fotografiranje novorojenčkov</h1>
-          <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
+          <p className="text-foreground text-lg max-w-2xl leading-relaxed">
             Prihod dojenčka je enkraten trenutek. Ujemimo ga nežno in sproščeno.
           </p>
         </div>

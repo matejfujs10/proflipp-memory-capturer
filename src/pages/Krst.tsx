@@ -107,7 +107,7 @@ export default function Krst() {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">
             {t('baptism.title') || 'Fotografiranje krsta'}
           </h1>
-          <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
+          <p className="text-foreground text-lg max-w-2xl leading-relaxed">
             Vsak krst je edinstven in poln čustev — od trenutkov priprav doma, svetega obreda v cerkvi, do prvih skupinskih fotografij z botri in družino.
           </p>
         </div>
