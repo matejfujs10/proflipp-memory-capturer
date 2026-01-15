@@ -89,7 +89,7 @@ export function Druzine() {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">
             Družinsko fotografiranje
           </h1>
-          <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
+          <p className="text-foreground text-lg max-w-2xl leading-relaxed">
             Sproščen pristop za naravne družinske trenutke. Vsako fotografiranje prilagodimo vam.
           </p>
         </div>

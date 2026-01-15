@@ -262,7 +262,7 @@ export default function Poroke() {
         <div className="container-wide relative z-10 pt-16 pb-20">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">{t('weddings.services')}</span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">{t('weddings.title')}</h1>
-          <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
+          <p className="text-foreground text-lg max-w-2xl leading-relaxed">
             {t('weddings.description')}
           </p>
         </div>

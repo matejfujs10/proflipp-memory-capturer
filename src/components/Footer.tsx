@@ -36,8 +36,8 @@ export function Footer() {
                 PROFLIPP
               </span>
               <span className="text-xs font-semibold tracking-wide block mb-3">
-                <span className="text-[#4a9fe8]">We Create </span>
-                <span className="text-gold italic">Emotions!</span>
+                <span className="text-[#4a9fe8]">Life needs </span>
+                <span className="text-gold italic">Memories!</span>
               </span>
               <img 
                 src={proflippLogoCameraImg} 
