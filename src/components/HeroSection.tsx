@@ -86,7 +86,7 @@ export function HeroSection() {
             key={index}
             src={image}
             alt={`Poročna fotografija ${index + 1}`}
-            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           />
