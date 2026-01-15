@@ -36,8 +36,8 @@ export function Footer() {
                 PROFLIPP
               </span>
               <span className="text-xs font-semibold tracking-wide block mb-3">
-                <span className="text-[#4a9fe8]">Life needs </span>
-                <span className="text-gold italic">Memories!</span>
+                <span className="text-[#4a9fe8]">We Create </span>
+                <span className="text-gold italic">Emotions!</span>
               </span>
               <img 
                 src={proflippLogoCameraImg} 
@@ -46,7 +46,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-card/70 mt-4 mb-6 max-w-sm">
-              {t('footer.tagline')}
+              Life Needs Memories! Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/proflippcom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -103,7 +103,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-card/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-card/50 text-sm">© {new Date().getFullYear()} Proflipp. {t('footer.rights')}</p>
+          <p className="text-card/50 text-sm">© {new Date().getFullYear()} PROFLIPP. {t('footer.rights')}</p>
           <div className="flex gap-6">
             {footerLinks.pravno.map((link) => (
               <Link key={link.href} to={link.href} className="text-card/50 text-sm hover:text-card transition-colors">{link.label}</Link>
