@@ -75,6 +75,18 @@ import kaWedding8 from "@/assets/ka-wedding-8.jpg";
 import kaWedding9 from "@/assets/ka-wedding-9.jpg";
 import kaWedding10 from "@/assets/ka-wedding-10.jpg";
 
+// M & B Murska Sobota 2024 wedding images
+import mbWedding1 from "@/assets/mb-wedding-1.jpg";
+import mbWedding2 from "@/assets/mb-wedding-2.jpg";
+import mbWedding3 from "@/assets/mb-wedding-3.jpg";
+import mbWedding4 from "@/assets/mb-wedding-4.jpg";
+import mbWedding5 from "@/assets/mb-wedding-5.jpg";
+import mbWedding6 from "@/assets/mb-wedding-6.jpg";
+import mbWedding7 from "@/assets/mb-wedding-7.jpg";
+import mbWedding8 from "@/assets/mb-wedding-8.jpg";
+import mbWedding9 from "@/assets/mb-wedding-9.jpg";
+import mbWedding10 from "@/assets/mb-wedding-10.jpg";
+
 const packages = [
   {
     name: "FLIPPmikro",
@@ -115,6 +127,22 @@ const videoPackages = [
 ];
 
 const weddingGalleries = [
+  {
+    title: "M & B Murska Sobota 2024",
+    coverImage: mbWedding1,
+    images: [
+      mbWedding1,
+      mbWedding2,
+      mbWedding3,
+      mbWedding4,
+      mbWedding5,
+      mbWedding6,
+      mbWedding7,
+      mbWedding8,
+      mbWedding9,
+      mbWedding10,
+    ],
+  },
   {
     title: "K & A Portorož 2025",
     coverImage: kaWedding1,
