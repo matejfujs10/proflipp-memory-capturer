@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
@@ -6,7 +7,8 @@ import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import { Button } from "@/components/ui/button";
+import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide-react";
 // Hero slideshow images
 import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
 import weddingCollage2 from "@/assets/wedding-collage-2.png";
@@ -321,40 +323,253 @@ export default function Poroke() {
         </div>
       </section>
 
-      {/* Why Choose PROFLIPP Section */}
-      <section className="py-10 bg-cream">
+      {/* Why Choose PROFLIPP Section - Trust Building */}
+      <section className="py-16 bg-cream">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6 text-center">
-              Zakaj izbrati ekipo PROFLIPP
-            </h2>
-            <div className="prose prose-lg">
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Poroka ni le dogodek – je zgodba, polna čustev, pristnih trenutkov in neponovljivih detajlov. Pri PROFLIPP verjamemo, da si zasluži biti ujeta iskreno, estetsko in brez vsiljivosti.
+            {/* Opening Statement */}
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Poroka ni vaja.<br />
+                <span className="text-primary">Ni ponovitve. In ni druge priložnosti.</span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Zato vemo, da <strong className="text-foreground">izbira poročnega fotografa ni lahka odločitev</strong> – ampak ena najbolj stresnih. 
+                Pari ne iščejo samo lepih fotografij. Iščejo <strong className="text-foreground">mir v glavi, zaupanje</strong> in občutek, da je nekdo res na njihovi strani.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Smo uigrana ekipa fotografa in videografa, ki deluje sproščeno, zanesljivo in profesionalno. Naši pari pravijo o nas, da že pred poročnim dnem ustvarimo občutek zaupanja, saj svetujemo, kako naj sestavijo časovnico, da bo dovolj časa za vse, da bo umirjeno in bo vse potekalo brez skrbi, kar bo omogočilo, da se na svoj dan resnično sprostijo in uživajo. Naredimo tudi predporočno pogodbo. To vse se odraža tudi v številnih odličnih ocenah in priporočilih zadovoljnih parov.
+              <p className="text-xl font-semibold text-primary mt-6">
+                Pri PROFLIPP TEAM-u smo ustvarili sistem, ki točno to omogoča.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4 font-medium">
-                Delamo premišljeno, s poudarkom na:
+            </div>
+
+            {/* Understanding Section */}
+            <div className="bg-card rounded-2xl p-8 md:p-10 shadow-lg mb-10">
+              <div className="flex items-center gap-3 mb-6">
+                <Heart className="h-8 w-8 text-primary" />
+                <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+                  Razumemo, zakaj pari oklevajo
+                </h3>
+              </div>
+              <p className="text-lg text-primary font-medium mb-6">Slišimo vas. In razumemo vas.</p>
+              
+              <div className="space-y-4 mb-6">
+                <blockquote className="border-l-4 border-primary/30 pl-4 py-2 text-muted-foreground italic">
+                  »Pregledala sva ogromno portfolijev, vsi so lepi… ampak <strong className="text-foreground not-italic">kako veva, da ne bova izbrala napačnega fotografa?</strong>«
+                </blockquote>
+                <blockquote className="border-l-4 border-primary/30 pl-4 py-2 text-muted-foreground italic">
+                  »Kaj če <strong className="text-foreground not-italic">fotograf zamudi, ne ujame pomembnih trenutkov</strong> ali pa se sploh ne ujemamo?«
+                </blockquote>
+                <blockquote className="border-l-4 border-primary/30 pl-4 py-2 text-muted-foreground italic">
+                  »Kaj če bova pred kamero <strong className="text-foreground not-italic">izgledala čudno, zakrčeno, nenaravno?</strong>«
+                </blockquote>
+                <blockquote className="border-l-4 border-primary/30 pl-4 py-2 text-muted-foreground italic">
+                  »Kaj če bo poročni dan minil <strong className="text-foreground not-italic">v stresu in fotografiranju</strong>, namesto da bi ga res doživela?«
+                </blockquote>
+              </div>
+              
+              <p className="text-foreground font-medium">
+                To niso pretirani strahovi. To so <strong>resnične skrbi</strong>, ki jih ima večina parov – in jih večina fotografov ignorira.
               </p>
-              <ul className="text-muted-foreground space-y-2 mb-6 list-none pl-0">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Pristnih trenutkih – vodimo obred, postavljamo svate, svetujemo pri poziranju</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Jasni komunikaciji in dobri pripravi</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Celostni zgodbi poročnega dne, od jutranjih priprav do večernega slavja</span>
-                </li>
-              </ul>
-              <p className="text-muted-foreground leading-relaxed">
-                Rezultat so brezčasne fotografije in videovsebine, ki ne sledijo kratkoročnim trendom, temveč vaši zgodbi. Naš cilj ni le končni izdelek, temveč celotna izkušnja – takšna, zaradi katere se svojega poročnega dne spominjate z nasmehom in brez skrbi. <span className="font-medium text-primary">Ustvarjamo čustveno fotografijo.</span>
+              <p className="text-xl font-bold text-primary mt-4">Mi jih ne.</p>
+            </div>
+
+            {/* Trust Building */}
+            <div className="text-center mb-12">
+              <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                Ne prodajamo samo fotografij. <span className="text-primary">Gradimo zaupanje.</span>
+              </h3>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Pri PROFLIPP TEAM-u ne verjamemo v pristop »oglej portfolio in upaj na najboljše«. 
+                Verjamemo v <strong className="text-foreground">jasen proces, transparentnost in aktivno zmanjševanje stresa</strong>.
               </p>
+              <p className="text-lg font-semibold text-primary mt-4">Zato pari izberejo nas.</p>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              {/* Zero-stress */}
+              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-display text-xl font-semibold text-foreground">Zero-stress fotografska izkušnja</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">Na poročni dan ne želite razmišljati:</p>
+                <ul className="text-muted-foreground space-y-2 mb-4">
+                  <li>• ali bo fotograf prišel pravočasno,</li>
+                  <li>• ali bo ujel ključne trenutke,</li>
+                  <li>• ali bo vse potekalo, kot je bilo obljubljeno.</li>
+                </ul>
+                <p className="text-foreground font-medium mb-3">Naš cilj je, da lahko <strong>mirno zadihate</strong> in se prepustite dnevu, ker veste, da:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>imamo <strong>jasen potek dela</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>smo <strong>ves čas v komunikaciji</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span><strong>prevzamemo odgovornost</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>imamo vedno <strong>varnostni načrt</strong>.</span>
+                  </li>
+                </ul>
+                <p className="text-primary font-semibold mt-4">Vi doživljate poroko. Mi poskrbimo, da ostane ujeta za vedno.</p>
+              </div>
+
+              {/* Camera shy */}
+              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Camera className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-display text-xl font-semibold text-foreground">Popoln pristop za pare, ki niso sproščeni pred kamero</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">Velika večina parov nama pove: <em>»Nisva fotogenična.«</em></p>
+                <p className="text-foreground font-medium mb-4">In to je <strong>povsem normalno</strong>.</p>
+                <p className="text-muted-foreground mb-3">Zato:</p>
+                <ul className="text-muted-foreground space-y-2 mb-4">
+                  <li>• <strong className="text-foreground">ne pričakujemo</strong>, da bosta znala pozirati,</li>
+                  <li>• <strong className="text-foreground">ne silimo</strong> v umetne poze,</li>
+                  <li>• <strong className="text-foreground">ne ustvarjamo</strong> občutka nastopanja.</li>
+                </ul>
+                <p className="text-foreground font-medium mb-3">Namesto tega:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span><strong>vodimo na nevsiljiv način</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>pomagamo z <strong>jasnimi, enostavnimi usmeritvami</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>ustvarimo <strong>sproščeno okolje</strong>, kjer pozabite na kamero.</span>
+                  </li>
+                </ul>
+                <p className="text-primary font-semibold mt-4">Rezultat so naravne fotografije, pravi izrazi in pristna čustva – ne prisiljeni nasmehi.</p>
+              </div>
+
+              {/* Your story */}
+              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Heart className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-display text-xl font-semibold text-foreground">Vajina zgodba. Ne generičen stil.</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">Eden največjih strahov parov je, da bo njihova poroka na fotografijah <strong className="text-foreground">izgledala kot vse druge</strong>.</p>
+                <p className="text-foreground font-medium mb-3">Pri PROFLIPP TEAM-u:</p>
+                <ul className="text-muted-foreground space-y-2 mb-4">
+                  <li>• <strong className="text-foreground">ne delamo po šabloni</strong>,</li>
+                  <li>• <strong className="text-foreground">ne reproduciramo</strong> istih poz,</li>
+                  <li>• <strong className="text-foreground">ne vsiljujemo</strong> svojega »house style-a«.</li>
+                </ul>
+                <p className="text-foreground font-medium">Vsak par je drugačen. Vsaka zgodba je drugačna.</p>
+                <p className="text-primary font-semibold mt-4">Zato fotografiramo vajino energijo, vajin odnos, vajine ljudi – tako, kot se je zares zgodilo.</p>
+              </div>
+
+              {/* More experiencing */}
+              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Clock className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-display text-xl font-semibold text-foreground">Več doživljanja, manj »foto seanse«</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">Pari se pogosto bojijo, da bodo:</p>
+                <ul className="text-muted-foreground space-y-2 mb-4">
+                  <li>• večino dneva <strong className="text-foreground">preživeli stran od gostov</strong>,</li>
+                  <li>• zamudili smeh, objeme in <strong className="text-foreground">spontane trenutke</strong>,</li>
+                  <li>• imeli občutek, da ves čas <strong className="text-foreground">»nastopajo«</strong>.</li>
+                </ul>
+                <p className="text-foreground font-medium mb-3">Naš pristop je drugačen. Z učinkovitim potekom dneva in premišljenim timingom:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>skupinske fotografije opravimo <strong>hitro in brez kaosa</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>fotografiranje vključimo v <strong>naravni tok dneva</strong>,</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>vi pa ostanete <strong>prisotni v svoji poroki</strong>.</span>
+                  </li>
+                </ul>
+                <p className="text-primary font-semibold mt-4">Maksimalni spomini. Minimalen poseg.</p>
+              </div>
+            </div>
+
+            {/* Clear value */}
+            <div className="bg-gradient-to-r from-primary/5 to-gold/5 rounded-2xl p-8 md:p-10 mb-10 border border-primary/20">
+              <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 text-center">
+                Jasna vrednost. <span className="text-primary">Brez dvomov.</span>
+              </h3>
+              <p className="text-muted-foreground text-center mb-6">
+                Ne iščemo parov, ki iščejo najcenejšo možnost. Iščemo pare, ki želijo <strong className="text-foreground">najboljšo vrednost za svojo odločitev</strong>.
+              </p>
+              <p className="text-foreground font-medium text-center mb-4">Pri nas točno veste:</p>
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
+                <span className="bg-card px-4 py-2 rounded-full text-foreground font-medium shadow-sm">✓ kaj dobite</span>
+                <span className="bg-card px-4 py-2 rounded-full text-foreground font-medium shadow-sm">✓ kako poteka proces</span>
+                <span className="bg-card px-4 py-2 rounded-full text-foreground font-medium shadow-sm">✓ zakaj je vsak del pomemben</span>
+              </div>
+              <p className="text-primary font-semibold text-center">Tako lahko svojo odločitev brez težav utemeljite sebi – in drugim.</p>
+            </div>
+
+            {/* Why PROFLIPP TEAM */}
+            <div className="text-center mb-10">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
+                Zakaj <span className="text-primary">PROFLIPP TEAM</span>
+              </h3>
+              <p className="text-lg text-foreground mb-6">Ker nismo samo fotografi. <strong>Smo ekipa, ki:</strong></p>
+              <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
+                <div className="flex items-center gap-3 bg-card p-4 rounded-xl shadow-sm">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-foreground"><strong>razume vajine strahove</strong>,</span>
+                </div>
+                <div className="flex items-center gap-3 bg-card p-4 rounded-xl shadow-sm">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-foreground">zna ustvariti <strong>varnost in zaupanje</strong>,</span>
+                </div>
+                <div className="flex items-center gap-3 bg-card p-4 rounded-xl shadow-sm">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-foreground">poskrbi, da se na poročni dan <strong>počutite sproščeno</strong>,</span>
+                </div>
+                <div className="flex items-center gap-3 bg-card p-4 rounded-xl shadow-sm">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-foreground">in <strong>ujame trenutke</strong>, ki jih ne morete ponoviti.</span>
+                </div>
+              </div>
+              <p className="text-xl font-bold text-primary mb-2">PROFLIPP TEAM</p>
+              <p className="text-lg text-muted-foreground italic">Za pare, ki si želijo poroko doživeti – in jo znova občutiti skozi fotografije.</p>
+            </div>
+
+            {/* CTA to Reviews */}
+            <div className="bg-primary/10 rounded-2xl p-8 md:p-10 text-center border-2 border-primary/30">
+              <div className="flex justify-center mb-4">
+                <MessageCircle className="h-12 w-12 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+                DA VSE TO PRIČAJO TUDI ŠTEVILNA POZITIVNA MNENJA
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Preberite, kaj o nas pravijo pari, ki so nam zaupali svoj najpomembnejši dan.
+              </p>
+              <Link to="/mnenja">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Oglejte si mnenja
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
