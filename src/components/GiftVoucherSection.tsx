@@ -16,45 +16,45 @@ const GiftVoucher = () => (
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: 0.2 }}
   >
-    <div className="bg-gradient-to-br from-primary via-primary to-sky-dark rounded-2xl p-1 shadow-glow max-w-md mx-auto">
-      <div className="bg-foreground rounded-xl p-6 relative overflow-hidden">
-        {/* Yellow decorative lines */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-accent" />
-        <div className="absolute top-0 left-0 h-full w-1 bg-accent" />
-        <div className="absolute top-0 right-0 h-full w-1 bg-accent" />
+    <div className="bg-gradient-to-br from-[#1e3a5f] via-[#2563eb] to-[#3b82f6] rounded-2xl p-1 shadow-glow max-w-md mx-auto">
+      <div className="bg-gradient-to-br from-[#1e3a5f] via-[#1e4a7f] to-[#2563eb] rounded-xl p-6 relative overflow-hidden">
+        {/* Yellow/Gold decorative lines */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-[#f59e0b]" />
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#f59e0b]" />
+        <div className="absolute top-0 left-0 h-full w-1 bg-[#f59e0b]" />
+        <div className="absolute top-0 right-0 h-full w-1 bg-[#f59e0b]" />
         
-        {/* Diagonal yellow lines */}
-        <div className="absolute top-4 left-4 w-16 h-0.5 bg-accent rotate-45 origin-left" />
-        <div className="absolute top-4 right-4 w-16 h-0.5 bg-accent -rotate-45 origin-right" />
-        <div className="absolute bottom-4 left-4 w-16 h-0.5 bg-accent -rotate-45 origin-left" />
-        <div className="absolute bottom-4 right-4 w-16 h-0.5 bg-accent rotate-45 origin-right" />
+        {/* Diagonal yellow/gold lines */}
+        <div className="absolute top-4 left-4 w-16 h-0.5 bg-[#f59e0b] rotate-45 origin-left" />
+        <div className="absolute top-4 right-4 w-16 h-0.5 bg-[#f59e0b] -rotate-45 origin-right" />
+        <div className="absolute bottom-4 left-4 w-16 h-0.5 bg-[#f59e0b] -rotate-45 origin-left" />
+        <div className="absolute bottom-4 right-4 w-16 h-0.5 bg-[#f59e0b] rotate-45 origin-right" />
         
         <div className="text-center relative z-10">
           <div className="mb-3">
-            <span className="text-primary font-display text-2xl font-bold tracking-wider">PROFLIPP</span>
-            <p className="text-card text-xs italic mt-1">We Create Emotions!</p>
+            <span className="text-white font-display text-2xl font-bold tracking-wider">PROFLIPP</span>
+            <p className="text-[#f59e0b] text-sm italic mt-1 font-semibold">We Create Emotions!</p>
           </div>
           
-          <div className="border-y border-accent/50 py-4 my-4">
-            <h3 className="text-card font-display text-xl md:text-2xl font-semibold mb-2">
+          <div className="border-y border-[#f59e0b]/50 py-4 my-4">
+            <h3 className="text-white font-display text-xl md:text-2xl font-semibold mb-2">
               DARILNI BON
             </h3>
-            <p className="text-card/80 text-sm">
+            <p className="text-white/80 text-sm">
               Za profesionalno fotografiranje
             </p>
           </div>
           
           <div className="flex justify-center items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-accent" />
-            <Gift className="w-8 h-8 text-primary" />
-            <div className="h-px w-12 bg-accent" />
+            <div className="h-px w-12 bg-[#f59e0b]" />
+            <Gift className="w-8 h-8 text-[#f59e0b]" />
+            <div className="h-px w-12 bg-[#f59e0b]" />
           </div>
           
-          <p className="text-card/70 text-xs max-w-xs mx-auto">
+          <p className="text-white/70 text-xs max-w-xs mx-auto">
             Vrednost: _________________ €
           </p>
-          <p className="text-card/70 text-xs mt-2">
+          <p className="text-white/70 text-xs mt-2">
             Veljavnost: 12 mesecev od izdaje
           </p>
         </div>

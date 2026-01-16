@@ -119,7 +119,7 @@ export default function Dogodki() {
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Storitve</span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Fotografiranje dogodkov</h1>
           <p className="text-card/90 text-lg max-w-2xl leading-relaxed">
-            Dobro fotografijo dogodka naredi trenutek – in fotograf, ki je točno tam, kjer mora biti.
+            <strong>Dobro fotografijo dogodka naredi trenutek</strong> – in fotograf, ki je točno tam, kjer mora biti.
           </p>
         </div>
       </section>
