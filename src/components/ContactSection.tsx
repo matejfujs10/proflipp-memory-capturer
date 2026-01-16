@@ -18,7 +18,31 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Povpraševanje poslano! Odgovorili vam bomo v najkrajšem možnem času.");
+    
+    // Validate inputs
+    const name = formData.name.trim().slice(0, 100);
+    const location = formData.location.trim().slice(0, 100);
+    const date = formData.date.trim().slice(0, 20);
+    const guests = formData.guests.trim().slice(0, 10);
+    const duration = formData.duration.trim().slice(0, 10);
+    const notes = formData.notes.trim().slice(0, 500);
+    const video = formData.video ? "Da" : "Ne";
+    
+    // Build mailto link with encoded data
+    const subject = encodeURIComponent(`Povpraševanje za fotografiranje - ${name}`);
+    const body = encodeURIComponent(
+      `Ime: ${name}\n` +
+      `Kraj: ${location}\n` +
+      `Datum: ${date}\n` +
+      `Število ljudi: ${guests}\n` +
+      `Trajanje (ure): ${duration}\n` +
+      `Želim snemanje: ${video}\n` +
+      `Ostale želje:\n${notes}`
+    );
+    
+    window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
+    
+    toast.success("Odpiramo e-poštni odjemalec...");
     onClose();
     setFormData({ name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "" });
   };
@@ -88,6 +112,61 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
   );
 }
 
+function QuickContactForm() {
+  const [quickForm, setQuickForm] = useState({ name: "", email: "", message: "" });
+  
+  const handleQuickSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate and sanitize inputs
+    const name = quickForm.name.trim().slice(0, 100);
+    const email = quickForm.email.trim().slice(0, 255);
+    const message = quickForm.message.trim().slice(0, 500);
+    
+    // Build mailto link with encoded data
+    const subject = encodeURIComponent(`Sporočilo s spletne strani - ${name}`);
+    const body = encodeURIComponent(
+      `Ime: ${name}\n` +
+      `E-pošta: ${email}\n\n` +
+      `Sporočilo:\n${message}`
+    );
+    
+    window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
+    
+    toast.success("Odpiramo e-poštni odjemalec...");
+    setQuickForm({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <form onSubmit={handleQuickSubmit} className="space-y-4">
+      <Input 
+        placeholder="Vaše ime" 
+        required 
+        maxLength={100}
+        value={quickForm.name}
+        onChange={(e) => setQuickForm({ ...quickForm, name: e.target.value })}
+      />
+      <Input 
+        type="email" 
+        placeholder="E-pošta" 
+        required 
+        maxLength={255}
+        value={quickForm.email}
+        onChange={(e) => setQuickForm({ ...quickForm, email: e.target.value })}
+      />
+      <Textarea 
+        placeholder="Vaše sporočilo..." 
+        rows={4} 
+        required 
+        maxLength={500}
+        value={quickForm.message}
+        onChange={(e) => setQuickForm({ ...quickForm, message: e.target.value })}
+      />
+      <Button type="submit" className="w-full" size="lg">Pošlji sporočilo</Button>
+    </form>
+  );
+}
+
 export function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -144,12 +223,7 @@ export function ContactSection() {
 
             <div className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl">
               <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Hitro sporočilo</h3>
-              <form onSubmit={(e) => { e.preventDefault(); toast.success("Sporočilo poslano!"); }} className="space-y-4">
-                <Input placeholder="Vaše ime" required />
-                <Input type="email" placeholder="E-pošta" required />
-                <Textarea placeholder="Vaše sporočilo..." rows={4} required />
-                <Button type="submit" className="w-full" size="lg">Pošlji sporočilo</Button>
-              </form>
+              <QuickContactForm />
             </div>
           </div>
         </div>
