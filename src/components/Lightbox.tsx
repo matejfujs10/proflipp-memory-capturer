@@ -97,7 +97,7 @@ export function Lightbox({ images, initialIndex = 0, isOpen, onClose }: Lightbox
                 index === currentIndex ? "border-primary" : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
-              <img src={img} alt={`Sličica ${index + 1}`} className="w-full h-full object-cover" />
+              <img src={img} alt={`Sličica ${index + 1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </button>
           ))}
         </div>
