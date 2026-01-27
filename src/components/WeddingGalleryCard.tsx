@@ -84,7 +84,9 @@ export function WeddingGalleryCard({ title, coverImage, images, description }: W
         <div className="aspect-[4/3] overflow-hidden">
           <img
             src={coverImage}
-            alt={title}
+            alt={`${title} - Proflipp poročna fotografija`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
@@ -163,7 +165,7 @@ export function WeddingGalleryCard({ title, coverImage, images, description }: W
                       index === currentIndex ? "border-primary" : "border-transparent opacity-60 hover:opacity-100"
                     }`}
                   >
-                    <img src={img} alt={`Sličica ${index + 1}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`Sličica ${index + 1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

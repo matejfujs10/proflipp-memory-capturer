@@ -103,7 +103,9 @@ export function HeroSection() {
           <img
             key={index}
             src={image}
-            alt={`Poročna fotografija ${index + 1}`}
+            alt={`Poročna fotografija ${index + 1} - Proflipp profesionalno fotografiranje`}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
             className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
