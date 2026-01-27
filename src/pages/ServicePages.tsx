@@ -3,11 +3,26 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
+import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { TravelReservationForm } from "@/components/TravelReservationForm";
+import { Lightbox } from "@/components/Lightbox";
 import familyHero from "@/assets/wedding-fun.jpg";
 import family1 from "@/assets/family-1.jpg";
 import family2 from "@/assets/family-2.jpg";
 import family3 from "@/assets/family-3.jpg";
 import family4 from "@/assets/family-4.jpg";
+
+// Travel images
+import travelHero from "@/assets/travel-hero.jpg";
+import travel1 from "@/assets/travel-1.jpg";
+import travel2 from "@/assets/travel-2.jpg";
+import travel3 from "@/assets/travel-3.jpg";
+import travel4 from "@/assets/travel-4.jpg";
+import travel5 from "@/assets/travel-5.jpg";
+import travel6 from "@/assets/travel-6.jpg";
+import travel7 from "@/assets/travel-7.jpg";
+import travel8 from "@/assets/travel-8.jpg";
+import travel9 from "@/assets/travel-9.jpg";
 
 const defaultPackages = [
   { name: "MINI PRO", price: "150", duration: "1 ura fotografiranja", description: "Kratek, sproščen session za naravne trenutke.", features: ["Vodeno, a naravno", "Izbor najboljših fotografij", "Digitalna dostava"] },
@@ -59,6 +74,8 @@ const travelPackages = [
   },
 ];
 
+const travelGalleryImages = [travel1, travel2, travel3, travel4, travel5, travel6, travel7, travel8, travel9];
+
 const familyGalleryImages = [family1, family2, family3, family4];
 
 interface PackageType {
@@ -91,7 +108,7 @@ function ServicePage({ title, subtitle, description, showGallery, galleryImages,
       
       <section className="relative pt-20">
         <div className="absolute inset-0 h-[40vh]">
-          <img src={familyHero} alt={title} className="w-full h-full object-cover" />
+          <img src={familyHero} alt={title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
@@ -146,6 +163,8 @@ function ServicePage({ title, subtitle, description, showGallery, galleryImages,
                     src={image} 
                     alt={`Družinska fotografija ${index + 1}`} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}
@@ -189,7 +208,9 @@ export function Novorojencki() {
 }
 
 export function Potovanja() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   
   const additionalInfo = [
     "Potni stroški niso vključeni v ceno",
@@ -197,6 +218,11 @@ export function Potovanja() {
     "Hitra dostava (48 h): +150 €",
     "Možnost fotoknjige ali dodatnih videovsebine po dogovoru"
   ];
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
   
   return (
     <div className="min-h-screen">
@@ -204,12 +230,18 @@ export function Potovanja() {
       
       {/* Hero Section */}
       <section className="relative pt-20">
-        <div className="absolute inset-0 h-[40vh]">
-          <img src={familyHero} alt="Potovalno fotografiranje" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 h-[50vh] md:h-[60vh]">
+          <img 
+            src={travelHero} 
+            alt="Potovalno fotografiranje" 
+            className="w-full h-full object-cover" 
+            loading="eager"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
-        <div className="container-wide relative z-10 pt-16 pb-20">
+        <div className="container-wide relative z-10 pt-20 md:pt-28 pb-24 md:pb-32">
           <span className="text-gold font-medium text-sm tracking-wider uppercase">Potovanje mine. Fotografije ostanejo.</span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-4">Potovalno fotografiranje</h1>
           <p className="text-xl font-semibold mt-4">
@@ -280,15 +312,42 @@ export function Potovanja() {
         </div>
       </section>
 
-      {/* Packages Section */}
+      {/* Gallery Section */}
       <section className="section-padding bg-cream">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Galerija potovanj</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Poglejte si nekaj naših potovalnih fotografij iz različnih destinacij.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {travelGalleryImages.map((image, index) => (
+              <div 
+                key={index} 
+                className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
+                onClick={() => openLightbox(index)}
+              >
+                <img 
+                  src={image} 
+                  alt={`Potovalna fotografija ${index + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">Izberite paket</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Sproščeni sessioni za pristne spomine.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {travelPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
+            {travelPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsReservationOpen(true)} />)}
           </div>
           
           {/* Additional Info */}
@@ -303,11 +362,27 @@ export function Potovanja() {
               ))}
             </ul>
           </div>
+
+          {/* Gift Voucher Section */}
+          <GiftVoucherSection 
+            onReserve={() => setIsReservationOpen(true)} 
+            title="Rezervirajte vaše potovanje"
+          />
         </div>
       </section>
 
       <Footer />
-      <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      
+      {/* Lightbox */}
+      <Lightbox
+        images={travelGalleryImages}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
+      
+      {/* Reservation Form */}
+      <TravelReservationForm isOpen={isReservationOpen} onClose={() => setIsReservationOpen(false)} />
     </div>
   );
 }
