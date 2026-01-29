@@ -4,7 +4,13 @@ import App from "./App.tsx";
 import Combi from "./pages/Combi";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(rootElement).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
