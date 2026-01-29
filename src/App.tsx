@@ -1,3 +1,4 @@
+import Combi from "./pages/Combi";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -32,6 +33,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/combi" element={<Combi />} />
             <Route path="/poroke" element={<Poroke />} />
             <Route path="/krst" element={<Krst />} />
             <Route path="/dogodki" element={<Dogodki />} />
