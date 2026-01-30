@@ -36,13 +36,20 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
       return;
     }
 
-    // Create mailto link with form data
+    // Validate and sanitize inputs
+    const fullName = formData.fullName.trim().slice(0, 100);
+    const travelDate = formData.travelDate.trim().slice(0, 20);
+    const timeFrom = formData.timeFrom.trim().slice(0, 10);
+    const timeTo = formData.timeTo.trim().slice(0, 10);
+    const additionalWishes = formData.additionalWishes.trim().slice(0, 500);
+
+    // Create mailto link with sanitized form data
     const subject = encodeURIComponent("Povpraševanje za potovalno fotografiranje");
     const body = encodeURIComponent(
-      `Ime in priimek: ${formData.fullName}\n` +
-      `Datum potovanja: ${formData.travelDate}\n` +
-      `Čas: od ${formData.timeFrom} do ${formData.timeTo}\n` +
-      `Dodatne želje: ${formData.additionalWishes}\n\n` +
+      `Ime in priimek: ${fullName}\n` +
+      `Datum potovanja: ${travelDate}\n` +
+      `Čas: od ${timeFrom} do ${timeTo}\n` +
+      `Dodatne želje: ${additionalWishes}\n\n` +
       `Splošni pogoji: Potrjeni`
     );
     
@@ -80,6 +87,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
               placeholder="Vaše ime in priimek"
               required
+              maxLength={100}
             />
           </div>
 
@@ -125,6 +133,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
               onChange={(e) => setFormData({ ...formData, additionalWishes: e.target.value })}
               placeholder="Opišite vaše želje, lokacijo, posebne zahteve..."
               rows={4}
+              maxLength={500}
             />
           </div>
 
