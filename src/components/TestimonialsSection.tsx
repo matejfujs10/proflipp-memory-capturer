@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Star, Facebook, ExternalLink } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Facebook reviews extracted from screenshots
 const facebookReviews = [
@@ -47,6 +48,7 @@ const omisliReviews = [
 const allReviews = [...facebookReviews, ...omisliReviews];
 
 export function TestimonialsSection() {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -68,68 +70,63 @@ export function TestimonialsSection() {
   return (
     <section className="section-padding bg-cream">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <span className="text-primary font-medium text-sm tracking-wider uppercase">
-            Mnenja strank
+            {t('testimonials.title')}
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mt-3 mb-4">
-            Kaj pravijo naše stranke
+          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-foreground mt-3 mb-4">
+            {t('testimonials.heading')}
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-gold text-gold" />
               ))}
             </div>
-            <span className="text-xl font-semibold text-foreground">5.0</span>
-            <span className="text-muted-foreground">({allReviews.length}+ ocen)</span>
+            <span className="text-lg md:text-xl font-semibold text-foreground">5.0</span>
+            <span className="text-muted-foreground text-sm md:text-base">({allReviews.length}+ {t('testimonials.reviews')})</span>
           </div>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel - show 1 on mobile, 3 on desktop */}
         <div className="relative overflow-hidden">
-          <div 
-            className="flex transition-transform duration-700 ease-in-out gap-6"
-            style={{ transform: `translateX(-${(currentIndex % allReviews.length) * 0}px)` }}
-          >
-            <div className="grid md:grid-cols-3 gap-6 w-full">
-              {getVisibleReviews().map((review, idx) => (
-                <div
-                  key={`${review.name}-${idx}`}
-                  className="bg-card rounded-2xl p-6 shadow-sm border border-border hover:shadow-md transition-all duration-500 animate-fade-in"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-primary font-semibold">
-                        {review.name.charAt(0)}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{review.name}</p>
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-gold text-gold" />
-                        ))}
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+            {getVisibleReviews().map((review, idx) => (
+              <div
+                key={`${review.name}-${idx}`}
+                className={`bg-card rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-border hover:shadow-md transition-all duration-500 animate-fade-in ${idx > 0 ? 'hidden md:block' : ''}`}
+              >
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-semibold text-sm md:text-base">
+                      {review.name.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground text-sm md:text-base truncate">{review.name}</p>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-2.5 h-2.5 md:w-3 md:h-3 fill-gold text-gold" />
+                      ))}
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed line-clamp-4">
-                    "{review.text}"
-                  </p>
                 </div>
-              ))}
-            </div>
+                <p className="text-muted-foreground leading-relaxed line-clamp-4 text-sm md:text-base">
+                  "{review.text}"
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* Dots indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-1.5 md:gap-2 mt-6 md:mt-8">
             {Array.from({ length: Math.min(10, Math.ceil(allReviews.length / 3)) }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentIndex(i * 3)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${
                   Math.floor(currentIndex / 3) === i 
-                    ? "bg-primary w-6" 
+                    ? "bg-primary w-4 md:w-6" 
                     : "bg-primary/30"
                 }`}
               />
@@ -138,12 +135,12 @@ export function TestimonialsSection() {
         </div>
 
         {/* CTA to see all reviews */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-8 md:mt-10">
           <Link
             to="/mnenja"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors text-sm md:text-base"
           >
-            <span>Vsa mnenja</span>
+            <span>{t('testimonials.all')}</span>
             <ExternalLink className="w-4 h-4" />
           </Link>
         </div>

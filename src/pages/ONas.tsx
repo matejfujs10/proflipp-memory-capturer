@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Heart, Camera, Users, Phone, Video, Gift, FileText, Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import weddingVeil from "@/assets/wedding-veil.jpg";
 import weddingBridge from "@/assets/wedding-bridge.jpg";
 import gasilci1 from "@/assets/gasilci-1.jpg";
@@ -47,31 +48,45 @@ const galleryImages = [
 ];
 
 export default function ONas() {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: Heart, title: t('about.passion'), description: t('about.passion_desc') },
+    { icon: Camera, title: t('about.experience'), description: t('about.experience_desc') },
+    { icon: Users, title: t('about.approach'), description: t('about.approach_desc') },
+  ];
+
+  const moreItems = [
+    t('about.more_1'),
+    t('about.more_2'),
+    t('about.more_3'),
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
       
       <section className="relative pt-20">
         <div className="absolute inset-0 h-[50vh]">
-          <img src={weddingVeil} alt="O nas" className="w-full h-full object-cover" />
+          <img src={weddingVeil} alt={t('about.title')} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         </div>
         
         <motion.div 
-          className="container-wide relative z-10 pt-20 pb-32"
+          className="container-wide relative z-10 pt-16 md:pt-20 pb-24 md:pb-32 px-4"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
         >
-          <span className="text-gold font-medium text-sm tracking-wider uppercase">Proflipp</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-card mt-3 mb-6">O nas</h1>
-          <p className="text-card/90 text-lg max-w-2xl leading-relaxed">We Create Emotions!</p>
+          <span className="text-gold font-medium text-sm tracking-wider uppercase">{t('about.tagline')}</span>
+          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-card mt-3 mb-4 md:mb-6">{t('about.title')}</h1>
+          <p className="text-card/90 text-base md:text-lg max-w-2xl leading-relaxed">{t('about.slogan')}</p>
           
           <a 
             href="tel:+38668169430" 
-            className="inline-flex items-center gap-3 mt-6 px-6 py-3 bg-gold/90 hover:bg-gold text-foreground rounded-lg transition-colors font-medium"
+            className="inline-flex items-center gap-3 mt-6 px-5 md:px-6 py-3 bg-gold/90 hover:bg-gold text-foreground rounded-lg transition-colors font-medium text-sm md:text-base"
           >
-            <Phone className="w-5 h-5" />
+            <Phone className="w-4 h-4 md:w-5 md:h-5" />
             <span className="tracking-wide">+386 68 169 430</span>
           </a>
         </motion.div>
@@ -79,47 +94,38 @@ export default function ONas() {
 
       {/* Uvod */}
       <section className="section-padding bg-background">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="container-wide px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInLeft}
             >
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-                PROFLIPP ni le fotografija. PROFLIPP so občutki, zgodbe in spomini, ki ostanejo.
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 md:mb-6">
+                {t('about.intro_heading')}
               </h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Smo kreativna ekipa z jasno vizijo: ujeti pristna čustva, energijo trenutka in drobne detajle, 
-                ki skupaj ustvarijo nepozabno zgodbo. Verjamemo, da najlepše fotografije nastanejo takrat, 
-                ko ste sproščeni, samozavestni in točno takšni, kot ste.
+              <p className="text-muted-foreground text-base md:text-lg mb-4 md:mb-6 leading-relaxed">
+                {t('about.intro_p1')}
               </p>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Ukvarjamo se s poročnim, družinskim, fotografiranjem dogodkov in poslovnim fotografiranjem. 
-                Naš pristop je profesionalen, a hkrati topel in človeški. Vsako fotografiranje je vodeno, 
-                premišljeno in prilagojeno vam – brez stresa, brez prisile, z občutkom za estetiko, 
-                svetlobo in potek dogodka.
+              <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
+                {t('about.intro_p2')}
               </p>
               
               <motion.div 
-                className="grid sm:grid-cols-3 gap-6"
+                className="grid grid-cols-3 gap-3 md:gap-6"
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                {[
-                  { icon: Heart, title: "Strast", description: "Ljubezen do fotografije" },
-                  { icon: Camera, title: "Izkušnje", description: "15+ let v panogi" },
-                  { icon: Users, title: "Pristop", description: "Sproščen in naraven" },
-                ].map((item, index) => (
+                {features.map((item, index) => (
                   <motion.div key={index} className="text-center" variants={fadeInUp}>
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                      <item.icon className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">{item.description}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -132,16 +138,16 @@ export default function ONas() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInRight}
             >
-              <img src={weddingBridge} alt="Proflipp fotografija" className="rounded-2xl shadow-card" />
+              <img src={weddingBridge} alt="Proflipp fotografija" className="rounded-xl md:rounded-2xl shadow-card w-full" />
               <motion.div 
-                className="absolute -bottom-6 -left-6 bg-card rounded-xl p-4 shadow-lg"
+                className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-card rounded-xl p-3 md:p-4 shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.4 }}
               >
-                <div className="font-display text-3xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Porok</div>
+                <div className="font-display text-2xl md:text-3xl font-bold text-primary">500+</div>
+                <div className="text-xs md:text-sm text-muted-foreground">{t('features.weddings')}</div>
               </motion.div>
             </motion.div>
           </div>
@@ -150,24 +156,24 @@ export default function ONas() {
 
       {/* Galerija fotografij */}
       <section className="section-padding bg-cream">
-        <div className="container-wide">
+        <div className="container-wide px-4">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Naši ujeti trenutki
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-3 md:mb-4">
+              {t('about.gallery_title')}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Poglejte nekaj utrinkov z naših projektov in dogodkov
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+              {t('about.gallery_desc')}
             </p>
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -176,7 +182,7 @@ export default function ONas() {
             {galleryImages.map((image, index) => (
               <motion.div 
                 key={index} 
-                className="aspect-square overflow-hidden rounded-xl"
+                className="aspect-square overflow-hidden rounded-lg md:rounded-xl"
                 variants={fadeInUp}
               >
                 <img 
@@ -192,7 +198,7 @@ export default function ONas() {
 
       {/* Fotografija + Video */}
       <section className="section-padding bg-background">
-        <div className="container-wide">
+        <div className="container-wide px-4">
           <motion.div 
             className="max-w-3xl mx-auto text-center"
             initial="hidden"
@@ -200,33 +206,30 @@ export default function ONas() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-6">
               <motion.div
                 initial={{ opacity: 0, rotate: -180 }}
                 whileInView={{ opacity: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <Camera className="w-10 h-10 text-primary" />
+                <Camera className="w-8 h-8 md:w-10 md:h-10 text-primary" />
               </motion.div>
-              <span className="text-2xl font-display">+</span>
+              <span className="text-xl md:text-2xl font-display">+</span>
               <motion.div
                 initial={{ opacity: 0, rotate: 180 }}
                 whileInView={{ opacity: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <Video className="w-10 h-10 text-primary" />
+                <Video className="w-8 h-8 md:w-10 md:h-10 text-primary" />
               </motion.div>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              Fotografija + video = popolna zgodba
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 md:mb-6">
+              {t('about.video_title')}
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Pri vsakem fotografiranju ali dogodku vam lahko ustvarimo tudi kratke video posnetke, 
-              ki so danes izjemno priljubljeni. Gre za dinamične, čustvene videe in reels-e, 
-              ki odlično dopolnijo fotografije in omogočajo, da trenutke doživite znova – 
-              v gibanju, zvoku in emociji.
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              {t('about.video_desc')}
             </p>
           </motion.div>
         </div>
@@ -234,45 +237,41 @@ export default function ONas() {
 
       {/* Več kot pričakujete */}
       <section className="section-padding bg-cream">
-        <div className="container-wide">
+        <div className="container-wide px-4">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <Gift className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Več kot pričakujete
+            <Gift className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-3 md:mb-4" />
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-3 md:mb-4">
+              {t('about.more_title')}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Naše stranke ne dobijo le fotografij. Dobijo celostno izkušnjo.
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+              {t('about.more_desc')}
             </p>
           </motion.div>
           
           <motion.div 
-            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            className="grid md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {[
-              "Skrbno izbrane bonuse in darila",
-              "Dodatne vsebine, kot so slideshowi in kratke video zgodbe",
-              "Oseben pristop in prilagoditve po meri",
-            ].map((item, index) => (
+            {moreItems.map((item, index) => (
               <motion.div 
                 key={index} 
-                className="bg-background rounded-xl p-6 text-center shadow-sm"
+                className="bg-background rounded-xl p-4 md:p-6 text-center shadow-sm"
                 variants={fadeInUp}
                 whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
               >
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 md:mb-4">
                   <Star className="w-4 h-4 text-primary" />
                 </div>
-                <p className="text-foreground font-medium">{item}</p>
+                <p className="text-foreground font-medium text-sm md:text-base">{item}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -281,50 +280,44 @@ export default function ONas() {
 
       {/* Personalizirana ponudba */}
       <section className="section-padding bg-background">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container-wide px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInLeft}
             >
-              <FileText className="w-12 h-12 text-primary mb-4" />
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-                Personalizirana ponudba in pogodba
+              <FileText className="w-10 h-10 md:w-12 md:h-12 text-primary mb-3 md:mb-4" />
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 md:mb-6">
+                {t('about.offer_title')}
               </h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Vsak dogodek je drugačen, zato za vsako sodelovanje pripravimo personalizirano ponudbo, 
-                prilagojeno vašim željam, idejam in obsegu dogodka.
+              <p className="text-muted-foreground text-base md:text-lg mb-4 md:mb-6 leading-relaxed">
+                {t('about.offer_p1')}
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Za popolno varnost in jasnost sodelovanja vam po potrebi pripravimo tudi pogodbo, 
-                kjer so vsi pogoji jasno in transparentno dogovorjeni.
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                {t('about.offer_p2')}
               </p>
             </motion.div>
             <motion.div 
-              className="bg-cream rounded-2xl p-8 shadow-lg"
+              className="bg-cream rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInRight}
             >
-              <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Zakaj PROFLIPP?</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Ker združujemo ustvarjalnost, izkušnje in zanesljivost.
+              <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4 md:mb-6">{t('about.why_title')}</h3>
+              <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                {t('about.why_desc')}
               </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                V več kot 15 letih dela v fotografiji in sodelovanja na številnih porokah ter različnih 
-                projektih smo pridobili znanje, ki presega zgolj fotografiranje. Zato vam lahko svetujemo 
-                tudi pri organizaciji samega dogodka ali poroke – pri časovnici, poteku dneva, izbiri lokacij, 
-                svetlobe in pomembnih detajlih.
+              <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                {t('about.why_p1')}
               </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                To svetovanje je za naše stranke popolnoma brezplačno, v kolikor se odločite za sodelovanje z nami.
+              <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                {t('about.why_p2')}
               </p>
-              <p className="text-foreground font-medium">
-                V vseh teh letih nismo odpovedali niti enega projekta, kar našim naročnikom daje 
-                dodatno zaupanje in občutek varnosti.
+              <p className="text-foreground font-medium text-sm md:text-base">
+                {t('about.why_p3')}
               </p>
             </motion.div>
           </div>
@@ -334,18 +327,17 @@ export default function ONas() {
       {/* Mnenja strank */}
       <section className="section-padding bg-cream">
         <motion.div 
-          className="container-wide text-center"
+          className="container-wide text-center px-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-            Mnenja naših strank
+          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 md:mb-6">
+            {t('about.reviews_title')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            Kakovost našega dela, naš pristop in vse, kar opisujemo zgoraj, potrjujejo tudi mnenja 
-            naših zadovoljnih strank. Njihove izkušnje so najboljše zagotovilo, da boste v pravih rokah.
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed">
+            {t('about.reviews_desc')}
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -353,9 +345,9 @@ export default function ONas() {
           >
             <Link 
               to="/mnenja"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium text-sm md:text-base"
             >
-              Oglejte si mnenja strank
+              {t('about.reviews_cta')}
             </Link>
           </motion.div>
         </motion.div>
@@ -364,39 +356,39 @@ export default function ONas() {
       {/* CTA */}
       <section className="section-padding bg-background">
         <motion.div 
-          className="container-wide text-center"
+          className="container-wide text-center px-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-            Vabljeni k sodelovanju
+          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 md:mb-6">
+            {t('about.cta_title')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Z veseljem bomo ustvarili zgodbo tudi za vas.
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-6 md:mb-8">
+            {t('about.cta_desc')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
             <motion.a 
               href="mailto:info@proflipp.com"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium text-sm md:text-base w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              Pišite nam na info@proflipp.com
+              {t('about.cta_email')}
             </motion.a>
             <motion.a 
               href="tel:+38668169430"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors font-medium"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors font-medium text-sm md:text-base w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-4 h-4 md:w-5 md:h-5" />
               +386 68 169 430
             </motion.a>
           </div>
           <motion.p 
-            className="mt-8 text-xl font-display text-foreground"
+            className="mt-6 md:mt-8 text-lg md:text-xl font-display text-foreground"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

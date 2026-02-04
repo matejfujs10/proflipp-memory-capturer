@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Phone, Mail, MapPin, Send, X } from "lucide-react";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface ContactFormModalProps {
 }
 
 export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "",
   });
@@ -42,7 +44,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
     
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
-    toast.success("Odpiramo e-poštni odjemalec...");
+    toast.success(t('contact.opening_email'));
     onClose();
     setFormData({ name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "" });
   };
@@ -55,7 +57,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
       <div className="relative bg-card rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto animate-scale-in">
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="font-display text-2xl font-semibold text-foreground">Pošlji povpraševanje</h3>
+            <h3 className="font-display text-2xl font-semibold text-foreground">{t('contact.send_inquiry')}</h3>
             <button onClick={onClose} className="p-2 rounded-full hover:bg-muted transition-colors">
               <X className="w-5 h-5" />
             </button>
@@ -63,48 +65,48 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-foreground mb-1.5 block">Ime in priimek *</label>
-              <Input required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Janez Novak" />
+              <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.name')} *</label>
+              <Input required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Janez Novak" maxLength={100} />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Kraj *</label>
-                <Input required value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value })} placeholder="Ljubljana" />
+                <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.location')} *</label>
+                <Input required value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value })} placeholder="Ljubljana" maxLength={100} />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Datum *</label>
+                <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.date')} *</label>
                 <Input type="date" required value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Število ljudi</label>
-                <Input type="number" value={formData.guests} onChange={(e) => setFormData({ ...formData, guests: e.target.value })} placeholder="50" />
+                <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.guests')}</label>
+                <Input type="number" value={formData.guests} onChange={(e) => setFormData({ ...formData, guests: e.target.value })} placeholder="50" maxLength={10} />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Trajanje (ure)</label>
-                <Input value={formData.duration} onChange={(e) => setFormData({ ...formData, duration: e.target.value })} placeholder="8" />
+                <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.duration')}</label>
+                <Input value={formData.duration} onChange={(e) => setFormData({ ...formData, duration: e.target.value })} placeholder="8" maxLength={10} />
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               <Checkbox id="video" checked={formData.video} onCheckedChange={(checked) => setFormData({ ...formData, video: checked as boolean })} />
-              <label htmlFor="video" className="text-sm font-medium text-foreground cursor-pointer">Želim tudi snemanje</label>
+              <label htmlFor="video" className="text-sm font-medium text-foreground cursor-pointer">{t('contact.form.video')}</label>
             </div>
 
             <div>
-              <label className="text-sm font-medium text-foreground mb-1.5 block">Ostale želje</label>
-              <Textarea value={formData.notes} onChange={(e) => setFormData({ ...formData, notes: e.target.value })} placeholder="Dodatne informacije, posebne želje..." rows={4} />
+              <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.notes')}</label>
+              <Textarea value={formData.notes} onChange={(e) => setFormData({ ...formData, notes: e.target.value })} placeholder={t('contact.form.notes_placeholder')} rows={4} maxLength={500} />
             </div>
 
             <Button type="submit" className="w-full" size="lg">
               <Send className="w-4 h-4" />
-              Pošlji povpraševanje
+              {t('contact.form.submit')}
             </Button>
 
-            <p className="text-xs text-muted-foreground text-center">Z oddajo obrazca potrjujete, da ste prebrali splošne pogoje.</p>
+            <p className="text-xs text-muted-foreground text-center">{t('contact.form.terms')}</p>
           </form>
         </div>
       </div>
@@ -113,6 +115,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
 }
 
 function QuickContactForm() {
+  const { t } = useLanguage();
   const [quickForm, setQuickForm] = useState({ name: "", email: "", message: "" });
   
   const handleQuickSubmit = (e: React.FormEvent) => {
@@ -133,14 +136,14 @@ function QuickContactForm() {
     
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
-    toast.success("Odpiramo e-poštni odjemalec...");
+    toast.success(t('contact.opening_email'));
     setQuickForm({ name: "", email: "", message: "" });
   };
 
   return (
     <form onSubmit={handleQuickSubmit} className="space-y-4">
       <Input 
-        placeholder="Vaše ime" 
+        placeholder={t('contact.your_name')} 
         required 
         maxLength={100}
         value={quickForm.name}
@@ -148,81 +151,80 @@ function QuickContactForm() {
       />
       <Input 
         type="email" 
-        placeholder="E-pošta" 
+        placeholder={t('contact.your_email')} 
         required 
         maxLength={255}
         value={quickForm.email}
         onChange={(e) => setQuickForm({ ...quickForm, email: e.target.value })}
       />
       <Textarea 
-        placeholder="Vaše sporočilo..." 
+        placeholder={t('contact.your_message')} 
         rows={4} 
         required 
         maxLength={500}
         value={quickForm.message}
         onChange={(e) => setQuickForm({ ...quickForm, message: e.target.value })}
       />
-      <Button type="submit" className="w-full" size="lg">Pošlji sporočilo</Button>
+      <Button type="submit" className="w-full" size="lg">{t('contact.send_message')}</Button>
     </form>
   );
 }
 
 export function ContactSection() {
+  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <section id="kontakt" className="section-padding bg-primary">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4">Kontaktirajte nas</h2>
-              <p className="text-primary-foreground/90 text-lg mb-8 leading-relaxed">
-                Imate radi sproščenost, spontanost in dobro energijo? Točno takšne 
-                fotografije tudi ustvarjamo. Pošljite nam povpraševanje — odgovorimo 
-                hitro, uskladimo želje in predlagamo najboljšo rešitev glede na vaš dogodek.
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-4">{t('contact.title')}</h2>
+              <p className="text-primary-foreground/90 text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
+                {t('contact.description')}
               </p>
 
-              <div className="space-y-4 mb-8">
-                <a href="tel:+38668169430" className="flex items-center gap-4 text-primary-foreground hover:text-gold transition-colors group">
-                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                    <Phone className="w-5 h-5" />
+              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                <a href="tel:+38668169430" className="flex items-center gap-3 md:gap-4 text-primary-foreground hover:text-gold transition-colors group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors flex-shrink-0">
+                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <div>
-                    <div className="text-sm text-primary-foreground/70">Telefon</div>
-                    <div className="font-medium">+386 68 169 430</div>
-                  </div>
-                </a>
-
-                <a href="mailto:info@proflipp.com" className="flex items-center gap-4 text-primary-foreground hover:text-gold transition-colors group">
-                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-primary-foreground/70">E-pošta</div>
-                    <div className="font-medium">info@proflipp.com</div>
+                  <div className="min-w-0">
+                    <div className="text-xs md:text-sm text-primary-foreground/70">{t('contact.phone')}</div>
+                    <div className="font-medium text-sm md:text-base">+386 68 169 430</div>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 text-primary-foreground">
-                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5" />
+                <a href="mailto:info@proflipp.com" className="flex items-center gap-3 md:gap-4 text-primary-foreground hover:text-gold transition-colors group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors flex-shrink-0">
+                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <div>
-                    <div className="text-sm text-primary-foreground/70">Lokacija</div>
-                    <div className="font-medium">Slovenija</div>
+                  <div className="min-w-0">
+                    <div className="text-xs md:text-sm text-primary-foreground/70">{t('contact.email')}</div>
+                    <div className="font-medium text-sm md:text-base break-all">info@proflipp.com</div>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-3 md:gap-4 text-primary-foreground">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs md:text-sm text-primary-foreground/70">{t('contact.location')}</div>
+                    <div className="font-medium text-sm md:text-base">Slovenija</div>
                   </div>
                 </div>
               </div>
 
-              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft" onClick={() => setIsModalOpen(true)}>
+              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft w-full sm:w-auto" onClick={() => setIsModalOpen(true)}>
                 <Send className="w-5 h-5" />
-                Pošlji povpraševanje
+                {t('contact.send_inquiry')}
               </Button>
             </div>
 
-            <div className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl">
-              <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Hitro sporočilo</h3>
+            <div className="bg-card rounded-2xl p-5 md:p-6 lg:p-8 shadow-2xl">
+              <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4 md:mb-6">{t('contact.quick_message')}</h3>
               <QuickContactForm />
             </div>
           </div>
