@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proflipp – Poročna fotografija, fotografiranje dogodkov in družin | Slovenija</title>
     <meta name="description" content="Proflipp je profesionalni fotografski studio za poročno fotografijo, fotografiranje dogodkov, družin in novorojenčkov. Pristni, sproščeni trenutki in profesionalna izvedba. We Create Emotions!" />
-    <meta name="keywords" content="poročna fotografija, poročni fotograf, fotografiranje porok, fotografiranje družin, fotografiranje novorojenčkov, fotografiranje dogodkov, foto studio, Slovenija, Murska Sobota, Ljubljana, Maribor" />
+    <meta name="keywords" content="poročna fotografija, poročni fotograf, fotografiranje porok, fotografiranje družin, fotografiranje novorojenčkov, fotografiranje dogodkov, foto studio, Slovenija, Murska Sobota, Ljubljana, Maribor, wedding photographer Slovenia, Hochzeitsfotograf Slowenien" />
     <meta name="author" content="Proflipp" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
+    
+    <!-- Language alternates for multilingual SEO -->
+    <link rel="alternate" hreflang="sl" href="https://proflipp.com/" />
+    <link rel="alternate" hreflang="en" href="https://proflipp.com/?lang=en" />
+    <link rel="alternate" hreflang="de" href="https://proflipp.com/?lang=de" />
+    <link rel="alternate" hreflang="x-default" href="https://proflipp.com/" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
@@ -17,19 +23,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://proflipp.com/" />
-    <meta property="og:title" content="Proflipp – We Create Emotions! | Poročna fotografija Slovenija" />
-    <meta property="og:description" content="Profesionalna poročna fotografija, fotografiranje dogodkov, družin in novorojenčkov. Pristni trenutki in nepozabni spomini." />
+    <meta property="og:title" content="PROFLIPP – We capture Memories! | Wedding Photography Slovenia" />
+    <meta property="og:description" content="Professional wedding photography, event and family photography. Authentic moments and unforgettable memories. We Create Emotions!" />
     <meta property="og:image" content="https://proflipp.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PROFLIPP - We capture Memories! Professional wedding photography" />
     <meta property="og:locale" content="sl_SI" />
-    <meta property="og:site_name" content="Proflipp" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:site_name" content="PROFLIPP" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://proflipp.com/" />
-    <meta name="twitter:title" content="Proflipp – We Create Emotions! | Poročna fotografija Slovenija" />
-    <meta name="twitter:description" content="Profesionalna poročna fotografija, fotografiranje dogodkov, družin in novorojenčkov. Pristni trenutki in nepozabni spomini." />
+    <meta name="twitter:title" content="PROFLIPP – We capture Memories! | Wedding Photography Slovenia" />
+    <meta name="twitter:description" content="Professional wedding photography, event and family photography. Authentic moments and unforgettable memories." />
     <meta name="twitter:image" content="https://proflipp.com/og-image.jpg" />
     
     <!-- Canonical -->
@@ -39,18 +48,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="SI" />
+    <meta name="geo.placename" content="Slovenia" />
+    
+    <!-- Mobile app capable -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PROFLIPP" />
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#1a3a6e" />
+    <meta name="msapplication-TileColor" content="#1a3a6e" />
+    
+    <!-- Structured Data (JSON-LD) - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Proflipp",
+      "@id": "https://proflipp.com/#organization",
+      "name": "PROFLIPP",
+      "alternateName": "Proflipp Photography",
       "image": "https://proflipp.com/og-image.jpg",
-      "description": "Profesionalni fotografski studio za poročno fotografijo, fotografiranje dogodkov, družin in novorojenčkov.",
+      "logo": "https://proflipp.com/favicon.jpg",
+      "description": "Professional photography studio specializing in wedding, event, family and newborn photography in Slovenia. We Create Emotions!",
       "url": "https://proflipp.com",
-      "telephone": "+386 40 123 456",
+      "telephone": "+386 68 169 430",
+      "email": "info@proflipp.com",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Murska Sobota",
+        "addressRegion": "Pomurje",
         "addressCountry": "SI"
       },
       "geo": {
@@ -58,6 +87,20 @@
         "latitude": 46.6628,
         "longitude": 16.1647
       },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Slovenia"
+        },
+        {
+          "@type": "Country", 
+          "name": "Austria"
+        },
+        {
+          "@type": "Country",
+          "name": "Croatia"
+        }
+      ],
       "priceRange": "€€",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -66,47 +109,103 @@
         "closes": "20:00"
       },
       "sameAs": [
-        "https://www.facebook.com/proflipp",
-        "https://www.instagram.com/proflipp"
+        "https://www.facebook.com/proflippfotovideo/",
+        "https://www.instagram.com/proflippcom/"
       ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Fotografske storitve",
+        "name": "Photography Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Poročna fotografija",
-              "description": "Profesionalno fotografiranje porok z reportažnim pristopom"
+              "name": "Wedding Photography",
+              "description": "Professional wedding photography with reportage approach"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Fotografiranje dogodkov",
-              "description": "Fotografiranje korporativnih in zasebnih dogodkov"
+              "name": "Event Photography",
+              "description": "Corporate and private event photography"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Družinska fotografija",
-              "description": "Naravno fotografiranje družin v studiu ali na lokaciji"
+              "name": "Family Photography",
+              "description": "Natural family photography in studio or on location"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Fotografiranje novorojenčkov",
-              "description": "Nežno in varno fotografiranje dojenčkov"
+              "name": "Newborn Photography",
+              "description": "Gentle and safe newborn baby photography"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Baptism Photography",
+              "description": "Capturing precious baptism ceremony moments"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Studio Photography",
+              "description": "Professional studio portraits and sessions"
             }
           }
         ]
       }
+    }
+    </script>
+    
+    <!-- Structured Data - Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://proflipp.com",
+      "name": "PROFLIPP",
+      "description": "Professional wedding, event and family photography in Slovenia",
+      "inLanguage": ["sl", "en", "de"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://proflipp.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://proflipp.com/"
+        }
+      ]
     }
     </script>
   </head>

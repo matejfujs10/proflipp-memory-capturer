@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide7 from "@/assets/hero-slide-7.jpg";
 import heroSlide12 from "@/assets/hero-slide-12.jpg";
@@ -31,6 +32,7 @@ const images = [
 ];
 
 export function GallerySection() {
+  const { t } = useLanguage();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setSelectedIndex(index);
@@ -51,22 +53,22 @@ export function GallerySection() {
   return (
     <section className="section-padding bg-cream">
       <div className="container-wide">
-        <div className="text-center mb-16">
-          <span className="text-primary font-medium text-sm tracking-wider uppercase">Galerija</span>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mt-3 mb-4">
-            Ujeti trenutki
+        <div className="text-center mb-10 md:mb-16">
+          <span className="text-primary font-medium text-sm tracking-wider uppercase">{t('gallery.title')}</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mt-3 mb-4">
+            {t('gallery.heading')}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Vsaka fotografija pripoveduje svojo zgodbo. Poglejte, kako ujamemo čustva in spomine.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg px-4">
+            {t('gallery.description')}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
               onClick={() => openLightbox(index)}
-              className={`relative overflow-hidden rounded-xl group cursor-pointer ${
+              className={`relative overflow-hidden rounded-lg md:rounded-xl group cursor-pointer ${
                 index === 0 ? "md:col-span-2 md:row-span-2" : ""
               }`}
             >
@@ -90,16 +92,16 @@ export function GallerySection() {
             
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 p-2 md:p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
             >
-              <ChevronLeft className="w-8 h-8 text-white" />
+              <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </button>
             
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 p-2 md:p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
             >
-              <ChevronRight className="w-8 h-8 text-white" />
+              <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </button>
             
             {selectedIndex !== null && (
