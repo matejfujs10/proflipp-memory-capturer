@@ -85,6 +85,15 @@ export function Navigation() {
               >
                 DE
               </button>
+              <button
+                onClick={() => setLanguage('hr')}
+                className={cn(
+                  "text-xs font-medium px-2 py-1 rounded transition-colors",
+                  language === 'hr' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                HR
+              </button>
             </div>
 
             {/* Social Icons */}
@@ -161,6 +170,15 @@ export function Navigation() {
                   )}
                 >
                   DE
+                </button>
+                <button
+                  onClick={() => setLanguage('hr')}
+                  className={cn(
+                    "text-sm font-medium px-3 py-1 rounded transition-colors",
+                    language === 'hr' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground border border-border"
+                  )}
+                >
+                  HR
                 </button>
               </div>
               <div className="pt-4 px-4">
