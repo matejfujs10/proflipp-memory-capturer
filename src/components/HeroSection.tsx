@@ -41,41 +41,41 @@ import heroSlide34 from "@/assets/hero-slide-34.jpg";
 import heroSlide35 from "@/assets/hero-slide-35.jpg";
 
 const heroImages = [
-  heroSlide1,
-  heroSlide2,
-  heroSlide3,
-  heroSlide4,
-  heroSlide5,
-  heroSlide6,
-  heroSlide7,
-  heroSlide8,
-  heroSlide9,
-  heroSlide10,
-  heroSlide11,
-  heroSlide12,
-  heroSlide13,
-  heroSlide14,
-  heroSlide15,
-  heroSlide16,
-  heroSlide17,
-  heroSlide18,
-  heroSlide19,
-  heroSlide20,
-  heroSlide21,
-  heroSlide22,
-  heroSlide23,
-  heroSlide24,
-  heroSlide25,
-  heroSlide26,
-  heroSlide27,
-  heroSlide28,
-  heroSlide29,
-  heroSlide30,
-  heroSlide31,
-  heroSlide32,
-  heroSlide33,
-  heroSlide34,
-  heroSlide35,
+  { src: heroSlide1, alt: "Poročna fotografija v Ljubljani – Proflipp" },
+  { src: heroSlide2, alt: "Poročna fotografija na Bledu – Proflipp" },
+  { src: heroSlide3, alt: "Poročna fotografija v Mariboru – Proflipp" },
+  { src: heroSlide4, alt: "Poročna fotografija v Kranju – Proflipp" },
+  { src: heroSlide5, alt: "Poročna fotografija v Celju – Proflipp" },
+  { src: heroSlide6, alt: "Poročna fotografija v Kopru – Proflipp" },
+  { src: heroSlide7, alt: "Poročna fotografija v Piranu – Proflipp" },
+  { src: heroSlide8, alt: "Poročna fotografija v Portorožu – Proflipp" },
+  { src: heroSlide9, alt: "Poročna fotografija v Novi Gorici – Proflipp" },
+  { src: heroSlide10, alt: "Poročna fotografija v Postojni – Proflipp" },
+  { src: heroSlide11, alt: "Poročna fotografija na Ptuju – Proflipp" },
+  { src: heroSlide12, alt: "Poročna fotografija v Murski Soboti – Proflipp" },
+  { src: heroSlide13, alt: "Poročna fotografija v Velenju – Proflipp" },
+  { src: heroSlide14, alt: "Poročna fotografija v Kamniku – Proflipp" },
+  { src: heroSlide15, alt: "Poročna fotografija v Škofji Loki – Proflipp" },
+  { src: heroSlide16, alt: "Poročna fotografija v Radovljici – Proflipp" },
+  { src: heroSlide17, alt: "Poročna fotografija na Bohinju – Proflipp" },
+  { src: heroSlide18, alt: "Poročna fotografija v Izoli – Proflipp" },
+  { src: heroSlide19, alt: "Poročna fotografija v Ankaranu – Proflipp" },
+  { src: heroSlide20, alt: "Poročna fotografija v Logarski dolini – Proflipp" },
+  { src: heroSlide21, alt: "Poročna fotografija v Gradcu – Proflipp" },
+  { src: heroSlide22, alt: "Poročna fotografija na Dunaju – Proflipp" },
+  { src: heroSlide23, alt: "Poročna fotografija v Salzburgu – Proflipp" },
+  { src: heroSlide24, alt: "Poročna fotografija v Celovcu – Proflipp" },
+  { src: heroSlide25, alt: "Poročna fotografija v Beljaku – Proflipp" },
+  { src: heroSlide26, alt: "Poročna fotografija v Linzu – Proflipp" },
+  { src: heroSlide27, alt: "Poročna fotografija v Innsbrucku – Proflipp" },
+  { src: heroSlide28, alt: "Poročna fotografija v Hallstattu – Proflipp" },
+  { src: heroSlide29, alt: "Poročna fotografija v Zagrebu – Proflipp" },
+  { src: heroSlide30, alt: "Poročna fotografija v Opatiji – Proflipp" },
+  { src: heroSlide31, alt: "Poročna fotografija v Rovinju – Proflipp" },
+  { src: heroSlide32, alt: "Poročna fotografija v Sarajevu – Proflipp" },
+  { src: heroSlide33, alt: "Poročna fotografija v Mostarju – Proflipp" },
+  { src: heroSlide34, alt: "Poročna fotografija v Banja Luki – Proflipp" },
+  { src: heroSlide35, alt: "Poročna fotografija v Beogradu – Proflipp" },
 ];
 
 export function HeroSection() {
@@ -102,8 +102,8 @@ export function HeroSection() {
         {heroImages.map((image, index) => (
           <img
             key={index}
-            src={image}
-            alt={`Poročna fotografija ${index + 1} - Proflipp profesionalno fotografiranje`}
+            src={image.src}
+            alt={image.alt}
             loading={index === 0 ? "eager" : "lazy"}
             decoding="async"
             className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
