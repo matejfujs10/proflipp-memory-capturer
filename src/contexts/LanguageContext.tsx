@@ -27,14 +27,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Poročna & družinska fotografija',
-    'hero.title': 'We Create',
-    'hero.emotions': 'Emotions!',
-    'hero.subtitle': 'Uživajte v dnevu – mi ujamemo zgodbo.',
-    'hero.description': 'Naj bo vaš poročni dan sproščen. Vi uživate, mi pa poskrbimo, da bodo fotografije polne ponosa, sreče in pristnih trenutkov – od detajlov, skupinskih do spontanih fotografij.',
+    'hero.title': 'Poročni fotograf',
+    'hero.emotions': 'v Sloveniji',
+    'hero.subtitle': 'Ujamemo pristne, čustvene in brezčasne trenutke porok.',
+    'hero.description': 'Proflipp je profesionalni poročni fotograf v Sloveniji, specializiran za pristno, čustveno in brezčasno fotografijo porok. Naš cilj je ujeti resnične trenutke, naravna čustva in zgodbo vajinega dne brez poziranja in umetnega vodenja.',
     'hero.emotions_text': 'Čustva, smeh, solze',
     'hero.media': 'Video & fotografije',
     'hero.memories': 'Večni spomini',
-    'hero.inquiry': 'Pošlji povpraševanje',
+    'hero.inquiry': 'Rezerviraj termin',
     'hero.packages': 'Izberi paket',
     
     // Services Section
@@ -189,14 +189,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Wedding & family photography',
-    'hero.title': 'We Create',
-    'hero.emotions': 'Emotions!',
-    'hero.subtitle': 'Enjoy the day – we capture the story.',
-    'hero.description': 'Let your wedding day be relaxed. You enjoy, and we make sure the photos are full of pride, happiness and authentic moments – from details, group shots to spontaneous photos.',
+    'hero.title': 'Wedding Photographer',
+    'hero.emotions': 'in Slovenia',
+    'hero.subtitle': 'We capture authentic, emotional and timeless wedding moments.',
+    'hero.description': 'Proflipp is a professional wedding photographer in Slovenia, specialized in authentic, emotional and timeless wedding photography. Our goal is to capture real moments, natural emotions and the story of your day without posing and artificial direction.',
     'hero.emotions_text': 'Emotions, laughter, tears',
     'hero.media': 'Video & photography',
     'hero.memories': 'Eternal memories',
-    'hero.inquiry': 'Send inquiry',
+    'hero.inquiry': 'Book your date',
     'hero.packages': 'Choose a package',
     
     // Services Section
@@ -332,6 +332,15 @@ const translations: Record<Language, Record<string, string>> = {
     'about.cta_title': 'Welcome to collaborate',
     'about.cta_desc': 'We\'ll be happy to create a story for you too.',
     'about.cta_email': 'Write to us at info@proflipp.com',
+    
+    // Wedding Content Section
+    'wedding_content.intro': 'We photograph weddings throughout Slovenia – from intimate ceremonies to full-day weddings at Bled, in Ljubljana, on the Coast and in mountain locations. Every wedding is a unique story, so we approach each couple personally with attention to detail. In addition to wedding photography, we also offer family photography, event photography and business projects. Our style is based on natural light, a discreet approach and an emphasis on authentic moments that remain relevant for years to come.',
+    'wedding_content.section1_title': 'Wedding photography across Slovenia',
+    'wedding_content.section1_desc': 'We do wedding photography throughout Slovenia. Whether it\'s a wedding in nature, at a castle, by a lake or in the city, we adapt to the location, light and your story.',
+    'wedding_content.section2_title': 'Natural and documentary photography style',
+    'wedding_content.section2_desc': 'Our approach is documentary. We follow events discreetly and without intrusion, so authentic photos full of emotions and real moments can be created.',
+    'wedding_content.section3_title': 'Book your date',
+    'wedding_content.section3_desc': 'Contact us for information about date availability and offers. We\'ll be happy to answer your questions and help you plan your wedding photography.',
   },
   de: {
     // Navigation
@@ -351,14 +360,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Hochzeits- & Familienfotografie',
-    'hero.title': 'We Create',
-    'hero.emotions': 'Emotions!',
-    'hero.subtitle': 'Genießen Sie den Tag – wir halten die Geschichte fest.',
-    'hero.description': 'Lassen Sie Ihren Hochzeitstag entspannt sein. Sie genießen, und wir sorgen dafür, dass die Fotos voller Stolz, Glück und authentischer Momente sind – von Details, Gruppenfotos bis zu spontanen Aufnahmen.',
+    'hero.title': 'Hochzeitsfotograf',
+    'hero.emotions': 'in Slowenien',
+    'hero.subtitle': 'Wir fangen authentische, emotionale und zeitlose Hochzeitsmomente ein.',
+    'hero.description': 'Proflipp ist ein professioneller Hochzeitsfotograf in Slowenien, spezialisiert auf authentische, emotionale und zeitlose Hochzeitsfotografie. Unser Ziel ist es, echte Momente, natürliche Emotionen und die Geschichte Ihres Tages ohne Posieren und künstliche Anleitung festzuhalten.',
     'hero.emotions_text': 'Emotionen, Lachen, Tränen',
     'hero.media': 'Video & Fotografie',
     'hero.memories': 'Ewige Erinnerungen',
-    'hero.inquiry': 'Anfrage senden',
+    'hero.inquiry': 'Termin reservieren',
     'hero.packages': 'Paket wählen',
     
     // Services Section
@@ -494,6 +503,15 @@ const translations: Record<Language, Record<string, string>> = {
     'about.cta_title': 'Willkommen zur Zusammenarbeit',
     'about.cta_desc': 'Wir freuen uns, auch für Sie eine Geschichte zu erschaffen.',
     'about.cta_email': 'Schreiben Sie uns an info@proflipp.com',
+    
+    // Wedding Content Section
+    'wedding_content.intro': 'Wir fotografieren Hochzeiten in ganz Slowenien – von intimen Zeremonien bis hin zu ganztägigen Hochzeiten am Bleder See, in Ljubljana, an der Küste und in Berglagen. Jede Hochzeit ist eine einzigartige Geschichte, deshalb gehen wir auf jedes Paar persönlich und mit Sinn für Details ein. Neben Hochzeitsfotografie bieten wir auch Familienfotografie, Eventfotografie und Geschäftsprojekte an. Unser Stil basiert auf natürlichem Licht, einem diskreten Ansatz und dem Fokus auf authentische Momente, die auch nach Jahren aktuell bleiben.',
+    'wedding_content.section1_title': 'Hochzeitsfotografie in ganz Slowenien',
+    'wedding_content.section1_desc': 'Wir führen Hochzeitsfotografie in ganz Slowenien durch. Ob es sich um eine Hochzeit in der Natur, auf einer Burg, am See oder in der Stadt handelt, wir passen uns dem Ort, dem Licht und Ihrer Geschichte an.',
+    'wedding_content.section2_title': 'Natürlicher und dokumentarischer Fotografiestil',
+    'wedding_content.section2_desc': 'Unser Ansatz ist dokumentarisch. Wir begleiten das Geschehen diskret und ohne Aufdringlichkeit, damit authentische Fotos voller Emotionen und echter Momente entstehen können.',
+    'wedding_content.section3_title': 'Termin reservieren',
+    'wedding_content.section3_desc': 'Kontaktieren Sie uns für Informationen zur Terminverfügbarkeit und zu Angeboten. Wir beantworten gerne Ihre Fragen und helfen Ihnen bei der Planung Ihrer Hochzeitsfotografie.',
   },
 };
 
