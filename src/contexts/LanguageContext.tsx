@@ -1,12 +1,14 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-export type Language = 'si' | 'en' | 'de';
+export type Language = 'si' | 'en' | 'de' | 'hr';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
+
+const LANGUAGE_STORAGE_KEY = 'preferred_language';
 
 const translations: Record<Language, Record<string, string>> = {
   si: {
@@ -170,6 +172,15 @@ const translations: Record<Language, Record<string, string>> = {
     'about.cta_title': 'Vabljeni k sodelovanju',
     'about.cta_desc': 'Z veseljem bomo ustvarili zgodbo tudi za vas.',
     'about.cta_email': 'Pišite nam na info@proflipp.com',
+    
+    // Wedding Content Section
+    'wedding_content.intro': 'Fotografiramo poroke po vsej Sloveniji – od intimnih obredov do celodnevnih porok na Bledu, v Ljubljani, na Obali in v gorskih lokacijah. Vsaka poroka je unikatna zgodba, zato k vsakemu paru pristopimo osebno in z občutkom za detajle. Poleg poročne fotografije ponujamo tudi družinsko fotografiranje, fotografiranje dogodkov in poslovne projekte. Naš slog temelji na naravni svetlobi, diskretnem pristopu in poudarku na avtentičnih trenutkih, ki ostanejo aktualni tudi čez leta.',
+    'wedding_content.section1_title': 'Poročna fotografija po vsej Sloveniji',
+    'wedding_content.section1_desc': 'Poročno fotografiranje izvajamo po vsej Sloveniji. Ne glede na to, ali gre za poroko v naravi, na gradu, ob jezeru ali v mestu, se prilagodimo lokaciji, svetlobi in vajini zgodbi.',
+    'wedding_content.section2_title': 'Naraven in dokumentaren fotografski slog',
+    'wedding_content.section2_desc': 'Naš pristop je dokumentaren. Dogajanje spremljamo diskretno in brez vsiljevanja, da lahko nastanejo pristne fotografije, polne čustev in resničnih trenutkov.',
+    'wedding_content.section3_title': 'Rezervacija termina',
+    'wedding_content.section3_desc': 'Za informacije o razpoložljivosti termina in ponudbi nas kontaktirajte. Z veseljem odgovorimo na vaša vprašanja in vam pomagamo pri načrtovanju poročnega fotografiranja.',
   },
   en: {
     // Navigation
@@ -513,12 +524,275 @@ const translations: Record<Language, Record<string, string>> = {
     'wedding_content.section3_title': 'Termin reservieren',
     'wedding_content.section3_desc': 'Kontaktieren Sie uns für Informationen zur Terminverfügbarkeit und zu Angeboten. Wir beantworten gerne Ihre Fragen und helfen Ihnen bei der Planung Ihrer Hochzeitsfotografie.',
   },
+  hr: {
+    // Navigation
+    'nav.about': 'O nama',
+    'nav.weddings': 'Vjenčanja',
+    'nav.baptism': 'Krštenje',
+    'nav.events': 'Događaji',
+    'nav.families': 'Obitelji',
+    'nav.newborns': 'Novorođenčad',
+    'nav.travels': 'Putovanja',
+    'nav.reviews': 'Recenzije',
+    'nav.contact': 'Kontaktirajte nas',
+    
+    // Baptism page
+    'baptism.title': 'Fotografiranje krštenja',
+    'baptism.packages': 'Odaberite paket',
+    
+    // Hero Section
+    'hero.tagline': 'Vjenčana i obiteljska fotografija',
+    'hero.title': 'Vjenčani fotograf za Europu i',
+    'hero.emotions': 'destinacijska vjenčanja',
+    'hero.subtitle': 'Fotografiramo vjenčanja u Sloveniji, Austriji, Hrvatskoj, Bosni, Srbiji i širom Europe.',
+    'hero.description': 'Proflipp je profesionalni vjenčani fotograf u Sloveniji, specijaliziran za autentičnu, emocionalnu i bezvremensku fotografiju vjenčanja. Naš cilj je uhvatiti prave trenutke, prirodne emocije i priču vašeg dana bez poziranja i umjetnog vođenja.',
+    'hero.emotions_text': 'Emocije, smijeh, suze',
+    'hero.media': 'Video i fotografije',
+    'hero.memories': 'Vječna sjećanja',
+    'hero.inquiry': 'Rezervirajte termin',
+    'hero.packages': 'Odaberite paket',
+    
+    // Services Section
+    'services.title': 'Naše usluge',
+    'services.heading': 'Fotografija za svaki trenutak',
+    'services.description': 'Od vjenčanja do obiteljskih portreta – hvatamo emocije koje ostaju zauvijek.',
+    'services.more': 'Više informacija',
+    'services.weddings': 'Vjenčanja',
+    'services.weddings_desc': 'Autentične, vesele fotografije uhvaćene u najvažnijim trenucima vašeg dana.',
+    'services.events': 'Događaji',
+    'services.events_desc': 'Neprimjetni tim, pravi trenutak u pravo vrijeme, profesionalne fotografije s pričom.',
+    'services.families': 'Obitelji',
+    'services.families_desc': 'Opuštene sesije za autentična sjećanja – vi uživate, mi hvatamo priču.',
+    
+    // Gallery Section
+    'gallery.title': 'Galerija',
+    'gallery.heading': 'Uhvaćeni trenuci',
+    'gallery.description': 'Svaka fotografija priča svoju priču. Pogledajte kako hvatamo emocije i sjećanja.',
+    
+    // Features Section
+    'features.title': 'Zašto mi?',
+    'features.heading': 'Stvaramo sjećanja',
+    'features.heading2': 'koja ostaju',
+    'features.description': 'Vjenčana fotografija je naša posebna strast. Vjerujemo u podršku kroz cijeli proces – od pronalaženja idealnih mjesta do odabira najboljeg svjetla – da biste na fotografijama izgledali prekrasno i opušteno.',
+    'features.authentic': 'Autentične emocije',
+    'features.authentic_desc': 'Hvatamo smijeh, suze, dodire i spontane trenutke – bez pritiska i poziranja.',
+    'features.equipment': 'Profesionalna oprema',
+    'features.equipment_desc': 'Najnovija fotografska oprema za najbolje rezultate u svim svjetlosnim uvjetima.',
+    'features.approach': 'Opušten pristup',
+    'features.approach_desc': 'Neprimjetni tim koji osigurava da se osjećate ugodno i prirodno.',
+    'features.experience': 'Iskustvo',
+    'features.experience_desc': 'Godine iskustva u vjenčanjima, događajima i obiteljskoj fotografiji.',
+    'features.weddings': 'Vjenčanja',
+    'features.years': 'Godina iskustva',
+    'features.clients': 'Zadovoljnih klijenata',
+    'features.photos': 'Fotografija',
+    
+    // Testimonials Section
+    'testimonials.title': 'Recenzije klijenata',
+    'testimonials.heading': 'Što kažu naši klijenti',
+    'testimonials.reviews': 'recenzija',
+    'testimonials.all': 'Sve recenzije',
+    
+    // Contact Section
+    'contact.title': 'Kontaktirajte nas',
+    'contact.description': 'Volite li opuštenost, spontanost i dobru energiju? Upravo takve fotografije i stvaramo. Pošaljite nam upit — odgovaramo brzo, usklađujemo želje i predlažemo najbolje rješenje za vaš događaj.',
+    'contact.phone': 'Telefon',
+    'contact.email': 'E-pošta',
+    'contact.location': 'Lokacija',
+    'contact.send_inquiry': 'Pošalji upit',
+    'contact.quick_message': 'Brza poruka',
+    'contact.your_name': 'Vaše ime',
+    'contact.your_email': 'E-pošta',
+    'contact.your_message': 'Vaša poruka...',
+    'contact.send_message': 'Pošalji poruku',
+    'contact.form.name': 'Ime i prezime',
+    'contact.form.location': 'Mjesto',
+    'contact.form.date': 'Datum',
+    'contact.form.guests': 'Broj ljudi',
+    'contact.form.duration': 'Trajanje (sati)',
+    'contact.form.video': 'Želim i video',
+    'contact.form.notes': 'Ostale želje',
+    'contact.form.notes_placeholder': 'Dodatne informacije, posebne želje...',
+    'contact.form.submit': 'Pošalji upit',
+    'contact.form.terms': 'Slanjem ovog obrasca potvrđujete da ste pročitali opće uvjete.',
+    'contact.opening_email': 'Otvaram email klijent...',
+    
+    // Footer
+    'footer.services': 'Usluge',
+    'footer.info': 'Informacije',
+    'footer.contact': 'Kontakt',
+    'footer.rights': 'Sva prava pridržana.',
+    'footer.tagline': 'We Create Emotions! Hvatamo emocije, smijeh, suze, dodire – da vaša sjećanja traju vječno.',
+    'footer.terms': 'Opći uvjeti',
+    'footer.privacy': 'Politika privatnosti',
+    'footer.cookies': 'Kolačići',
+    'footer.copyright': 'Autorska prava',
+    
+    // Poroke page
+    'weddings.services': 'Usluge',
+    'weddings.title': 'Vjenčana fotografija',
+    'weddings.description': 'Ljubav je u malim stvarima: pogledima, dodirima, osmjesima i onim potpuno vašim trenucima. Na dan vjenčanja vi ste u središtu pozornosti – a mi hvatamo priču tako da fotografije budu autentične, vesele i pune emocija.',
+    'weddings.choose_package': 'Odaberite paket',
+    'weddings.choose_desc': 'Odaberite paket koji najbolje odgovara vašem danu.',
+    'weddings.pricing_note': 'Cijene variraju ovisno o željama mladenaca. Pripremamo vam personaliziranu ponudu.',
+    'weddings.follow_promo': 'Pratite nas na Facebooku i Instagramu za aktualne akcije i posebne ponude!',
+    'weddings.video_packages': 'Video paketi',
+    'weddings.video_desc': 'Dodajte video fotografiji za potpunu priču vašeg dana.',
+    'weddings.gallery': 'Galerija vjenčanja',
+    'weddings.gallery_desc': 'Pogledajte naše vjenčane fotografije.',
+    'weddings.photos': 'fotografija',
+    'weddings.gallery_note': 'Prikazane su samo odabrane fotografije. Više fotografija možete vidjeti na našem Facebook i Instagram profilu.',
+    
+    // Legal pages
+    'legal.terms_title': 'Opći uvjeti poslovanja',
+    'legal.cookies_title': 'Politika kolačića',
+    'legal.privacy_title': 'Politika privatnosti',
+    'legal.copyright_title': 'Pravilnik o autorskim pravima i korištenju sadržaja',
+    
+    // O nas page
+    'about.tagline': 'Proflipp',
+    'about.title': 'O nama',
+    'about.slogan': 'We Create Emotions!',
+    'about.intro_heading': 'PROFLIPP nije samo fotografija. PROFLIPP su osjećaji, priče i sjećanja koja ostaju.',
+    'about.intro_p1': 'Mi smo kreativni tim s jasnom vizijom: uhvatiti autentične emocije, energiju trenutka i male detalje koji zajedno stvaraju nezaboravnu priču. Vjerujemo da najljepše fotografije nastaju kada ste opušteni, samopouzdani i upravo onakvi kakvi jeste.',
+    'about.intro_p2': 'Specijalizirani smo za vjenčanu, obiteljsku, event i poslovnu fotografiju. Naš pristup je profesionalan, ali istovremeno topao i ljudski. Svako fotografiranje je vođeno, promišljeno i prilagođeno vama – bez stresa, bez pritiska, s osjećajem za estetiku, svjetlo i tijek događaja.',
+    'about.passion': 'Strast',
+    'about.passion_desc': 'Ljubav prema fotografiji',
+    'about.experience': 'Iskustvo',
+    'about.experience_desc': '15+ godina u industriji',
+    'about.approach': 'Pristup',
+    'about.approach_desc': 'Opušten i prirodan',
+    'about.gallery_title': 'Naši uhvaćeni trenuci',
+    'about.gallery_desc': 'Pogledajte neke utiske s naših projekata i događaja',
+    'about.video_title': 'Fotografija + video = potpuna priča',
+    'about.video_desc': 'Na svakom fotografiranju ili događaju možemo stvoriti i kratke video snimke koje su danas iznimno popularne. Radi se o dinamičnim, emocionalnim videima i reelsima koji savršeno nadopunjuju fotografije i omogućuju vam da trenutke proživite iznova – u pokretu, zvuku i emociji.',
+    'about.more_title': 'Više od očekivanog',
+    'about.more_desc': 'Naši klijenti ne dobivaju samo fotografije. Dobivaju potpuno iskustvo.',
+    'about.more_1': 'Pažljivo odabrani bonusi i pokloni',
+    'about.more_2': 'Dodatni sadržaj poput slideshowova i kratkih video priča',
+    'about.more_3': 'Osobni pristup i prilagodbe po mjeri',
+    'about.offer_title': 'Personalizirana ponuda i ugovor',
+    'about.offer_p1': 'Svaki događaj je drugačiji, stoga za svaku suradnju pripremamo personaliziranu ponudu prilagođenu vašim željama, idejama i opsegu događaja.',
+    'about.offer_p2': 'Za potpunu sigurnost i jasnoću suradnje možemo pripremiti i ugovor u kojem su svi uvjeti jasno i transparentno dogovoreni.',
+    'about.why_title': 'Zašto PROFLIPP?',
+    'about.why_desc': 'Jer spajamo kreativnost, iskustvo i pouzdanost.',
+    'about.why_p1': 'U više od 15 godina fotografije i suradnje na brojnim vjenčanjima i raznim projektima stekli smo znanje koje nadilazi samo fotografiranje. Zato vas možemo savjetovati i pri organizaciji samog događaja ili vjenčanja – o timingu, tijeku dana, odabiru lokacija, osvjetljenju i važnim detaljima.',
+    'about.why_p2': 'Ovo savjetovanje je potpuno besplatno za naše klijente ako se odlučite za suradnju s nama.',
+    'about.why_p3': 'U svim ovim godinama nismo otkazali niti jedan projekt, što našim klijentima daje dodatno povjerenje i osjećaj sigurnosti.',
+    'about.reviews_title': 'Recenzije klijenata',
+    'about.reviews_desc': 'Kvalitetu našeg rada, naš pristup i sve gore opisano potvrđuju i recenzije naših zadovoljnih klijenata. Njihova iskustva su najbolje jamstvo da ste u dobrim rukama.',
+    'about.reviews_cta': 'Pogledajte recenzije klijenata',
+    'about.cta_title': 'Dobrodošli u suradnju',
+    'about.cta_desc': 'Rado ćemo stvoriti priču i za vas.',
+    'about.cta_email': 'Pišite nam na info@proflipp.com',
+    
+    // Wedding Content Section
+    'wedding_content.intro': 'Fotografiramo vjenčanja diljem Slovenije – od intimnih ceremonija do cjelodnevnih vjenčanja na Bledu, u Ljubljani, na Obali i u planinskim lokacijama. Svako vjenčanje je jedinstvena priča, stoga svakom paru pristupamo osobno i s osjećajem za detalje. Osim vjenčane fotografije nudimo i obiteljsku fotografiju, fotografiranje događaja i poslovne projekte. Naš stil temelji se na prirodnom svjetlu, diskretnom pristupu i naglašavanju autentičnih trenutaka koji ostaju aktualni godinama.',
+    'wedding_content.section1_title': 'Vjenčana fotografija diljem Slovenije',
+    'wedding_content.section1_desc': 'Vjenčanu fotografiju provodimo diljem Slovenije. Bilo da se radi o vjenčanju u prirodi, na dvorcu, uz jezero ili u gradu, prilagođavamo se lokaciji, svjetlu i vašoj priči.',
+    'wedding_content.section2_title': 'Prirodan i dokumentarni stil fotografije',
+    'wedding_content.section2_desc': 'Naš pristup je dokumentaran. Događanja pratimo diskretno i bez nametanja, tako da mogu nastati autentične fotografije pune emocija i pravih trenutaka.',
+    'wedding_content.section3_title': 'Rezervacija termina',
+    'wedding_content.section3_desc': 'Kontaktirajte nas za informacije o dostupnosti termina i ponudi. Rado ćemo odgovoriti na vaša pitanja i pomoći vam u planiranju vjenčane fotografije.',
+  },
 };
+
+// Detect country from geo-IP
+async function detectCountryFromGeoIP(): Promise<string | null> {
+  try {
+    // Using ip-api.com (free, no API key required, 45 req/min limit)
+    const response = await fetch('https://ip-api.com/json/?fields=countryCode');
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data.countryCode || null;
+  } catch {
+    return null;
+  }
+}
+
+// Map country code to language
+function mapCountryToLanguage(countryCode: string): Language {
+  const mapping: Record<string, Language> = {
+    'SI': 'si', // Slovenia
+    'AT': 'de', // Austria
+    'HR': 'hr', // Croatia
+    'DE': 'de', // Germany
+    'CH': 'de', // Switzerland (German-speaking majority)
+  };
+  return mapping[countryCode] || 'en'; // Default to English
+}
+
+// Get language from browser as fallback
+function getBrowserLanguage(): Language | null {
+  if (typeof navigator === 'undefined') return null;
+  
+  const browserLang = navigator.language?.split('-')[0]?.toLowerCase();
+  const validLanguages: Language[] = ['si', 'en', 'de', 'hr'];
+  
+  // Map browser languages
+  if (browserLang === 'sl') return 'si';
+  if (browserLang === 'hr') return 'hr';
+  if (browserLang === 'de') return 'de';
+  if (browserLang === 'en') return 'en';
+  
+  return null;
+}
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('si');
+  const [language, setLanguageState] = useState<Language>('si');
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Set language and save preference to localStorage
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+    } catch {
+      // localStorage might not be available
+    }
+  };
+
+  // Initialize language on mount
+  useEffect(() => {
+    const initLanguage = async () => {
+      // Check if user has a saved preference
+      try {
+        const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language | null;
+        if (savedLanguage && ['si', 'en', 'de', 'hr'].includes(savedLanguage)) {
+          setLanguageState(savedLanguage);
+          setIsInitialized(true);
+          return;
+        }
+      } catch {
+        // localStorage might not be available
+      }
+
+      // No saved preference - try geo-IP detection
+      const countryCode = await detectCountryFromGeoIP();
+      if (countryCode) {
+        const detectedLanguage = mapCountryToLanguage(countryCode);
+        setLanguageState(detectedLanguage);
+        setIsInitialized(true);
+        return;
+      }
+
+      // Fallback to browser language
+      const browserLang = getBrowserLanguage();
+      if (browserLang) {
+        setLanguageState(browserLang);
+        setIsInitialized(true);
+        return;
+      }
+
+      // Final fallback: English
+      setLanguageState('en');
+      setIsInitialized(true);
+    };
+
+    initLanguage();
+  }, []);
 
   const t = (key: string): string => {
     return translations[language][key] || translations['si'][key] || key;
