@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import proflippLogoCameraImg from "@/assets/proflipp-logo-camera.png";
+import proflippLogoFooterImg from "@/assets/proflipp-logo-footer.png";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -32,21 +32,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="hover:opacity-80 transition-opacity inline-block">
-              <span className="text-xl md:text-2xl font-extrabold tracking-tight block mb-1 text-[#4a9fe8]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                PROFLIPP
-              </span>
-              <span className="text-xs font-semibold tracking-wide block mb-3">
-                <span className="text-[#4a9fe8]">We Create </span>
-                <span className="text-gold italic">Emotions!</span>
-              </span>
               <img 
-                src={proflippLogoCameraImg} 
-                alt="PROFLIPP - We Create Emotions!" 
-                className="h-20 md:h-24 lg:h-28 w-auto object-contain"
+                src={proflippLogoFooterImg} 
+                alt="PROFLIPP - Ujamemo čustva" 
+                className="h-24 md:h-28 lg:h-32 w-auto object-contain"
               />
             </Link>
             <p className="text-card/70 mt-4 mb-4 md:mb-6 max-w-sm text-sm md:text-base">
-              {t('footer.tagline')}
+              Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni!
             </p>
             <div className="flex gap-3 md:gap-4">
               <a href="https://www.instagram.com/proflippcom/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-card/10 flex items-center justify-center hover:bg-primary transition-colors">
