@@ -35,7 +35,7 @@ export function Footer() {
               <img 
                 src={proflippLogoFooterImg} 
                 alt="PROFLIPP - Ujamemo čustva" 
-                className="h-24 md:h-28 lg:h-32 w-auto object-contain"
+                className="h-32 md:h-40 lg:h-48 w-auto object-contain"
               />
             </Link>
             <p className="text-card/70 mt-4 mb-4 md:mb-6 max-w-sm text-sm md:text-base">
