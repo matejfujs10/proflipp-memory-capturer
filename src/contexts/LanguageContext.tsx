@@ -798,6 +798,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return translations[language][key] || translations['si'][key] || key;
   };
 
+  // Don't render children until language is initialized to prevent context errors
+  if (!isInitialized) {
+    return null;
+  }
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
