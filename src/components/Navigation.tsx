@@ -32,8 +32,8 @@ export function Navigation() {
                 PROFLIPP
               </span>
               <span className="text-[10px] md:text-xs font-semibold tracking-wide">
-                <span className="text-[#4a9fe8]">We Create </span>
-                <span className="text-gold italic">Emotions!</span>
+                <span className="text-[#4a9fe8]">Ujamemo </span>
+                <span className="text-gold italic">Čustva!</span>
               </span>
             </div>
           </Link>

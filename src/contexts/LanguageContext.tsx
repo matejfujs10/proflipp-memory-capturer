@@ -28,11 +28,11 @@ const translations: Record<Language, Record<string, string>> = {
     'baptism.packages': 'Izberite paket',
     
     // Hero Section
-    'hero.tagline': 'Poročna & družinska fotografija',
-    'hero.title': 'Poročni fotograf za Evropo in',
-    'hero.emotions': 'destinacijske poroke',
-    'hero.subtitle': 'Fotografiramo poroke v Sloveniji, Avstriji, na Hrvaškem, v Bosni, Srbiji in po vsej Evropi.',
-    'hero.description': 'Proflipp je profesionalni poročni fotograf v Sloveniji, specializiran za pristno, čustveno in brezčasno fotografijo porok. Naš cilj je ujeti resnične trenutke, naravna čustva in zgodbo vajinega dne brez poziranja in umetnega vodenja.',
+    'hero.tagline': 'Ujamemo čustva.',
+    'hero.title': 'Več kot fotografije.',
+    'hero.emotions': 'Vaša zgodba.',
+    'hero.subtitle': 'Pristna in brezčasna fotografija porok, družin in dogodkov – sproščeni, naravno ujeti trenutki.',
+    'hero.description': 'Naj bo vaš dan sproščen. Vi ga doživite, mi pa ujamemo zgodbo – od drobnih detajlov do velikih trenutkov.',
     'hero.emotions_text': 'Čustva, smeh, solze',
     'hero.media': 'Video & fotografije',
     'hero.memories': 'Večni spomini',
