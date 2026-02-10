@@ -35,7 +35,7 @@ export function Footer() {
               <img 
                 src={proflippLogoCameraImg} 
                 alt="PROFLIPP - We Capture Emotions" 
-                className="h-28 md:h-36 lg:h-44 w-auto object-contain"
+                className="h-32 md:h-40 lg:h-52 w-auto object-contain"
               />
             </Link>
             <div className="flex gap-3 mt-4">
