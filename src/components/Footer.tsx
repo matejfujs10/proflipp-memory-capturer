@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import proflippLogoCameraImg from "@/assets/proflipp-logo-camera.png";
+import proflippLogoCameraImg from "@/assets/proflipp-logo-camera-dark.png";
 
 export function Footer() {
   const { t } = useLanguage();
