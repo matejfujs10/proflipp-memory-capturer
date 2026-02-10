@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 // Facebook reviews extracted from screenshots
 const facebookReviews = [
+  { name: "Klemen Bizjak", text: "Za nase Drustvo ljubiteljev domace zganjekuhe je delal reportazo festivala. Natancen, tocen in zelo profesionalen. Tako kot smo se dogovorili. Priporocam! Hvala Matej!" },
   { name: "Tomislav Gomboc", text: "Ich hatte das Vergnügen, von diesem Fotografen bei der Masterverleihung umfassend begleitet zu werden - von Anfang an bis zum gesamten Abend. Schon vor der Verleihung war er aufmerksam, professionell und hat mir das Gefühl gegeben, gut betreut zu sein." },
   { name: "Aljaž Koštric", text: "Zelo dober fotograf. Sva ga imela za poroko in krst. Slike so zelo vrhunske, dobro organizira kje je najbolše se fotografirati da uzame lepo ozadje. Priporočam ga, ker je res vrhunski fotograf." },
   { name: "Kim Koštric", text: "Najboljši fotograf! 😊 Poročne slike so vrhunske, samo fotografiranje je bilo res sproščeno in res lepo vodeno. Dobila sva več slik kot sva pričakovala in seveda tudi video. Glede na to, da sva imela res grooooomno slik, so bile urejene v zelo kratkem času. Priporočam!! 😊" },
@@ -25,7 +26,6 @@ const facebookReviews = [
   { name: "Matic Skarlovnik", text: "Z Matejem sva skupaj snemala in fotografirala poroko. Iz prve roke sem videl, kako zelo prilagodljiv je in kako vedno išče rešitve, da ustreže željam strank. Z njim se je mogoče vse dogovoriti, tudi če pride do nepričakovanih sprememb." },
   { name: "Blaž Mernik", text: "Hvala Proflipu za odlične fotografije! Toplo priporočam res izvrstno." },
   { name: "Mernik Anja", text: "Super fotograf, neopazen.. zajame vse spontane trenutke ki so pomembni. Odličen odnos pred in po poroki." },
-  { name: "Klemen Bizjak", text: "Za nase Drustvo ljubiteljev domace zganjekuhe je delal reportazo festivala. Natancen, tocen in zelo profesionalen. Tako kot smo se dogovorili. Priporocam! Hvala Matej!" },
 ];
 
 // Omisli.si reviews
