@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import proflippLogoFooterImg from "@/assets/proflipp-logo-footer.png";
+import proflippLogoCameraImg from "@/assets/proflipp-logo-camera.png";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -38,6 +39,13 @@ export function Footer() {
                 className="h-32 md:h-40 lg:h-48 w-auto object-contain"
               />
             </Link>
+            <div className="flex items-center gap-3 mt-3">
+              <img 
+                src={proflippLogoCameraImg} 
+                alt="PROFLIPP Camera Logo" 
+                className="h-12 md:h-14 w-auto object-contain"
+              />
+            </div>
             <p className="text-card/70 mt-4 mb-4 md:mb-6 max-w-sm text-sm md:text-base">
               Ujamemo čustva, smeh, solze, dotike – da bodo vaši spomini večni!
             </p>

@@ -35,6 +35,9 @@ export function Navigation() {
                 <span className="text-[#4a9fe8]">Ujamemo </span>
                 <span className="text-gold italic">Čustva!</span>
               </span>
+              <span className="text-[8px] md:text-[9px] tracking-[0.15em] uppercase text-muted-foreground/70 font-medium">
+                We Capture Emotions
+              </span>
             </div>
           </Link>
 
