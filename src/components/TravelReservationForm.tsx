@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TravelReservationFormProps {
   isOpen: boolean;
@@ -15,6 +16,7 @@ interface TravelReservationFormProps {
 
 export function TravelReservationForm({ isOpen, onClose }: TravelReservationFormProps) {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: "",
     travelDate: "",
@@ -29,8 +31,8 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
     
     if (!formData.termsAccepted) {
       toast({
-        title: "Napaka",
-        description: "Prosimo, da potrdite splošne pogoje.",
+        title: t('travel.form.error'),
+        description: t('contact.form.terms_required'),
         variant: "destructive",
       });
       return;
@@ -56,8 +58,8 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast({
-      title: "Povpraševanje poslano!",
-      description: "Odpiramo vaš email odjemalec za pošiljanje povpraševanja.",
+      title: t('travel.form.success'),
+      description: t('travel.form.success_desc'),
     });
     
     onClose();
@@ -75,24 +77,24 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-display text-2xl">Rezervacija potovalnega fotografiranja</DialogTitle>
+          <DialogTitle className="font-display text-2xl">{t('travel.title')}</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label htmlFor="fullName">Ime in priimek *</Label>
+            <Label htmlFor="fullName">{t('travel.form.name')} *</Label>
             <Input
               id="fullName"
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-              placeholder="Vaše ime in priimek"
+              placeholder={t('travel.form.name_placeholder')}
               required
               maxLength={100}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="travelDate">Datum potovanja *</Label>
+            <Label htmlFor="travelDate">{t('travel.form.date')} *</Label>
             <Input
               id="travelDate"
               type="date"
@@ -104,7 +106,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="timeFrom">Čas od *</Label>
+              <Label htmlFor="timeFrom">{t('travel.form.time_from')} *</Label>
               <Input
                 id="timeFrom"
                 type="time"
@@ -114,7 +116,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="timeTo">Čas do *</Label>
+              <Label htmlFor="timeTo">{t('travel.form.time_to')} *</Label>
               <Input
                 id="timeTo"
                 type="time"
@@ -126,12 +128,12 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="additionalWishes">Dodatne želje</Label>
+            <Label htmlFor="additionalWishes">{t('travel.form.wishes')}</Label>
             <Textarea
               id="additionalWishes"
               value={formData.additionalWishes}
               onChange={(e) => setFormData({ ...formData, additionalWishes: e.target.value })}
-              placeholder="Opišite vaše želje, lokacijo, posebne zahteve..."
+              placeholder={t('travel.form.wishes_placeholder')}
               rows={4}
               maxLength={500}
             />
@@ -147,20 +149,20 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
               className="mt-1"
             />
             <Label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-              Strinjam se s{" "}
+              {t('contact.form.terms_agree')}{" "}
               <Link to="/splosni-pogoji" className="text-primary hover:underline" target="_blank">
-                splošnimi pogoji
+                {t('contact.form.terms_link')}
               </Link>{" "}
-              in{" "}
+              &{" "}
               <Link to="/politika-zasebnosti" className="text-primary hover:underline" target="_blank">
-                politiko zasebnosti
+                {t('contact.form.privacy_link')}
               </Link>
               . *
             </Label>
           </div>
 
           <Button type="submit" className="w-full" size="lg">
-            Pošlji povpraševanje
+            {t('travel.form.submit')}
           </Button>
         </form>
       </DialogContent>

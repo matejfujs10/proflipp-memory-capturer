@@ -102,7 +102,25 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.notes_placeholder': 'Dodatne informacije, posebne želje...',
     'contact.form.submit': 'Pošlji povpraševanje',
     'contact.form.terms': 'Z oddajo obrazca potrjujete, da ste prebrali splošne pogoje.',
+    'contact.form.terms_agree': 'Strinjam se s',
+    'contact.form.terms_link': 'splošnimi pogoji poslovanja',
+    'contact.form.privacy_link': 'politiko zasebnosti',
+    'contact.form.terms_required': 'Prosimo, potrdite splošne pogoje.',
     'contact.opening_email': 'Odpiramo e-poštni odjemalec...',
+    
+    // Travel form
+    'travel.title': 'Rezervacija potovalnega fotografiranja',
+    'travel.form.name': 'Ime in priimek',
+    'travel.form.name_placeholder': 'Vaše ime in priimek',
+    'travel.form.date': 'Datum potovanja',
+    'travel.form.time_from': 'Čas od',
+    'travel.form.time_to': 'Čas do',
+    'travel.form.wishes': 'Dodatne želje',
+    'travel.form.wishes_placeholder': 'Opišite vaše želje, lokacijo, posebne zahteve...',
+    'travel.form.submit': 'Pošlji povpraševanje',
+    'travel.form.success': 'Povpraševanje poslano!',
+    'travel.form.success_desc': 'Odpiramo vaš e-poštni odjemalec za pošiljanje povpraševanja.',
+    'travel.form.error': 'Napaka',
     
     // Footer
     'footer.services': 'Storitve',
@@ -273,7 +291,25 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.notes_placeholder': 'Additional information, special wishes...',
     'contact.form.submit': 'Send inquiry',
     'contact.form.terms': 'By submitting this form, you confirm that you have read the terms and conditions.',
+    'contact.form.terms_agree': 'I agree to the',
+    'contact.form.terms_link': 'general terms and conditions',
+    'contact.form.privacy_link': 'privacy policy',
+    'contact.form.terms_required': 'Please confirm the terms and conditions.',
     'contact.opening_email': 'Opening email client...',
+    
+    // Travel form
+    'travel.title': 'Travel photography reservation',
+    'travel.form.name': 'Full name',
+    'travel.form.name_placeholder': 'Your full name',
+    'travel.form.date': 'Travel date',
+    'travel.form.time_from': 'Time from',
+    'travel.form.time_to': 'Time to',
+    'travel.form.wishes': 'Additional wishes',
+    'travel.form.wishes_placeholder': 'Describe your wishes, location, special requirements...',
+    'travel.form.submit': 'Send inquiry',
+    'travel.form.success': 'Inquiry sent!',
+    'travel.form.success_desc': 'Opening your email client to send the inquiry.',
+    'travel.form.error': 'Error',
     
     // Footer
     'footer.services': 'Services',
@@ -444,7 +480,25 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.notes_placeholder': 'Zusätzliche Informationen, besondere Wünsche...',
     'contact.form.submit': 'Anfrage senden',
     'contact.form.terms': 'Mit dem Absenden dieses Formulars bestätigen Sie, dass Sie die AGB gelesen haben.',
+    'contact.form.terms_agree': 'Ich stimme den',
+    'contact.form.terms_link': 'Allgemeinen Geschäftsbedingungen',
+    'contact.form.privacy_link': 'Datenschutzrichtlinie',
+    'contact.form.terms_required': 'Bitte bestätigen Sie die AGB.',
     'contact.opening_email': 'E-Mail-Client wird geöffnet...',
+    
+    // Travel form
+    'travel.title': 'Reservierung Reisefotografie',
+    'travel.form.name': 'Vollständiger Name',
+    'travel.form.name_placeholder': 'Ihr vollständiger Name',
+    'travel.form.date': 'Reisedatum',
+    'travel.form.time_from': 'Zeit von',
+    'travel.form.time_to': 'Zeit bis',
+    'travel.form.wishes': 'Zusätzliche Wünsche',
+    'travel.form.wishes_placeholder': 'Beschreiben Sie Ihre Wünsche, Ort, besondere Anforderungen...',
+    'travel.form.submit': 'Anfrage senden',
+    'travel.form.success': 'Anfrage gesendet!',
+    'travel.form.success_desc': 'Ihr E-Mail-Client wird zum Senden der Anfrage geöffnet.',
+    'travel.form.error': 'Fehler',
     
     // Footer
     'footer.services': 'Leistungen',
@@ -615,7 +669,25 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.notes_placeholder': 'Dodatne informacije, posebne želje...',
     'contact.form.submit': 'Pošalji upit',
     'contact.form.terms': 'Slanjem ovog obrasca potvrđujete da ste pročitali opće uvjete.',
+    'contact.form.terms_agree': 'Slažem se s',
+    'contact.form.terms_link': 'općim uvjetima poslovanja',
+    'contact.form.privacy_link': 'politikom privatnosti',
+    'contact.form.terms_required': 'Molimo potvrdite opće uvjete.',
     'contact.opening_email': 'Otvaram email klijent...',
+    
+    // Travel form
+    'travel.title': 'Rezervacija putničke fotografije',
+    'travel.form.name': 'Ime i prezime',
+    'travel.form.name_placeholder': 'Vaše ime i prezime',
+    'travel.form.date': 'Datum putovanja',
+    'travel.form.time_from': 'Vrijeme od',
+    'travel.form.time_to': 'Vrijeme do',
+    'travel.form.wishes': 'Dodatne želje',
+    'travel.form.wishes_placeholder': 'Opišite vaše želje, lokaciju, posebne zahtjeve...',
+    'travel.form.submit': 'Pošalji upit',
+    'travel.form.success': 'Upit poslan!',
+    'travel.form.success_desc': 'Otvaramo vaš email klijent za slanje upita.',
+    'travel.form.error': 'Greška',
     
     // Footer
     'footer.services': 'Usluge',
@@ -700,11 +772,13 @@ const translations: Record<Language, Record<string, string>> = {
 // Detect country from geo-IP
 async function detectCountryFromGeoIP(): Promise<string | null> {
   try {
-    // Using ip-api.com (free, no API key required, 45 req/min limit)
-    const response = await fetch('https://ip-api.com/json/?fields=countryCode');
+    // Using ipapi.co (free, supports HTTPS, 1000 req/day)
+    const response = await fetch('https://ipapi.co/json/', {
+      signal: AbortSignal.timeout(3000),
+    });
     if (!response.ok) return null;
     const data = await response.json();
-    return data.countryCode || null;
+    return data.country_code || null;
   } catch {
     return null;
   }

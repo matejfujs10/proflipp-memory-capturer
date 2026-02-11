@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Phone, Mail, MapPin, Send, X } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -15,11 +16,16 @@ interface ContactFormModalProps {
 export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "",
+    name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formData.termsAccepted) {
+      toast.error(t('contact.form.terms_required'));
+      return;
+    }
     
     // Validate inputs
     const name = formData.name.trim().slice(0, 100);
@@ -46,7 +52,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
     
     toast.success(t('contact.opening_email'));
     onClose();
-    setFormData({ name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "" });
+    setFormData({ name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false });
   };
 
   if (!isOpen) return null;
@@ -101,12 +107,30 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
               <Textarea value={formData.notes} onChange={(e) => setFormData({ ...formData, notes: e.target.value })} placeholder={t('contact.form.notes_placeholder')} rows={4} maxLength={500} />
             </div>
 
+            <div className="flex items-start space-x-3 pt-2">
+              <Checkbox
+                id="terms-modal"
+                checked={formData.termsAccepted}
+                onCheckedChange={(checked) => setFormData({ ...formData, termsAccepted: checked as boolean })}
+                className="mt-1"
+              />
+              <label htmlFor="terms-modal" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                {t('contact.form.terms_agree')}{" "}
+                <Link to="/splosni-pogoji" className="text-primary hover:underline" target="_blank">
+                  {t('contact.form.terms_link')}
+                </Link>{" "}
+                &{" "}
+                <Link to="/politika-zasebnosti" className="text-primary hover:underline" target="_blank">
+                  {t('contact.form.privacy_link')}
+                </Link>
+                . *
+              </label>
+            </div>
+
             <Button type="submit" className="w-full" size="lg">
               <Send className="w-4 h-4" />
               {t('contact.form.submit')}
             </Button>
-
-            <p className="text-xs text-muted-foreground text-center">{t('contact.form.terms')}</p>
           </form>
         </div>
       </div>
@@ -116,10 +140,15 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
 
 function QuickContactForm() {
   const { t } = useLanguage();
-  const [quickForm, setQuickForm] = useState({ name: "", email: "", message: "" });
+  const [quickForm, setQuickForm] = useState({ name: "", email: "", message: "", termsAccepted: false });
   
   const handleQuickSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!quickForm.termsAccepted) {
+      toast.error(t('contact.form.terms_required'));
+      return;
+    }
     
     // Validate and sanitize inputs
     const name = quickForm.name.trim().slice(0, 100);
@@ -137,7 +166,7 @@ function QuickContactForm() {
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast.success(t('contact.opening_email'));
-    setQuickForm({ name: "", email: "", message: "" });
+    setQuickForm({ name: "", email: "", message: "", termsAccepted: false });
   };
 
   return (
@@ -165,6 +194,25 @@ function QuickContactForm() {
         value={quickForm.message}
         onChange={(e) => setQuickForm({ ...quickForm, message: e.target.value })}
       />
+      <div className="flex items-start space-x-3">
+        <Checkbox
+          id="terms-quick"
+          checked={quickForm.termsAccepted}
+          onCheckedChange={(checked) => setQuickForm({ ...quickForm, termsAccepted: checked as boolean })}
+          className="mt-1"
+        />
+        <label htmlFor="terms-quick" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+          {t('contact.form.terms_agree')}{" "}
+          <Link to="/splosni-pogoji" className="text-primary hover:underline" target="_blank">
+            {t('contact.form.terms_link')}
+          </Link>{" "}
+          &{" "}
+          <Link to="/politika-zasebnosti" className="text-primary hover:underline" target="_blank">
+            {t('contact.form.privacy_link')}
+          </Link>
+          . *
+        </label>
+      </div>
       <Button type="submit" className="w-full" size="lg">{t('contact.send_message')}</Button>
     </form>
   );
