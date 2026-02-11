@@ -42,6 +42,19 @@ const content = {
       { title: "7. Kontakt", text: "Für alle Fragen: info@proflipp.com" },
     ],
   },
+  hr: {
+    title: "Politika privatnosti",
+    intro: "Ova politika privatnosti odnosi se na web stranicu www.proflipp.com i opisuje kako voditelj obrade obrađuje osobne podatke korisnika u skladu s GDPR-om i važećim slovenskim zakonodavstvom.",
+    sections: [
+      { title: "1. Voditelj obrade osobnih podataka", text: "Proflipp\nE-pošta: info@proflipp.com" },
+      { title: "2. Vrste osobnih podataka", text: "Voditelj obrade može obrađivati: ime i prezime, adresu e-pošte, telefonski broj, adresu, IP adresu, podatke o korištenju web stranice." },
+      { title: "3. Svrhe obrade", text: "Osobni podaci obrađuju se za: izvršenje narudžbi, odgovaranje na upite, slanje newslettera, poboljšanje funkcionalnosti web stranice." },
+      { title: "4. Pohrana podataka", text: "Osobni podaci čuvaju se do ispunjenja svrhe ili do povlačenja suglasnosti." },
+      { title: "5. Sigurnost podataka", text: "Voditelj obrade koristi odgovarajuće tehničke i organizacijske mjere za zaštitu osobnih podataka." },
+      { title: "6. Prava pojedinaca", text: "Pojedinac ima pravo na pristup, ispravak, brisanje, ograničenje obrade i prenosivost podataka. Zahtjevi: info@proflipp.com" },
+      { title: "7. Kontakt", text: "Za sva pitanja: info@proflipp.com" },
+    ],
+  },
 };
 
 export default function PolitikaZasebnosti() {

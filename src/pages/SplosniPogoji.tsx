@@ -126,6 +126,47 @@ const content = {
       },
     ],
   },
+  hr: {
+    title: "Opći uvjeti poslovanja",
+    intro: {
+      provider: "Pružatelj usluga:",
+      providerValue: "PROFLIPP (izdavatelj: SF TEAM MARATONEC)",
+      email: "E-pošta / tel.:",
+      emailValue: "info@proflipp.com / +386 68 169 430",
+      website: "Web stranica:",
+      websiteValue: "www.proflipp.si / www.proflipp.com",
+      validity: "Vrijedi od:",
+      validityValue: "16. 12. 2025.",
+    },
+    sections: [
+      {
+        title: "1. Definicije",
+        items: [
+          "Pružatelj usluga je PROFLIPP (u nastavku: pružatelj).",
+          "Naručitelj je fizička ili pravna osoba koja naruči uslugu. Ako je naručitelj potrošač, primjenjuju se i obvezna pravila zaštite potrošača (ZVPot-1), koja ovi uvjeti ne mogu isključiti.",
+          "Usluga označava fotografsku i/ili video uslugu te povezane proizvode (npr. fotoknjiga).",
+          "Ugovor označava prihvaćanje ponude (pisano: e-pošta/SMS) i/ili plaćanje kapare/predujma, ako nije drugačije dogovoreno.",
+        ],
+      },
+      {
+        title: "2. Sklapanje ugovora i rezervacija termina",
+        items: [
+          "Na upit pružatelj naručitelju šalje ponudu (paket, opseg, cijena, rok, datum).",
+          "Termin je rezerviran kada naručitelj pisano potvrdi ponudu i uplati kaparu/predujam (ako je dogovoreno).",
+          "Ako se pojedine odredbe ponude/ugovora razlikuju od ovih uvjeta, vrijedi ono što je dogovoreno u ponudi/ugovoru.",
+        ],
+      },
+      {
+        title: "3. Cijene i uvjeti plaćanja",
+        items: [
+          "Cijene su određene u cjeniku ili u individualnoj ponudi.",
+          "Kapara/predujam se uračunava u konačnu cijenu.",
+          "Preostali iznos se podmiruje najkasnije 5 dana prije događaja, ako nije drugačije dogovoreno.",
+          "Ako plaćanje nije izvršeno u dogovorenom roku, pružatelj može (nakon prethodne opomene) odbiti uslugu; do tada nastali opravdani troškovi mogu se naplatiti sukladno Građanskom zakoniku.",
+        ],
+      },
+    ],
+  },
 };
 
 export default function SplosniPogoji() {

@@ -39,6 +39,18 @@ const content = {
       { title: "6) Kontakt", text: "E-Mail: info@proflipp.com\nGültig ab: 17. Dezember 2025" },
     ],
   },
+  hr: {
+    title: "Pravilnik o autorskim pravima i korištenju sadržaja",
+    intro: "Web stranica proflipp.com vlasništvo je Team MARATONEC. Sva prava pridržana.",
+    sections: [
+      { title: "1) Autorska prava", text: "Svi tekstovi, fotografije, videozapisi, grafike, logotipi i drugi materijali zaštićeni su autorskim pravom. Bez prethodne pisane suglasnosti nije dopušteno nikakvo umnožavanje ili druga uporaba sadržaja." },
+      { title: "2) Dopuštena uporaba", text: "Dopušteno je pregledavanje i korištenje web stranice za osobnu, nekomercijalnu uporabu te dijeljenje poveznica na pojedine stranice." },
+      { title: "3) Sadržaj trećih strana", text: "Web stranica može sadržavati materijale trećih strana koji su zaštićeni pravima njihovih vlasnika." },
+      { title: "4) Žigovi", text: "Sve oznake, logotipi i nazivi usluga mogu biti zaštićeni kao žigovi. Njihova uporaba bez suglasnosti nije dopuštena." },
+      { title: "5) Ograničenje odgovornosti", text: "Upravljač ne jamči za potpunost, točnost ili ažurnost sadržaja i ne odgovara za eventualnu štetu." },
+      { title: "6) Kontakt", text: "E-pošta: info@proflipp.com\nVrijedi od: 17. 12. 2025." },
+    ],
+  },
 };
 
 export default function AvtorskePravice() {

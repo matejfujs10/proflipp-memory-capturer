@@ -96,6 +96,37 @@ const content = {
       },
     ],
   },
+  hr: {
+    title: "Politika kolačića",
+    sections: [
+      {
+        title: "1. Što su kolačići?",
+        text: "Kolačići su male tekstualne datoteke koje web stranica pohranjuje na vaše računalo, tablet ili telefon prilikom posjeta. Kolačići omogućuju web stranici da \"zapamti\" vaš uređaj (npr. za funkciju košarice, prijavu, odabir jezika ili statistiku posjeta).",
+      },
+      {
+        title: "2. Koje vrste kolačića koristimo?",
+        text: "Na našoj web stranici koristimo sljedeće kategorije:",
+        categories: [
+          { name: "(A) Nužno potrebni kolačići", desc: "Ovi kolačići su potrebni za osnovno funkcioniranje web stranice. Za ove kolačiće u pravilu nije potrebna suglasnost." },
+          { name: "(B) Funkcionalni kolačići", desc: "Omogućuju poboljšano korisničko iskustvo (npr. pohranjen odabir jezika)." },
+          { name: "(C) Analitički kolačići", desc: "Pomažu nam razumjeti korištenje web stranice kako bismo mogli poboljšati funkcionalnost i sadržaj." },
+          { name: "(D) Marketinški kolačići", desc: "Koriste se za prikaz prilagođenih oglasa i mjerenje učinkovitosti oglašavanja." },
+        ],
+      },
+      {
+        title: "3. Kako pribavljamo suglasnost?",
+        text: "Kada prvi put posjetite našu web stranicu, prikazuje se obavijest gdje možete prihvatiti ili odbiti nebitne kolačiće.",
+      },
+      {
+        title: "4. Kontakt",
+        text: "Za pitanja o kolačićima kontaktirajte nas: PROFLIPP, info@proflipp.com",
+      },
+      {
+        title: "5. Promjene politike",
+        text: "Ovu politiku možemo povremeno ažurirati. Datum posljednje promjene: 17. 12. 2025.",
+      },
+    ],
+  },
 };
 
 export default function Piskotki() {
