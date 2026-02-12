@@ -117,9 +117,15 @@ export function HeroSection() {
 
       <div className="container-wide relative z-10">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-card/30 mb-6 animate-fade-up">
-            <Heart className="w-4 h-4 text-gold" fill="currentColor" />
-            <span className="text-sm font-medium text-card">{t('hero.tagline')}</span>
+          <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-card/30">
+              <Heart className="w-4 h-4 text-gold" fill="currentColor" />
+              <span className="text-sm font-medium text-card">{t('hero.tagline')}</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-card/30">
+              <Camera className="w-4 h-4 text-gold" />
+              <span className="text-sm font-medium text-card">{t('hero.badge_service')}</span>
+            </div>
           </div>
 
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-card mb-4 leading-tight animate-fade-up">
