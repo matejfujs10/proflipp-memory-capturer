@@ -29,6 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Ujamemo čustva.',
+    'hero.badge_service': 'Poročna & družinska fotografija',
     'hero.title': 'Več kot fotografije.',
     'hero.emotions': 'Vaša zgodba.',
     'hero.subtitle': 'Pristna in brezčasna fotografija porok, družin in dogodkov – sproščeni, naravno ujeti trenutki.',
@@ -218,6 +219,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'We capture emotions.',
+    'hero.badge_service': 'Wedding & family photography',
     'hero.title': 'More than photos.',
     'hero.emotions': 'Your story.',
     'hero.subtitle': 'Authentic and timeless photography of weddings, families and events – relaxed, naturally captured moments.',
@@ -407,6 +409,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Wir fangen Emotionen ein.',
+    'hero.badge_service': 'Hochzeits- & Familienfotografie',
     'hero.title': 'Mehr als Fotos.',
     'hero.emotions': 'Ihre Geschichte.',
     'hero.subtitle': 'Authentische und zeitlose Fotografie von Hochzeiten, Familien und Events – entspannte, natürlich eingefangene Momente.',
@@ -596,6 +599,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.tagline': 'Hvatamo emocije.',
+    'hero.badge_service': 'Vjenčana i obiteljska fotografija',
     'hero.title': 'Više od fotografija.',
     'hero.emotions': 'Vaša priča.',
     'hero.subtitle': 'Autentična i bezvremenska fotografija vjenčanja, obitelji i događaja – opušteni, prirodno uhvaćeni trenuci.',
