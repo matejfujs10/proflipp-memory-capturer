@@ -164,10 +164,10 @@ export function HeroSection() {
 
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-sky-dark shadow-lg">
-              <Link to="/kontakt">{t('hero.inquiry')}</Link>
+              <Link to="/contact">{t('hero.inquiry')}</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-card text-card bg-transparent hover:bg-card/10">
-              <Link to="/poroke">{t('hero.packages')}</Link>
+              <Link to="/wedding-photography-slovenia">{t('hero.packages')}</Link>
             </Button>
           </div>
         </div>

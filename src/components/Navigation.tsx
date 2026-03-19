@@ -183,7 +183,7 @@ export function Navigation() {
               </div>
               <div className="pt-4 px-4">
                 <Button asChild className="w-full">
-                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
                 </Button>
               </div>
             </div>

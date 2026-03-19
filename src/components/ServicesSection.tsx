@@ -25,7 +25,7 @@ export function ServicesSection() {
       title: t('services.families'),
       description: t('services.families_desc'),
       image: familyImage,
-      href: "/druzine",
+      href: "/family-photography",
     },
   ];
 

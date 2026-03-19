@@ -8,15 +8,17 @@ export function Footer() {
 
   const footerLinks = {
     storitve: [
-      { label: t('nav.weddings'), href: "/poroke" },
-      { label: t('nav.events'), href: "/dogodki" },
-      { label: t('nav.families'), href: "/druzine" },
-      { label: t('nav.newborns'), href: "/novorojencki" },
+      { label: t('nav.weddings'), href: "/wedding-photography-slovenia" },
+      { label: "Wedding Austria", href: "/wedding-photographer-austria" },
+      { label: t('nav.events'), href: "/event-photography" },
+      { label: t('nav.families'), href: "/family-photography" },
+      { label: t('nav.newborns'), href: "/newborn-photography" },
       { label: t('nav.travels'), href: "/potovanja" },
     ],
     informacije: [
-      { label: t('nav.about'), href: "/o-nas" },
-      { label: t('nav.contact'), href: "/kontakt" },
+      { label: t('nav.about'), href: "/about" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: t('nav.contact'), href: "/contact" },
     ],
     pravno: [
       { label: t('footer.terms'), href: "/splosni-pogoji" },
