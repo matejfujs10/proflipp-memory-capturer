@@ -20,6 +20,11 @@ export default function Mnenja() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Client Reviews | Proflipp Wedding Photography"
+        description="Read what our clients say about Proflipp wedding and event photography. 5.0 rating across 50+ reviews."
+        canonical="/reviews"
+      />
       <Navigation />
       
       <section className="pt-24 pb-8 bg-cream">

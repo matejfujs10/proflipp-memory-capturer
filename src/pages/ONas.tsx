@@ -65,6 +65,11 @@ export default function ONas() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="About Proflipp | Wedding Photographer"
+        description="Learn more about Proflipp, a premium wedding photographer in Slovenia and Austria."
+        canonical="/about"
+      />
       <Navigation />
       
       <section className="relative pt-20">

@@ -179,6 +179,11 @@ export default function Studio() {
   
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Studio Photography | Proflipp"
+        description="Professional studio photography for portraits, brands, bands and commercial projects."
+        canonical="/studio"
+      />
       <Navigation />
       
       {/* Hero Section */}

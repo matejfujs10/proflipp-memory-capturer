@@ -77,6 +77,11 @@ export function Druzine() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Family Photography | Proflipp"
+        description="Natural and emotional family photography in Slovenia and Austria."
+        canonical="/family-photography"
+      />
       <Navigation />
       
       {/* Hero Section */}

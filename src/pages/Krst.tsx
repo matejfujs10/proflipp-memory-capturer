@@ -95,6 +95,11 @@ export default function Krst() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Baptism Photography | Proflipp"
+        description="Capturing precious baptism ceremony moments with professional and discreet photography."
+        canonical="/baptism-photography"
+      />
       <Navigation />
       
       {/* Hero Section */}

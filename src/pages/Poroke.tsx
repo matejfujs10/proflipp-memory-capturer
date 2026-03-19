@@ -246,6 +246,11 @@ export default function Poroke() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Wedding Photography Slovenia | Proflipp"
+        description="Elegant and timeless wedding photography in Slovenia. Authentic love stories captured with emotion and style."
+        canonical="/wedding-photography-slovenia"
+      />
       <Navigation />
       
       <section className="relative pt-20">

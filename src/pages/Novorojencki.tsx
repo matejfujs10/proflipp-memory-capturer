@@ -58,6 +58,11 @@ export default function Novorojencki() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Newborn Photography | Proflipp"
+        description="Gentle and natural newborn baby photography capturing first precious moments."
+        canonical="/newborn-photography"
+      />
       <Navigation />
       
       {/* Hero Section */}

@@ -109,6 +109,11 @@ export default function Dogodki() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Event Photography | Proflipp"
+        description="Professional event photography for corporate and private events."
+        canonical="/event-photography"
+      />
       <Navigation />
       
       <section className="relative pt-20">
