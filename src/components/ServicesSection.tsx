@@ -19,7 +19,7 @@ export function ServicesSection() {
       title: t('services.events'),
       description: t('services.events_desc'),
       image: eventsImage,
-      href: "/dogodki",
+      href: "/event-photography",
     },
     {
       title: t('services.families'),
