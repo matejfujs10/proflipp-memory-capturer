@@ -350,7 +350,7 @@ export default function ONas() {
             whileTap={{ scale: 0.98 }}
           >
             <Link 
-              to="/mnenja"
+              to="/reviews"
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium text-sm md:text-base"
             >
               {t('about.reviews_cta')}

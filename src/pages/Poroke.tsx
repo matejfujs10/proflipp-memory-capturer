@@ -571,7 +571,7 @@ export default function Poroke() {
               <p className="text-lg text-muted-foreground mb-6">
                 Preberite, kaj o nas pravijo pari, ki so nam zaupali svoj najpomembnejši dan.
               </p>
-              <Link to="/mnenja">
+              <Link to="/reviews">
                 <Button size="lg" className="text-lg px-8 py-6">
                   Oglejte si mnenja
                 </Button>

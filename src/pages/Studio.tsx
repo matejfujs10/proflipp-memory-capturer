@@ -502,7 +502,7 @@ export default function Studio() {
               Ste pripravljeni na profesionalno studijsko fotografiranje? Kontaktirajte nas in rezervirajte svoj termin.
             </p>
             <Button size="lg" asChild>
-              <Link to="/kontakt">Kontaktirajte nas</Link>
+              <Link to="/contact">Kontaktirajte nas</Link>
             </Button>
           </motion.div>
         </div>
