@@ -13,7 +13,7 @@ export function ServicesSection() {
       title: t('services.weddings'),
       description: t('services.weddings_desc'),
       image: weddingImage,
-      href: "/poroke",
+      href: "/wedding-photography-slovenia",
     },
     {
       title: t('services.events'),
