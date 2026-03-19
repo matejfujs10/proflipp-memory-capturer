@@ -139,7 +139,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <h1 className="sr-only">Poročni fotograf Slovenija, Avstrija & Evropa</h1>
+          <h1 className="sr-only">Wedding Photographer in Slovenia & Austria</h1>
           <p className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-card mb-4 leading-tight animate-fade-up" role="presentation">
             {t('hero.title')}{" "}
             <span className="italic text-gold">{t('hero.emotions')}</span>
