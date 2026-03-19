@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 import { Star, Facebook, ExternalLink } from "lucide-react";
 import { facebookReviews, omisliReviews } from "@/components/TestimonialsSection";
 
