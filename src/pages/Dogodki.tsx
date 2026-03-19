@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { EventGalleryCard } from "@/components/EventGalleryCard";
@@ -107,6 +108,11 @@ export default function Dogodki() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Event Photography | Proflipp"
+        description="Professional event photography for corporate and private events."
+        canonical="/event-photography"
+      />
       <Navigation />
       
       <section className="relative pt-20">

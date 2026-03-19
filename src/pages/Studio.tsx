@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, Camera, Clock, Image, Gift, Scissors, Sparkles, Package } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
@@ -178,6 +179,11 @@ export default function Studio() {
   
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Studio Photography | Proflipp"
+        description="Professional studio photography for portraits, brands, bands and commercial projects."
+        canonical="/studio"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -496,7 +502,7 @@ export default function Studio() {
               Ste pripravljeni na profesionalno studijsko fotografiranje? Kontaktirajte nas in rezervirajte svoj termin.
             </p>
             <Button size="lg" asChild>
-              <Link to="/kontakt">Kontaktirajte nas</Link>
+              <Link to="/contact">Kontaktirajte nas</Link>
             </Button>
           </motion.div>
         </div>

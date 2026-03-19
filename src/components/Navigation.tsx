@@ -11,15 +11,15 @@ export function Navigation() {
   const location = useLocation();
 
   const navItems = [
-    { label: t('nav.about'), href: "/o-nas" },
-    { label: t('nav.weddings'), href: "/poroke" },
-    { label: t('nav.baptism') || "Krst", href: "/krst" },
-    { label: t('nav.events'), href: "/dogodki" },
-    { label: t('nav.families'), href: "/druzine" },
-    { label: t('nav.newborns'), href: "/novorojencki" },
+    { label: t('nav.about'), href: "/about" },
+    { label: t('nav.weddings'), href: "/wedding-photography-slovenia" },
+    { label: t('nav.baptism') || "Krst", href: "/baptism-photography" },
+    { label: t('nav.events'), href: "/event-photography" },
+    { label: t('nav.families'), href: "/family-photography" },
+    { label: t('nav.newborns'), href: "/newborn-photography" },
     { label: "Studio", href: "/studio" },
     { label: t('nav.travels'), href: "/potovanja" },
-    { label: t('nav.reviews'), href: "/mnenja" },
+    { label: t('nav.reviews'), href: "/reviews" },
   ];
 
   return (
@@ -115,7 +115,7 @@ export function Navigation() {
             </a>
 
             <Button asChild>
-              <Link to="/kontakt">{t('nav.contact')}</Link>
+              <Link to="/contact">{t('nav.contact')}</Link>
             </Button>
           </div>
 
@@ -183,7 +183,7 @@ export function Navigation() {
               </div>
               <div className="pt-4 px-4">
                 <Button asChild className="w-full">
-                  <Link to="/kontakt" onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
                 </Button>
               </div>
             </div>

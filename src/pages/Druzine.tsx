@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
@@ -75,6 +76,11 @@ export function Druzine() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Family Photography | Proflipp"
+        description="Natural and emotional family photography in Slovenia and Austria."
+        canonical="/family-photography"
+      />
       <Navigation />
       
       {/* Hero Section */}

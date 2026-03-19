@@ -50,7 +50,7 @@ export function WeddingContentSection() {
 
           <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-sky-dark">
-              <Link to="/kontakt">{t('hero.inquiry')}</Link>
+              <Link to="/contact">{t('hero.inquiry')}</Link>
             </Button>
           </div>
         </div>

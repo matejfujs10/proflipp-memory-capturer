@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Heart, Camera, Users, Phone, Video, Gift, FileText, Star } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { useLanguage } from "@/contexts/LanguageContext";
 import weddingVeil from "@/assets/wedding-veil.jpg";
 import weddingBridge from "@/assets/wedding-bridge.jpg";
@@ -64,6 +65,11 @@ export default function ONas() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="About Proflipp | Wedding Photographer"
+        description="Learn more about Proflipp, a premium wedding photographer in Slovenia and Austria."
+        canonical="/about"
+      />
       <Navigation />
       
       <section className="relative pt-20">
@@ -344,7 +350,7 @@ export default function ONas() {
             whileTap={{ scale: 0.98 }}
           >
             <Link 
-              to="/mnenja"
+              to="/reviews"
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium text-sm md:text-base"
             >
               {t('about.reviews_cta')}

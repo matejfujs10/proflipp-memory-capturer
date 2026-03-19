@@ -8,10 +8,16 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Proflipp | Wedding Photographer Slovenia & Austria"
+        description="Proflipp offers timeless wedding photography in Slovenia and Austria, capturing authentic moments with elegance, emotion and style."
+        canonical="/"
+      />
       <Navigation />
       <main>
         <HeroSection />

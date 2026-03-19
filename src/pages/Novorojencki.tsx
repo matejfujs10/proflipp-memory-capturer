@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
@@ -56,6 +57,11 @@ export default function Novorojencki() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Newborn Photography | Proflipp"
+        description="Gentle and natural newborn baby photography capturing first precious moments."
+        canonical="/newborn-photography"
+      />
       <Navigation />
       
       {/* Hero Section */}

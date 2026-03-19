@@ -137,7 +137,7 @@ export function TestimonialsSection() {
         {/* CTA to see all reviews */}
         <div className="text-center mt-8 md:mt-10">
           <Link
-            to="/mnenja"
+            to="/reviews"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors text-sm md:text-base"
           >
             <span>{t('testimonials.all')}</span>

@@ -90,6 +90,13 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Only render current, previous and next images for performance
+  const visibleIndices = new Set([
+    currentIndex,
+    (currentIndex - 1 + heroImages.length) % heroImages.length,
+    (currentIndex + 1) % heroImages.length,
+  ]);
+
   const features = [
     { icon: Heart, text: t('hero.emotions_text') },
     { icon: Camera, text: t('hero.media') },
@@ -99,18 +106,22 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
-            className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        {heroImages.map((image, index) => {
+          if (!visibleIndices.has(index)) return null;
+          return (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              {...(index === 0 ? { fetchpriority: "high" } : {})}
+              className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
+                index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          );
+        })}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent" />
       </div>
@@ -128,7 +139,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <h1 className="sr-only">Poročni fotograf Slovenija, Avstrija & Evropa</h1>
+          <h1 className="sr-only">Wedding Photographer in Slovenia & Austria</h1>
           <p className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-card mb-4 leading-tight animate-fade-up" role="presentation">
             {t('hero.title')}{" "}
             <span className="italic text-gold">{t('hero.emotions')}</span>
@@ -153,10 +164,10 @@ export function HeroSection() {
 
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-sky-dark shadow-lg">
-              <Link to="/kontakt">{t('hero.inquiry')}</Link>
+              <Link to="/contact">{t('hero.inquiry')}</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-card text-card bg-transparent hover:bg-card/10">
-              <Link to="/poroke">{t('hero.packages')}</Link>
+              <Link to="/wedding-photography-slovenia">{t('hero.packages')}</Link>
             </Button>
           </div>
         </div>

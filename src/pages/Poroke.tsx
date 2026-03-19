@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
@@ -244,6 +245,11 @@ export default function Poroke() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Wedding Photography Slovenia | Proflipp"
+        description="Elegant and timeless wedding photography in Slovenia. Authentic love stories captured with emotion and style."
+        canonical="/wedding-photography-slovenia"
+      />
       <Navigation />
       
       <section className="relative pt-20">
@@ -565,7 +571,7 @@ export default function Poroke() {
               <p className="text-lg text-muted-foreground mb-6">
                 Preberite, kaj o nas pravijo pari, ki so nam zaupali svoj najpomembnejši dan.
               </p>
-              <Link to="/mnenja">
+              <Link to="/reviews">
                 <Button size="lg" className="text-lg px-8 py-6">
                   Oglejte si mnenja
                 </Button>
