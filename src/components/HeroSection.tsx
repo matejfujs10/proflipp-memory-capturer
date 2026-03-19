@@ -90,6 +90,13 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Only render current, previous and next images for performance
+  const visibleIndices = new Set([
+    currentIndex,
+    (currentIndex - 1 + heroImages.length) % heroImages.length,
+    (currentIndex + 1) % heroImages.length,
+  ]);
+
   const features = [
     { icon: Heart, text: t('hero.emotions_text') },
     { icon: Camera, text: t('hero.media') },
@@ -99,18 +106,22 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
-            className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        {heroImages.map((image, index) => {
+          if (!visibleIndices.has(index)) return null;
+          return (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={index === 0 ? "high" : undefined}
+              className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
+                index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          );
+        })}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent" />
       </div>
