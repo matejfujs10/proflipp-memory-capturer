@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Heart, Camera, Users, Phone, Video, Gift, FileText, Star } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { useLanguage } from "@/contexts/LanguageContext";
 import weddingVeil from "@/assets/wedding-veil.jpg";
 import weddingBridge from "@/assets/wedding-bridge.jpg";
