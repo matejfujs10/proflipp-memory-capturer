@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, Camera, Clock, Image, Gift, Scissors, Sparkles, Package } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
