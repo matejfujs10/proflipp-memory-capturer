@@ -115,7 +115,7 @@ export function Navigation() {
             </a>
 
             <Button asChild>
-              <Link to="/kontakt">{t('nav.contact')}</Link>
+              <Link to="/contact">{t('nav.contact')}</Link>
             </Button>
           </div>
 
