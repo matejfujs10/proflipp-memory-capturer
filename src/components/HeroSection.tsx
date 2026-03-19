@@ -115,7 +115,7 @@ export function HeroSection() {
               alt={image.alt}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              fetchPriority={index === 0 ? "high" : undefined}
+              {...(index === 0 ? { fetchpriority: "high" } : {})}
               className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
