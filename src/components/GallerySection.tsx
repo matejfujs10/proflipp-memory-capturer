@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useSectionTracking } from "@/hooks/use-section-tracking";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide7 from "@/assets/hero-slide-7.jpg";
