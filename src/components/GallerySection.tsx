@@ -53,7 +53,7 @@ export function GallerySection() {
   };
 
   return (
-    <section className="section-padding bg-cream">
+    <section ref={galleryRef} className="section-padding bg-cream">
       <div className="container-wide">
         <div className="text-center mb-10 md:mb-16">
           <span className="text-primary font-medium text-sm tracking-wider uppercase">{t('gallery.title')}</span>

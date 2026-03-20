@@ -56,6 +56,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
       `Splošni pogoji: Potrjeni`
     );
     
+    trackEvent('contact_submit', { form: 'travel' }, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast({

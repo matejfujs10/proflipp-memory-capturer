@@ -268,7 +268,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft w-full sm:w-auto" onClick={() => setIsModalOpen(true)}>
+              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft w-full sm:w-auto" onClick={() => { trackCTA('contact_inquiry'); setIsModalOpen(true); }}>
                 <Send className="w-5 h-5" />
                 {t('contact.send_inquiry')}
               </Button>

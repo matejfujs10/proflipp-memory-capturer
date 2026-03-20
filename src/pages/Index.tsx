@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { WeddingContentSection } from "@/components/WeddingContentSection";
@@ -9,8 +10,12 @@ import { PartnersSection } from "@/components/PartnersSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { trackEvent } from "@/lib/analytics";
 
 const Index = () => {
+  useEffect(() => {
+    trackEvent('landing_view');
+  }, []);
   return (
     <div className="min-h-screen">
       <SEOHead
