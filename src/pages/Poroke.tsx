@@ -326,7 +326,7 @@ export default function Poroke() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
+            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }} />)}
           </div>
         </div>
       </section>
