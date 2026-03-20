@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackCTA } from "@/lib/analytics";
 
 interface GiftVoucherSectionProps {
   onReserve: () => void;
