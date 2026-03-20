@@ -235,6 +235,7 @@ const heroSlideImages = [weddingCollage1, weddingCollage2];
 export default function Poroke() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const pricingRef = useSectionTracking('pricing_view');
   const { t } = useLanguage();
 
   // Hero slideshow effect
