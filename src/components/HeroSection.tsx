@@ -2,90 +2,85 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Camera, Smile } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { trackCTA } from "@/lib/analytics";
 
+// Only statically import the first image for instant FCP
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
-import heroSlide2 from "@/assets/hero-slide-2.jpg";
-import heroSlide3 from "@/assets/hero-slide-3.jpg";
-import heroSlide4 from "@/assets/hero-slide-4.jpg";
-import heroSlide5 from "@/assets/hero-slide-5.jpg";
-import heroSlide6 from "@/assets/hero-slide-6.jpg";
-import heroSlide7 from "@/assets/hero-slide-7.jpg";
-import heroSlide8 from "@/assets/hero-slide-8.jpg";
-import heroSlide9 from "@/assets/hero-slide-9.jpg";
-import heroSlide10 from "@/assets/hero-slide-10.jpg";
-import heroSlide11 from "@/assets/hero-slide-11.jpg";
-import heroSlide12 from "@/assets/hero-slide-12.jpg";
-import heroSlide13 from "@/assets/hero-slide-13.jpg";
-import heroSlide14 from "@/assets/hero-slide-14.jpg";
-import heroSlide15 from "@/assets/hero-slide-15.jpg";
-import heroSlide16 from "@/assets/hero-slide-16.jpg";
-import heroSlide17 from "@/assets/hero-slide-17.jpg";
-import heroSlide18 from "@/assets/hero-slide-18.jpg";
-import heroSlide19 from "@/assets/hero-slide-19.jpg";
-import heroSlide20 from "@/assets/hero-slide-20.jpg";
-import heroSlide21 from "@/assets/hero-slide-21.jpg";
-import heroSlide22 from "@/assets/hero-slide-22.jpg";
-import heroSlide23 from "@/assets/hero-slide-23.jpg";
-import heroSlide24 from "@/assets/hero-slide-24.jpg";
-import heroSlide25 from "@/assets/hero-slide-25.jpg";
-import heroSlide26 from "@/assets/hero-slide-26.jpg";
-import heroSlide27 from "@/assets/hero-slide-27.jpg";
-import heroSlide28 from "@/assets/hero-slide-28.jpg";
-import heroSlide29 from "@/assets/hero-slide-29.jpg";
-import heroSlide30 from "@/assets/hero-slide-30.jpg";
-import heroSlide31 from "@/assets/hero-slide-31.jpg";
-import heroSlide32 from "@/assets/hero-slide-32.jpg";
-import heroSlide33 from "@/assets/hero-slide-33.jpg";
-import heroSlide34 from "@/assets/hero-slide-34.jpg";
-import heroSlide35 from "@/assets/hero-slide-35.jpg";
 
-const heroImages = [
-  { src: heroSlide1, alt: "Poročna fotografija v Ljubljani – Proflipp" },
-  { src: heroSlide2, alt: "Poročna fotografija na Bledu – Proflipp" },
-  { src: heroSlide3, alt: "Poročna fotografija v Mariboru – Proflipp" },
-  { src: heroSlide4, alt: "Poročna fotografija v Kranju – Proflipp" },
-  { src: heroSlide5, alt: "Poročna fotografija v Celju – Proflipp" },
-  { src: heroSlide6, alt: "Poročna fotografija v Kopru – Proflipp" },
-  { src: heroSlide7, alt: "Poročna fotografija v Piranu – Proflipp" },
-  { src: heroSlide8, alt: "Poročna fotografija v Portorožu – Proflipp" },
-  { src: heroSlide9, alt: "Poročna fotografija v Novi Gorici – Proflipp" },
-  { src: heroSlide10, alt: "Poročna fotografija v Postojni – Proflipp" },
-  { src: heroSlide11, alt: "Poročna fotografija na Ptuju – Proflipp" },
-  { src: heroSlide12, alt: "Poročna fotografija v Murski Soboti – Proflipp" },
-  { src: heroSlide13, alt: "Poročna fotografija v Velenju – Proflipp" },
-  { src: heroSlide14, alt: "Poročna fotografija v Kamniku – Proflipp" },
-  { src: heroSlide15, alt: "Poročna fotografija v Škofji Loki – Proflipp" },
-  { src: heroSlide16, alt: "Poročna fotografija v Radovljici – Proflipp" },
-  { src: heroSlide17, alt: "Poročna fotografija na Bohinju – Proflipp" },
-  { src: heroSlide18, alt: "Poročna fotografija v Izoli – Proflipp" },
-  { src: heroSlide19, alt: "Poročna fotografija v Ankaranu – Proflipp" },
-  { src: heroSlide20, alt: "Poročna fotografija v Logarski dolini – Proflipp" },
-  { src: heroSlide21, alt: "Poročna fotografija v Gradcu – Proflipp" },
-  { src: heroSlide22, alt: "Poročna fotografija na Dunaju – Proflipp" },
-  { src: heroSlide23, alt: "Poročna fotografija v Salzburgu – Proflipp" },
-  { src: heroSlide24, alt: "Poročna fotografija v Celovcu – Proflipp" },
-  { src: heroSlide25, alt: "Poročna fotografija v Beljaku – Proflipp" },
-  { src: heroSlide26, alt: "Poročna fotografija v Linzu – Proflipp" },
-  { src: heroSlide27, alt: "Poročna fotografija v Innsbrucku – Proflipp" },
-  { src: heroSlide28, alt: "Poročna fotografija v Hallstattu – Proflipp" },
-  { src: heroSlide29, alt: "Poročna fotografija v Zagrebu – Proflipp" },
-  { src: heroSlide30, alt: "Poročna fotografija v Opatiji – Proflipp" },
-  { src: heroSlide31, alt: "Poročna fotografija v Rovinju – Proflipp" },
-  { src: heroSlide32, alt: "Poročna fotografija v Sarajevu – Proflipp" },
-  { src: heroSlide33, alt: "Poročna fotografija v Mostarju – Proflipp" },
-  { src: heroSlide34, alt: "Poročna fotografija v Banja Luki – Proflipp" },
-  { src: heroSlide35, alt: "Poročna fotografija v Beogradu – Proflipp" },
+const heroAlts = [
+  "Poročna fotografija v Ljubljani – Proflipp",
+  "Poročna fotografija na Bledu – Proflipp",
+  "Poročna fotografija v Mariboru – Proflipp",
+  "Poročna fotografija v Kranju – Proflipp",
+  "Poročna fotografija v Celju – Proflipp",
+  "Poročna fotografija v Kopru – Proflipp",
+  "Poročna fotografija v Piranu – Proflipp",
+  "Poročna fotografija v Portorožu – Proflipp",
+  "Poročna fotografija v Novi Gorici – Proflipp",
+  "Poročna fotografija v Postojni – Proflipp",
+  "Poročna fotografija na Ptuju – Proflipp",
+  "Poročna fotografija v Murski Soboti – Proflipp",
+  "Poročna fotografija v Velenju – Proflipp",
+  "Poročna fotografija v Kamniku – Proflipp",
+  "Poročna fotografija v Škofji Loki – Proflipp",
+  "Poročna fotografija v Radovljici – Proflipp",
+  "Poročna fotografija na Bohinju – Proflipp",
+  "Poročna fotografija v Izoli – Proflipp",
+  "Poročna fotografija v Ankaranu – Proflipp",
+  "Poročna fotografija v Logarski dolini – Proflipp",
+  "Poročna fotografija v Gradcu – Proflipp",
+  "Poročna fotografija na Dunaju – Proflipp",
+  "Poročna fotografija v Salzburgu – Proflipp",
+  "Poročna fotografija v Celovcu – Proflipp",
+  "Poročna fotografija v Beljaku – Proflipp",
+  "Poročna fotografija v Linzu – Proflipp",
+  "Poročna fotografija v Innsbrucku – Proflipp",
+  "Poročna fotografija v Hallstattu – Proflipp",
+  "Poročna fotografija v Zagrebu – Proflipp",
+  "Poročna fotografija v Opatiji – Proflipp",
+  "Poročna fotografija v Rovinju – Proflipp",
+  "Poročna fotografija v Sarajevu – Proflipp",
+  "Poročna fotografija v Mostarju – Proflipp",
+  "Poročna fotografija v Banja Luki – Proflipp",
+  "Poročna fotografija v Beogradu – Proflipp",
 ];
+
+const TOTAL_SLIDES = 35;
+
+// Dynamic import map for hero images (lazy loaded on demand)
+const imageImports = import.meta.glob<{ default: string }>("/src/assets/hero-slide-*.jpg", { eager: false });
+
+function getImagePath(index: number): string {
+  return `/src/assets/hero-slide-${index + 1}.jpg`;
+}
 
 export function HeroSection() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Record<number, string>>({ 0: heroSlide1 });
+
+  const preloadImage = useCallback(async (index: number) => {
+    if (loadedImages[index]) return;
+    const path = getImagePath(index);
+    const loader = imageImports[path];
+    if (loader) {
+      const mod = await loader();
+      setLoadedImages(prev => ({ ...prev, [index]: mod.default }));
+    }
+  }, [loadedImages]);
+
+  // Preload next few images ahead of time
+  useEffect(() => {
+    const next = (currentIndex + 1) % TOTAL_SLIDES;
+    const next2 = (currentIndex + 2) % TOTAL_SLIDES;
+    preloadImage(next);
+    preloadImage(next2);
+  }, [currentIndex, preloadImage]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % TOTAL_SLIDES);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -94,8 +89,8 @@ export function HeroSection() {
   // Only render current, previous and next images for performance
   const visibleIndices = new Set([
     currentIndex,
-    (currentIndex - 1 + heroImages.length) % heroImages.length,
-    (currentIndex + 1) % heroImages.length,
+    (currentIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES,
+    (currentIndex + 1) % TOTAL_SLIDES,
   ]);
 
   const features = [
@@ -107,16 +102,18 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => {
+        {Array.from({ length: TOTAL_SLIDES }, (_, index) => {
           if (!visibleIndices.has(index)) return null;
+          const src = loadedImages[index];
+          if (!src) return null;
           return (
             <img
               key={index}
-              src={image.src}
-              alt={image.alt}
+              src={src}
+              alt={heroAlts[index]}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              {...(index === 0 ? { fetchpriority: "high" } : {})}
+              {...(index === 0 ? { fetchpriority: "high" as const } : {})}
               className={`absolute w-full h-full object-cover object-top transition-opacity duration-1000 ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
@@ -176,10 +173,13 @@ export function HeroSection() {
 
       {/* Slide indicators */}
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {heroImages.map((_, index) => (
+        {Array.from({ length: TOTAL_SLIDES }, (_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => {
+              preloadImage(index);
+              setCurrentIndex(index);
+            }}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentIndex ? "bg-gold w-6" : "bg-card/50 hover:bg-card/70"
             }`}
