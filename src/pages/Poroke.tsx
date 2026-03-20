@@ -279,7 +279,7 @@ export default function Poroke() {
         </div>
       </section>
 
-      <section className="py-10 bg-background">
+      <section ref={pricingRef} className="py-10 bg-background">
         <div className="container-wide">
           <div className="text-center mb-8">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.choose_package')}</h2>
