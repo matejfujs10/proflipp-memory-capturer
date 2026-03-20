@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Camera, Smile } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
+import { trackCTA } from "@/lib/analytics";
 
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
