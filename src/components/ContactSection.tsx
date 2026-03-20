@@ -49,6 +49,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
       `Ostale želje:\n${notes}`
     );
     
+    trackEvent('contact_submit', undefined, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast.success(t('contact.opening_email'));
