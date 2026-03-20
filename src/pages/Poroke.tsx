@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -10,6 +10,8 @@ import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide-react";
+import { trackEvent, trackCTA } from "@/lib/analytics";
+import { useSectionTracking } from "@/hooks/use-section-tracking";
 // Hero slideshow images
 import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
 import weddingCollage2 from "@/assets/wedding-collage-2.png";
