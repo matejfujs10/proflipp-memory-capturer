@@ -7,6 +7,7 @@ import { Phone, Mail, MapPin, Send, X } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { trackEvent, trackCTA } from "@/lib/analytics";
 
 interface ContactFormModalProps {
   isOpen: boolean;
