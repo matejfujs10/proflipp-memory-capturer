@@ -35,6 +35,7 @@ const images = [
 export function GallerySection() {
   const { t } = useLanguage();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const galleryRef = useSectionTracking('gallery_view');
 
   const openLightbox = (index: number) => setSelectedIndex(index);
   const closeLightbox = () => setSelectedIndex(null);
