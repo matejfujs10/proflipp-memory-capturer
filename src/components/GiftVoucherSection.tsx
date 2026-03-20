@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackCTA } from "@/lib/analytics";
 
 interface GiftVoucherSectionProps {
   onReserve: () => void;
@@ -80,7 +81,7 @@ export function GiftVoucherSection({ onReserve, title = "Rezervirajte termin" }:
         <p className="text-muted-foreground max-w-xl mx-auto mb-6">
           Ste pripravljeni? Kontaktirajte nas in rezervirajte svoj termin.
         </p>
-        <Button size="lg" onClick={onReserve}>
+        <Button size="lg" onClick={() => { trackCTA('reserve_term'); onReserve(); }}>
           Rezervirajte termin
         </Button>
       </div>

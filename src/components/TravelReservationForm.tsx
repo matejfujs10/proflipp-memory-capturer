@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TravelReservationFormProps {
@@ -55,6 +56,7 @@ export function TravelReservationForm({ isOpen, onClose }: TravelReservationForm
       `Splošni pogoji: Potrjeni`
     );
     
+    trackEvent('contact_submit', { form: 'travel' }, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast({

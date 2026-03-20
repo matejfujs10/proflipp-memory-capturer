@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -10,6 +10,8 @@ import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide-react";
+import { trackEvent, trackCTA } from "@/lib/analytics";
+import { useSectionTracking } from "@/hooks/use-section-tracking";
 // Hero slideshow images
 import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
 import weddingCollage2 from "@/assets/wedding-collage-2.png";
@@ -233,6 +235,7 @@ const heroSlideImages = [weddingCollage1, weddingCollage2];
 export default function Poroke() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const pricingRef = useSectionTracking('pricing_view');
   const { t } = useLanguage();
 
   // Hero slideshow effect
@@ -276,7 +279,7 @@ export default function Poroke() {
         </div>
       </section>
 
-      <section className="py-10 bg-background">
+      <section ref={pricingRef} className="py-10 bg-background">
         <div className="container-wide">
           <div className="text-center mb-8">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.choose_package')}</h2>
@@ -289,7 +292,7 @@ export default function Poroke() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
+            {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('package_select'); setIsModalOpen(true); }} />)}
           </div>
         </div>
       </section>
@@ -324,7 +327,7 @@ export default function Poroke() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => setIsModalOpen(true)} />)}
+            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }} />)}
           </div>
         </div>
       </section>

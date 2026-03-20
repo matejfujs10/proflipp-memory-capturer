@@ -7,6 +7,7 @@ import { Phone, Mail, MapPin, Send, X } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { trackEvent, trackCTA } from "@/lib/analytics";
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -48,6 +49,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
       `Ostale želje:\n${notes}`
     );
     
+    trackEvent('contact_submit', undefined, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast.success(t('contact.opening_email'));
@@ -163,6 +165,7 @@ function QuickContactForm() {
       `Sporočilo:\n${message}`
     );
     
+    trackEvent('contact_submit', { form: 'quick' }, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast.success(t('contact.opening_email'));
@@ -265,7 +268,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft w-full sm:w-auto" onClick={() => setIsModalOpen(true)}>
+              <Button size="lg" className="bg-gold text-accent-foreground hover:bg-gold-light shadow-soft w-full sm:w-auto" onClick={() => { trackCTA('contact_inquiry'); setIsModalOpen(true); }}>
                 <Send className="w-5 h-5" />
                 {t('contact.send_inquiry')}
               </Button>

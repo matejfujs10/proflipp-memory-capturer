@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Camera, Smile } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
+import { trackCTA } from "@/lib/analytics";
 
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
@@ -163,10 +164,10 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-sky-dark shadow-lg">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-sky-dark shadow-lg" onClick={() => trackCTA('hero_inquiry')}>
               <Link to="/contact">{t('hero.inquiry')}</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-card text-card bg-transparent hover:bg-card/10">
+            <Button asChild size="lg" variant="outline" className="border-2 border-card text-card bg-transparent hover:bg-card/10" onClick={() => trackCTA('hero_packages')}>
               <Link to="/wedding-photography-slovenia">{t('hero.packages')}</Link>
             </Button>
           </div>

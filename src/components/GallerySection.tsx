@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useSectionTracking } from "@/hooks/use-section-tracking";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide7 from "@/assets/hero-slide-7.jpg";
@@ -34,6 +35,7 @@ const images = [
 export function GallerySection() {
   const { t } = useLanguage();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const galleryRef = useSectionTracking('gallery_view');
 
   const openLightbox = (index: number) => setSelectedIndex(index);
   const closeLightbox = () => setSelectedIndex(null);
@@ -51,7 +53,7 @@ export function GallerySection() {
   };
 
   return (
-    <section className="section-padding bg-cream">
+    <section ref={galleryRef} className="section-padding bg-cream">
       <div className="container-wide">
         <div className="text-center mb-10 md:mb-16">
           <span className="text-primary font-medium text-sm tracking-wider uppercase">{t('gallery.title')}</span>
