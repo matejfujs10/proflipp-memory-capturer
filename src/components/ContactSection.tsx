@@ -165,6 +165,7 @@ function QuickContactForm() {
       `Sporočilo:\n${message}`
     );
     
+    trackEvent('contact_submit', { form: 'quick' }, { once: false });
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     
     toast.success(t('contact.opening_email'));
