@@ -52,7 +52,7 @@ const TOTAL_SLIDES = 35;
 const imageImports = import.meta.glob<{ default: string }>("/src/assets/hero-slide-*.webp", { eager: false });
 
 function getImagePath(index: number): string {
-  return `/src/assets/hero-slide-${index + 1}.jpg`;
+  return `/src/assets/hero-slide-${index + 1}.webp`;
 }
 
 export function HeroSection() {
