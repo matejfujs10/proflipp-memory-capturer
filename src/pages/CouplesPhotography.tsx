@@ -3,10 +3,10 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroSlide3 from "@/assets/hero-slide-3.jpg";
-import heroSlide7 from "@/assets/hero-slide-7.jpg";
-import heroSlide15 from "@/assets/hero-slide-15.jpg";
-import heroSlide18 from "@/assets/hero-slide-18.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.webp";
+import heroSlide7 from "@/assets/hero-slide-7.webp";
+import heroSlide15 from "@/assets/hero-slide-15.webp";
+import heroSlide18 from "@/assets/hero-slide-18.webp";
 
 export default function CouplesPhotography() {
   return (

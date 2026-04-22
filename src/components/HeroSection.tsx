@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 import { trackCTA } from "@/lib/analytics";
 
 // Only statically import the first image for instant FCP
-import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.webp";
 
 const heroAlts = [
   "Poročna fotografija v Ljubljani – Proflipp",
@@ -49,10 +49,10 @@ const heroAlts = [
 const TOTAL_SLIDES = 35;
 
 // Dynamic import map for hero images (lazy loaded on demand)
-const imageImports = import.meta.glob<{ default: string }>("/src/assets/hero-slide-*.jpg", { eager: false });
+const imageImports = import.meta.glob<{ default: string }>("/src/assets/hero-slide-*.webp", { eager: false });
 
 function getImagePath(index: number): string {
-  return `/src/assets/hero-slide-${index + 1}.jpg`;
+  return `/src/assets/hero-slide-${index + 1}.webp`;
 }
 
 export function HeroSection() {

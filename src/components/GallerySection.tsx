@@ -4,18 +4,18 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useSectionTracking } from "@/hooks/use-section-tracking";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroSlide3 from "@/assets/hero-slide-3.jpg";
-import heroSlide7 from "@/assets/hero-slide-7.jpg";
-import heroSlide12 from "@/assets/hero-slide-12.jpg";
-import heroSlide15 from "@/assets/hero-slide-15.jpg";
-import heroSlide18 from "@/assets/hero-slide-18.jpg";
-import heroSlide21 from "@/assets/hero-slide-21.jpg";
-import eventDog from "@/assets/event-dog.jpg";
-import eventParty from "@/assets/event-party.jpg";
-import family3 from "@/assets/family-3.jpg";
-import family7 from "@/assets/family-7.jpg";
-import newborn1 from "@/assets/newborn-1.jpg";
-import newborn5 from "@/assets/newborn-5.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.webp";
+import heroSlide7 from "@/assets/hero-slide-7.webp";
+import heroSlide12 from "@/assets/hero-slide-12.webp";
+import heroSlide15 from "@/assets/hero-slide-15.webp";
+import heroSlide18 from "@/assets/hero-slide-18.webp";
+import heroSlide21 from "@/assets/hero-slide-21.webp";
+import eventDog from "@/assets/event-dog.webp";
+import eventParty from "@/assets/event-party.webp";
+import family3 from "@/assets/family-3.webp";
+import family7 from "@/assets/family-7.webp";
+import newborn1 from "@/assets/newborn-1.webp";
+import newborn5 from "@/assets/newborn-5.webp";
 
 const images = [
   { src: heroSlide21, alt: "Spontan smeh na poroki" },

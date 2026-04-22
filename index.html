@@ -19,11 +19,11 @@
     <link rel="alternate" hreflang="hr" href="https://proflipp.com/?lang=hr" />
     <link rel="alternate" hreflang="x-default" href="https://proflipp.com/" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Favicon (cache-busted after optimization) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Open Graph / Facebook -->
@@ -53,6 +53,9 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload first hero slide for faster LCP -->
+    <link rel="preload" as="image" href="/src/assets/hero-slide-1.webp" fetchpriority="high" />
     
     <!-- Geo targeting -->
     <meta name="geo.region" content="SI" />

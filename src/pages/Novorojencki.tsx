@@ -8,15 +8,15 @@ import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
 import { Check } from "lucide-react";
 
-import newborn1 from "@/assets/newborn-1.jpg";
-import newborn2 from "@/assets/newborn-2.jpg";
-import newborn3 from "@/assets/newborn-3.jpg";
+import newborn1 from "@/assets/newborn-1.webp";
+import newborn2 from "@/assets/newborn-2.webp";
+import newborn3 from "@/assets/newborn-3.webp";
 import newborn4 from "@/assets/newborn-4.png";
-import newborn5 from "@/assets/newborn-5.jpg";
-import newborn6 from "@/assets/newborn-6.jpg";
-import newborn7 from "@/assets/newborn-7.jpg";
+import newborn5 from "@/assets/newborn-5.webp";
+import newborn6 from "@/assets/newborn-6.webp";
+import newborn7 from "@/assets/newborn-7.webp";
 import newborn8 from "@/assets/newborn-8.webp";
-import newborn9 from "@/assets/newborn-9.jpg";
+import newborn9 from "@/assets/newborn-9.webp";
 
 const packages = [
   { 
