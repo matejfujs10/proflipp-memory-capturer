@@ -33,6 +33,10 @@ const CouplesPhotography = lazy(() => import("./pages/CouplesPhotography"));
 const DestinationWedding = lazy(() => import("./pages/DestinationWedding"));
 const WeddingVideography = lazy(() => import("./pages/WeddingVideography"));
 const Combi = lazy(() => import("./pages/Combi"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPorocniCena = lazy(() => import("./pages/blog/PorocniFotografCena2026"));
+const BlogAustriaPrice = lazy(() => import("./pages/blog/WeddingPhotographerAustria2026"));
+const BlogLokacije = lazy(() => import("./pages/blog/NajlepsePorocneLokacije"));
 const queryClient = new QueryClient();
 
 const App = () => (
