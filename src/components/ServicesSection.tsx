@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import weddingImage from "@/assets/trebnje-wedding-1.jpg";
-import eventsImage from "@/assets/forestland-hero.jpg";
-import familyImage from "@/assets/family-1.jpg";
+import weddingImage from "@/assets/trebnje-wedding-1.webp";
+import eventsImage from "@/assets/forestland-hero.webp";
+import familyImage from "@/assets/family-1.webp";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ServicesSection() {

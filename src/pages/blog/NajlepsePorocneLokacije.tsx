@@ -1,6 +1,6 @@
 import { SEOHead } from "@/components/SEOHead";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
-import heroImage from "@/assets/hero-slide-22.jpg";
+import heroImage from "@/assets/hero-slide-22.webp";
 
 const NajlepsePorocneLokacije = () => {
   return (

@@ -1,6 +1,6 @@
 import { SEOHead } from "@/components/SEOHead";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
-import heroImage from "@/assets/hero-slide-7.jpg";
+import heroImage from "@/assets/hero-slide-7.webp";
 
 const WeddingPhotographerAustria2026 = () => {
   return (

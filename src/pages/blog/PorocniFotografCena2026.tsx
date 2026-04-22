@@ -1,6 +1,6 @@
 import { SEOHead } from "@/components/SEOHead";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
-import heroImage from "@/assets/hero-slide-12.jpg";
+import heroImage from "@/assets/hero-slide-12.webp";
 
 const PorocniFotografCena2026 = () => {
   return (

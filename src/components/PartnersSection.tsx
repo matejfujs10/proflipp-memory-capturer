@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-import partnerBledFilm from "@/assets/partner-bled-film.jpg";
-import partnerFurmil from "@/assets/partner-furmil.jpg";
-import partnerLaksmi from "@/assets/partner-laksmi.jpg";
-import partnerFestivalZganja from "@/assets/partner-festival-zganja.jpg";
-import partnerNetmedia from "@/assets/partner-netmedia.jpg";
-import partnerCoriana from "@/assets/partner-coriana.jpg";
+import partnerBledFilm from "@/assets/partner-bled-film.webp";
+import partnerFurmil from "@/assets/partner-furmil.webp";
+import partnerLaksmi from "@/assets/partner-laksmi.webp";
+import partnerFestivalZganja from "@/assets/partner-festival-zganja.webp";
+import partnerNetmedia from "@/assets/partner-netmedia.webp";
+import partnerCoriana from "@/assets/partner-coriana.webp";
 import partnerPerunika from "@/assets/partner-perunika.png";
-import partnerRclTeh from "@/assets/partner-rcl-teh.jpg";
+import partnerRclTeh from "@/assets/partner-rcl-teh.webp";
 import partnerSobotainfo from "@/assets/partner-sobotainfo.png";
 import partnerUniMaribor from "@/assets/partner-uni-maribor.png";
-import partnerProflippRent from "@/assets/partner-proflipp-rent.jpg";
+import partnerProflippRent from "@/assets/partner-proflipp-rent.webp";
 import partnerLaVita from "@/assets/partner-lavita.png";
-import partnerGasilci from "@/assets/partner-gasilci.jpg";
-import partnerMartur from "@/assets/partner-martur.jpg";
-import partnerMaliRaj from "@/assets/partner-mali-raj.jpg";
+import partnerGasilci from "@/assets/partner-gasilci.webp";
+import partnerMartur from "@/assets/partner-martur.webp";
+import partnerMaliRaj from "@/assets/partner-mali-raj.webp";
 import partnerMaratonec from "@/assets/partner-maratonec.png";
 
 const partners = [

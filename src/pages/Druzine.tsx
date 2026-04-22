@@ -9,23 +9,23 @@ import { Lightbox } from "@/components/Lightbox";
 import { Check } from "lucide-react";
 
 // Hero image
-import heroImage from "@/assets/family-10.jpg";
+import heroImage from "@/assets/family-10.webp";
 
 // Gallery images
-import family1 from "@/assets/family-1.jpg";
-import family2 from "@/assets/family-2.jpg";
-import family3 from "@/assets/family-3.jpg";
-import family4 from "@/assets/family-4.jpg";
-import family5 from "@/assets/family-5.jpg";
-import family6 from "@/assets/family-6.jpg";
-import family7 from "@/assets/family-7.jpg";
-import family8 from "@/assets/family-8.jpg";
-import family9 from "@/assets/family-9.jpg";
-import family10 from "@/assets/family-10.jpg";
-import family11 from "@/assets/family-11.jpg";
-import family12 from "@/assets/family-12.jpg";
-import family13 from "@/assets/family-13.jpg";
-import family14 from "@/assets/family-14.jpg";
+import family1 from "@/assets/family-1.webp";
+import family2 from "@/assets/family-2.webp";
+import family3 from "@/assets/family-3.webp";
+import family4 from "@/assets/family-4.webp";
+import family5 from "@/assets/family-5.webp";
+import family6 from "@/assets/family-6.webp";
+import family7 from "@/assets/family-7.webp";
+import family8 from "@/assets/family-8.webp";
+import family9 from "@/assets/family-9.webp";
+import family10 from "@/assets/family-10.webp";
+import family11 from "@/assets/family-11.webp";
+import family12 from "@/assets/family-12.webp";
+import family13 from "@/assets/family-13.webp";
+import family14 from "@/assets/family-14.webp";
 
 const packages = [
   { 

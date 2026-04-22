@@ -7,40 +7,40 @@ import { ContactFormModal } from "@/components/ContactSection";
 import { EventGalleryCard } from "@/components/EventGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
-import eventsHero from "@/assets/forestland-hero.jpg";
-import eventDog from "@/assets/event-dog.jpg";
-import eventHorse from "@/assets/event-horse.jpg";
-import eventParty from "@/assets/event-party.jpg";
-import eventDog2 from "@/assets/event-dog2.jpg";
-import eventBw from "@/assets/event-bw.jpg";
-import eventCake from "@/assets/event-cake.jpg";
+import eventsHero from "@/assets/forestland-hero.webp";
+import eventDog from "@/assets/event-dog.webp";
+import eventHorse from "@/assets/event-horse.webp";
+import eventParty from "@/assets/event-party.webp";
+import eventDog2 from "@/assets/event-dog2.webp";
+import eventBw from "@/assets/event-bw.webp";
+import eventCake from "@/assets/event-cake.webp";
 
 // Festival Koper images
-import festivalKoper1 from "@/assets/festival-koper-1.jpg";
-import festivalKoper2 from "@/assets/festival-koper-2.jpg";
-import festivalKoper3 from "@/assets/festival-koper-3.jpg";
-import festivalKoper4 from "@/assets/festival-koper-4.jpg";
-import festivalKoper5 from "@/assets/festival-koper-5.jpg";
-import festivalKoper6 from "@/assets/festival-koper-6.jpg";
-import festivalKoper7 from "@/assets/festival-koper-7.jpg";
+import festivalKoper1 from "@/assets/festival-koper-1.webp";
+import festivalKoper2 from "@/assets/festival-koper-2.webp";
+import festivalKoper3 from "@/assets/festival-koper-3.webp";
+import festivalKoper4 from "@/assets/festival-koper-4.webp";
+import festivalKoper5 from "@/assets/festival-koper-5.webp";
+import festivalKoper6 from "@/assets/festival-koper-6.webp";
+import festivalKoper7 from "@/assets/festival-koper-7.webp";
 
 // Martur images
-import martur1 from "@/assets/martur-1.jpg";
-import martur2 from "@/assets/martur-2.jpg";
-import martur3 from "@/assets/martur-3.jpg";
+import martur1 from "@/assets/martur-1.webp";
+import martur2 from "@/assets/martur-2.webp";
+import martur3 from "@/assets/martur-3.webp";
 
 // Forestland images
-import forestland1 from "@/assets/forestland-1.jpg";
-import forestland2 from "@/assets/forestland-2.jpg";
-import forestland3 from "@/assets/forestland-3.jpg";
-import forestland4 from "@/assets/forestland-4.jpg";
-import forestland5 from "@/assets/forestland-5.jpg";
-import forestland6 from "@/assets/forestland-6.jpg";
+import forestland1 from "@/assets/forestland-1.webp";
+import forestland2 from "@/assets/forestland-2.webp";
+import forestland3 from "@/assets/forestland-3.webp";
+import forestland4 from "@/assets/forestland-4.webp";
+import forestland5 from "@/assets/forestland-5.webp";
+import forestland6 from "@/assets/forestland-6.webp";
 
 // Gasilci images
-import gasilci1 from "@/assets/gasilci-1.jpg";
-import gasilci2 from "@/assets/gasilci-2.jpg";
-import gasilci3 from "@/assets/gasilci-3.jpg";
+import gasilci1 from "@/assets/gasilci-1.webp";
+import gasilci2 from "@/assets/gasilci-2.webp";
+import gasilci3 from "@/assets/gasilci-3.webp";
 
 const packages = [
   { name: "MINI PRO", price: "196", duration: "2 uri prisotnosti", description: "Hitra, učinkovita pokritost dogodka.", features: ["Reportažne fotografije dogajanja", "Ključni kadri", "Ekspresna obdelava"] },

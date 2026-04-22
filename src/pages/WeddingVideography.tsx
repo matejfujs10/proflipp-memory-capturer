@@ -4,7 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Video, Camera, Check } from "lucide-react";
-import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
+import weddingCollage1 from "@/assets/wedding-collage-1.webp";
 
 const features = [
   "Cinematic highlight film (3–5 min)",

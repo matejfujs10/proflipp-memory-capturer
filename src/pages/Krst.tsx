@@ -8,23 +8,23 @@ import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-import krstHero from "@/assets/krst-1.jpg";
-import krst1 from "@/assets/krst-1.jpg";
-import krst2 from "@/assets/krst-2.jpg";
-import krst3 from "@/assets/krst-3.jpg";
-import krst4 from "@/assets/krst-4.jpg";
-import krst5 from "@/assets/krst-5.jpg";
-import krst6 from "@/assets/krst-6.jpg";
-import krst7 from "@/assets/krst-7.jpg";
-import krst8 from "@/assets/krst-8.jpg";
-import krst9 from "@/assets/krst-9.jpg";
-import krst10 from "@/assets/krst-10.jpg";
-import krst11 from "@/assets/krst-11.jpg";
-import krst12 from "@/assets/krst-12.jpg";
-import krst13 from "@/assets/krst-13.jpg";
-import krst14 from "@/assets/krst-14.jpg";
-import krst15 from "@/assets/krst-15.jpg";
-import krst16 from "@/assets/krst-16.jpg";
+import krstHero from "@/assets/krst-1.webp";
+import krst1 from "@/assets/krst-1.webp";
+import krst2 from "@/assets/krst-2.webp";
+import krst3 from "@/assets/krst-3.webp";
+import krst4 from "@/assets/krst-4.webp";
+import krst5 from "@/assets/krst-5.webp";
+import krst6 from "@/assets/krst-6.webp";
+import krst7 from "@/assets/krst-7.webp";
+import krst8 from "@/assets/krst-8.webp";
+import krst9 from "@/assets/krst-9.webp";
+import krst10 from "@/assets/krst-10.webp";
+import krst11 from "@/assets/krst-11.webp";
+import krst12 from "@/assets/krst-12.webp";
+import krst13 from "@/assets/krst-13.webp";
+import krst14 from "@/assets/krst-14.webp";
+import krst15 from "@/assets/krst-15.webp";
+import krst16 from "@/assets/krst-16.webp";
 
 const packages = [
   {

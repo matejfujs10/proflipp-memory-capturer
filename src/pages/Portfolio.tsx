@@ -4,12 +4,12 @@ import { SEOHead } from "@/components/SEOHead";
 import { GallerySection } from "@/components/GallerySection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import weddingCeremony from "@/assets/wedding-ceremony.jpg";
-import forestlandHero from "@/assets/forestland-hero.jpg";
-import family1 from "@/assets/family-1.jpg";
-import newborn1 from "@/assets/newborn-1.jpg";
-import studioPortrait1 from "@/assets/studio-portrait-1.jpg";
-import heroSlide22 from "@/assets/hero-slide-22.jpg";
+import weddingCeremony from "@/assets/wedding-ceremony.webp";
+import forestlandHero from "@/assets/forestland-hero.webp";
+import family1 from "@/assets/family-1.webp";
+import newborn1 from "@/assets/newborn-1.webp";
+import studioPortrait1 from "@/assets/studio-portrait-1.webp";
+import heroSlide22 from "@/assets/hero-slide-22.webp";
 
 const categories = [
   { title: "Wedding Photography", image: weddingCeremony, href: "/wedding-photography-slovenia", alt: "Wedding photography portfolio Slovenia" },

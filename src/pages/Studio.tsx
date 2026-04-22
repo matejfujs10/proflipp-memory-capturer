@@ -10,16 +10,16 @@ import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 
 // Studio images
-import studio1 from "@/assets/studio-1.jpg";
-import studio2 from "@/assets/studio-2.jpg";
-import studio3 from "@/assets/studio-3.jpg";
-import studio4 from "@/assets/studio-4.jpg";
-import studio5 from "@/assets/studio-5.jpg";
-import studio6 from "@/assets/studio-6.jpg";
-import studio7 from "@/assets/studio-7.jpg";
-import studio8 from "@/assets/studio-8.jpg";
-import studio9 from "@/assets/studio-9.jpg";
-import studio10 from "@/assets/studio-10.jpg";
+import studio1 from "@/assets/studio-1.webp";
+import studio2 from "@/assets/studio-2.webp";
+import studio3 from "@/assets/studio-3.webp";
+import studio4 from "@/assets/studio-4.webp";
+import studio5 from "@/assets/studio-5.webp";
+import studio6 from "@/assets/studio-6.webp";
+import studio7 from "@/assets/studio-7.webp";
+import studio8 from "@/assets/studio-8.webp";
+import studio9 from "@/assets/studio-9.webp";
+import studio10 from "@/assets/studio-10.webp";
 
 // New studio images
 import studioHeroNew from "@/assets/studio-hero-new.png";
@@ -29,9 +29,9 @@ import studioBand3 from "@/assets/studio-band-3.png";
 import studioBand4 from "@/assets/studio-band-4.png";
 import studioBand5 from "@/assets/studio-band-5.png";
 import studioBand6 from "@/assets/studio-band-6.png";
-import studioPortrait1 from "@/assets/studio-portrait-1.jpg";
-import studioPortrait2 from "@/assets/studio-portrait-2.jpg";
-import studioPortrait3 from "@/assets/studio-portrait-3.jpg";
+import studioPortrait1 from "@/assets/studio-portrait-1.webp";
+import studioPortrait2 from "@/assets/studio-portrait-2.webp";
+import studioPortrait3 from "@/assets/studio-portrait-3.webp";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },

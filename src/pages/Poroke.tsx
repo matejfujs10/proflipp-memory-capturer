@@ -13,7 +13,7 @@ import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide
 import { trackEvent, trackCTA } from "@/lib/analytics";
 import { useSectionTracking } from "@/hooks/use-section-tracking";
 // Hero slideshow images
-import weddingCollage1 from "@/assets/wedding-collage-1.jpg";
+import weddingCollage1 from "@/assets/wedding-collage-1.webp";
 import weddingCollage2 from "@/assets/wedding-collage-2.png";
 
 // Gallery collage images
@@ -21,76 +21,76 @@ import weddingCollage3 from "@/assets/wedding-collage-3.png";
 import weddingCollage4 from "@/assets/wedding-collage-4.png";
 
 // R & L Vrhnika wedding images
-import weddingCeremony from "@/assets/wedding-ceremony.jpg";
-import weddingVeil from "@/assets/wedding-veil.jpg";
-import weddingKiss from "@/assets/wedding-kiss.jpg";
-import weddingRings from "@/assets/wedding-rings.jpg";
-import weddingEmotion from "@/assets/wedding-emotion.jpg";
-import weddingConfetti from "@/assets/wedding-confetti.jpg";
-import weddingFun from "@/assets/wedding-fun.jpg";
-import weddingBridge from "@/assets/wedding-bridge.jpg";
-import weddingToast from "@/assets/wedding-toast.jpg";
-import weddingDetails from "@/assets/wedding-details.jpg";
+import weddingCeremony from "@/assets/wedding-ceremony.webp";
+import weddingVeil from "@/assets/wedding-veil.webp";
+import weddingKiss from "@/assets/wedding-kiss.webp";
+import weddingRings from "@/assets/wedding-rings.webp";
+import weddingEmotion from "@/assets/wedding-emotion.webp";
+import weddingConfetti from "@/assets/wedding-confetti.webp";
+import weddingFun from "@/assets/wedding-fun.webp";
+import weddingBridge from "@/assets/wedding-bridge.webp";
+import weddingToast from "@/assets/wedding-toast.webp";
+import weddingDetails from "@/assets/wedding-details.webp";
 
 // K & A Murska Sobota wedding images
-import msWedding1 from "@/assets/ms-wedding-1.jpg";
-import msWedding2 from "@/assets/ms-wedding-2.jpg";
-import msWedding3 from "@/assets/ms-wedding-3.jpg";
-import msWedding4 from "@/assets/ms-wedding-4.jpg";
-import msWedding5 from "@/assets/ms-wedding-5.jpg";
-import msWedding6 from "@/assets/ms-wedding-6.jpg";
-import msWedding7 from "@/assets/ms-wedding-7.jpg";
-import msWedding8 from "@/assets/ms-wedding-8.jpg";
-import msWedding9 from "@/assets/ms-wedding-9.jpg";
-import msWedding10 from "@/assets/ms-wedding-10.jpg";
+import msWedding1 from "@/assets/ms-wedding-1.webp";
+import msWedding2 from "@/assets/ms-wedding-2.webp";
+import msWedding3 from "@/assets/ms-wedding-3.webp";
+import msWedding4 from "@/assets/ms-wedding-4.webp";
+import msWedding5 from "@/assets/ms-wedding-5.webp";
+import msWedding6 from "@/assets/ms-wedding-6.webp";
+import msWedding7 from "@/assets/ms-wedding-7.webp";
+import msWedding8 from "@/assets/ms-wedding-8.webp";
+import msWedding9 from "@/assets/ms-wedding-9.webp";
+import msWedding10 from "@/assets/ms-wedding-10.webp";
 
 // I & J Trebnje wedding images
-import trebnjeWedding1 from "@/assets/trebnje-wedding-1.jpg";
-import trebnjeWedding2 from "@/assets/trebnje-wedding-2.jpg";
-import trebnjeWedding3 from "@/assets/trebnje-wedding-3.jpg";
-import trebnjeWedding4 from "@/assets/trebnje-wedding-4.jpg";
-import trebnjeWedding5 from "@/assets/trebnje-wedding-5.jpg";
-import trebnjeWedding6 from "@/assets/trebnje-wedding-6.jpg";
-import trebnjeWedding7 from "@/assets/trebnje-wedding-7.jpg";
-import trebnjeWedding8 from "@/assets/trebnje-wedding-8.jpg";
-import trebnjeWedding9 from "@/assets/trebnje-wedding-9.jpg";
-import trebnjeWedding10 from "@/assets/trebnje-wedding-10.jpg";
+import trebnjeWedding1 from "@/assets/trebnje-wedding-1.webp";
+import trebnjeWedding2 from "@/assets/trebnje-wedding-2.webp";
+import trebnjeWedding3 from "@/assets/trebnje-wedding-3.webp";
+import trebnjeWedding4 from "@/assets/trebnje-wedding-4.webp";
+import trebnjeWedding5 from "@/assets/trebnje-wedding-5.webp";
+import trebnjeWedding6 from "@/assets/trebnje-wedding-6.webp";
+import trebnjeWedding7 from "@/assets/trebnje-wedding-7.webp";
+import trebnjeWedding8 from "@/assets/trebnje-wedding-8.webp";
+import trebnjeWedding9 from "@/assets/trebnje-wedding-9.webp";
+import trebnjeWedding10 from "@/assets/trebnje-wedding-10.webp";
 
 // P & D Murska Sobota wedding images
-import pdWedding1 from "@/assets/pd-wedding-1.jpg";
-import pdWedding2 from "@/assets/pd-wedding-2.jpg";
-import pdWedding3 from "@/assets/pd-wedding-3.jpg";
-import pdWedding4 from "@/assets/pd-wedding-4.jpg";
-import pdWedding5 from "@/assets/pd-wedding-5.jpg";
-import pdWedding6 from "@/assets/pd-wedding-6.jpg";
-import pdWedding7 from "@/assets/pd-wedding-7.jpg";
-import pdWedding8 from "@/assets/pd-wedding-8.jpg";
-import pdWedding9 from "@/assets/pd-wedding-9.jpg";
-import pdWedding10 from "@/assets/pd-wedding-10.jpg";
+import pdWedding1 from "@/assets/pd-wedding-1.webp";
+import pdWedding2 from "@/assets/pd-wedding-2.webp";
+import pdWedding3 from "@/assets/pd-wedding-3.webp";
+import pdWedding4 from "@/assets/pd-wedding-4.webp";
+import pdWedding5 from "@/assets/pd-wedding-5.webp";
+import pdWedding6 from "@/assets/pd-wedding-6.webp";
+import pdWedding7 from "@/assets/pd-wedding-7.webp";
+import pdWedding8 from "@/assets/pd-wedding-8.webp";
+import pdWedding9 from "@/assets/pd-wedding-9.webp";
+import pdWedding10 from "@/assets/pd-wedding-10.webp";
 
 // K & A Portorož wedding images
-import kaWedding1 from "@/assets/ka-wedding-1.jpg";
-import kaWedding2 from "@/assets/ka-wedding-2.jpg";
-import kaWedding3 from "@/assets/ka-wedding-3.jpg";
-import kaWedding4 from "@/assets/ka-wedding-4.jpg";
-import kaWedding5 from "@/assets/ka-wedding-5.jpg";
-import kaWedding6 from "@/assets/ka-wedding-6.jpg";
-import kaWedding7 from "@/assets/ka-wedding-7.jpg";
-import kaWedding8 from "@/assets/ka-wedding-8.jpg";
-import kaWedding9 from "@/assets/ka-wedding-9.jpg";
-import kaWedding10 from "@/assets/ka-wedding-10.jpg";
+import kaWedding1 from "@/assets/ka-wedding-1.webp";
+import kaWedding2 from "@/assets/ka-wedding-2.webp";
+import kaWedding3 from "@/assets/ka-wedding-3.webp";
+import kaWedding4 from "@/assets/ka-wedding-4.webp";
+import kaWedding5 from "@/assets/ka-wedding-5.webp";
+import kaWedding6 from "@/assets/ka-wedding-6.webp";
+import kaWedding7 from "@/assets/ka-wedding-7.webp";
+import kaWedding8 from "@/assets/ka-wedding-8.webp";
+import kaWedding9 from "@/assets/ka-wedding-9.webp";
+import kaWedding10 from "@/assets/ka-wedding-10.webp";
 
 // M & B Murska Sobota 2024 wedding images
-import mbWedding1 from "@/assets/mb-wedding-1.jpg";
-import mbWedding2 from "@/assets/mb-wedding-2.jpg";
-import mbWedding3 from "@/assets/mb-wedding-3.jpg";
-import mbWedding4 from "@/assets/mb-wedding-4.jpg";
-import mbWedding5 from "@/assets/mb-wedding-5.jpg";
-import mbWedding6 from "@/assets/mb-wedding-6.jpg";
-import mbWedding7 from "@/assets/mb-wedding-7.jpg";
-import mbWedding8 from "@/assets/mb-wedding-8.jpg";
-import mbWedding9 from "@/assets/mb-wedding-9.jpg";
-import mbWedding10 from "@/assets/mb-wedding-10.jpg";
+import mbWedding1 from "@/assets/mb-wedding-1.webp";
+import mbWedding2 from "@/assets/mb-wedding-2.webp";
+import mbWedding3 from "@/assets/mb-wedding-3.webp";
+import mbWedding4 from "@/assets/mb-wedding-4.webp";
+import mbWedding5 from "@/assets/mb-wedding-5.webp";
+import mbWedding6 from "@/assets/mb-wedding-6.webp";
+import mbWedding7 from "@/assets/mb-wedding-7.webp";
+import mbWedding8 from "@/assets/mb-wedding-8.webp";
+import mbWedding9 from "@/assets/mb-wedding-9.webp";
+import mbWedding10 from "@/assets/mb-wedding-10.webp";
 
 const packages = [
   {

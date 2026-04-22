@@ -6,23 +6,23 @@ import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { TravelReservationForm } from "@/components/TravelReservationForm";
 import { Lightbox } from "@/components/Lightbox";
-import familyHero from "@/assets/wedding-fun.jpg";
-import family1 from "@/assets/family-1.jpg";
-import family2 from "@/assets/family-2.jpg";
-import family3 from "@/assets/family-3.jpg";
-import family4 from "@/assets/family-4.jpg";
+import familyHero from "@/assets/wedding-fun.webp";
+import family1 from "@/assets/family-1.webp";
+import family2 from "@/assets/family-2.webp";
+import family3 from "@/assets/family-3.webp";
+import family4 from "@/assets/family-4.webp";
 
 // Travel images
-import travelHero from "@/assets/travel-hero.jpg";
-import travel1 from "@/assets/travel-1.jpg";
-import travel2 from "@/assets/travel-2.jpg";
-import travel3 from "@/assets/travel-3.jpg";
-import travel4 from "@/assets/travel-4.jpg";
-import travel5 from "@/assets/travel-5.jpg";
-import travel6 from "@/assets/travel-6.jpg";
-import travel7 from "@/assets/travel-7.jpg";
-import travel8 from "@/assets/travel-8.jpg";
-import travel9 from "@/assets/travel-9.jpg";
+import travelHero from "@/assets/travel-hero.webp";
+import travel1 from "@/assets/travel-1.webp";
+import travel2 from "@/assets/travel-2.webp";
+import travel3 from "@/assets/travel-3.webp";
+import travel4 from "@/assets/travel-4.webp";
+import travel5 from "@/assets/travel-5.webp";
+import travel6 from "@/assets/travel-6.webp";
+import travel7 from "@/assets/travel-7.webp";
+import travel8 from "@/assets/travel-8.webp";
+import travel9 from "@/assets/travel-9.webp";
 
 const defaultPackages = [
   { name: "MINI PRO", price: "150", duration: "1 ura fotografiranja", description: "Kratek, sproščen session za naravne trenutke.", features: ["Vodeno, a naravno", "Izbor najboljših fotografij", "Digitalna dostava"] },

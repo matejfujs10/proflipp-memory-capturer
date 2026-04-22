@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import heroImage from "@/assets/hero-slide-1.jpg";
-import postCover1 from "@/assets/hero-slide-12.jpg";
-import postCover2 from "@/assets/hero-slide-7.jpg";
-import postCover3 from "@/assets/hero-slide-22.jpg";
+import heroImage from "@/assets/hero-slide-1.webp";
+import postCover1 from "@/assets/hero-slide-12.webp";
+import postCover2 from "@/assets/hero-slide-7.webp";
+import postCover3 from "@/assets/hero-slide-22.webp";
 
 const posts = [
   {

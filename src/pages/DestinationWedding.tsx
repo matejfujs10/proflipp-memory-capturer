@@ -4,10 +4,10 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Camera, Heart } from "lucide-react";
-import heroSlide2 from "@/assets/hero-slide-2.jpg";
-import heroSlide20 from "@/assets/hero-slide-20.jpg";
-import heroSlide28 from "@/assets/hero-slide-28.jpg";
-import heroSlide31 from "@/assets/hero-slide-31.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.webp";
+import heroSlide20 from "@/assets/hero-slide-20.webp";
+import heroSlide28 from "@/assets/hero-slide-28.webp";
+import heroSlide31 from "@/assets/hero-slide-31.webp";
 
 const destinations = [
   "Lake Bled, Slovenia", "Piran, Slovenia", "Vienna, Austria", "Hallstatt, Austria",

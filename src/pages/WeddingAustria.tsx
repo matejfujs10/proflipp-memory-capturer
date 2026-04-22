@@ -4,11 +4,11 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, Camera, MapPin, Star } from "lucide-react";
-import heroSlide22 from "@/assets/hero-slide-22.jpg";
-import heroSlide23 from "@/assets/hero-slide-23.jpg";
-import heroSlide24 from "@/assets/hero-slide-24.jpg";
-import heroSlide27 from "@/assets/hero-slide-27.jpg";
-import heroSlide28 from "@/assets/hero-slide-28.jpg";
+import heroSlide22 from "@/assets/hero-slide-22.webp";
+import heroSlide23 from "@/assets/hero-slide-23.webp";
+import heroSlide24 from "@/assets/hero-slide-24.webp";
+import heroSlide27 from "@/assets/hero-slide-27.webp";
+import heroSlide28 from "@/assets/hero-slide-28.webp";
 
 const locations = [
   "Vienna (Wien)", "Graz", "Salzburg", "Klagenfurt (Celovec)",
