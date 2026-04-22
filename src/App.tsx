@@ -33,6 +33,10 @@ const CouplesPhotography = lazy(() => import("./pages/CouplesPhotography"));
 const DestinationWedding = lazy(() => import("./pages/DestinationWedding"));
 const WeddingVideography = lazy(() => import("./pages/WeddingVideography"));
 const Combi = lazy(() => import("./pages/Combi"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPorocniCena = lazy(() => import("./pages/blog/PorocniFotografCena2026"));
+const BlogAustriaPrice = lazy(() => import("./pages/blog/WeddingPhotographerAustria2026"));
+const BlogLokacije = lazy(() => import("./pages/blog/NajlepsePorocneLokacije"));
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -62,6 +66,10 @@ const App = () => (
               <Route path="/baptism-photography" element={<Krst />} />
               <Route path="/studio" element={<Studio />} />
               <Route path="/reviews" element={<Mnenja />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/koliko-stane-porocni-fotograf-slovenija-2026" element={<BlogPorocniCena />} />
+              <Route path="/blog/wedding-photographer-austria-price-guide-2026" element={<BlogAustriaPrice />} />
+              <Route path="/blog/najlepse-porocne-lokacije-slovenija-avstrija" element={<BlogLokacije />} />
 
               {/* Legacy Slovenian routes → redirect to new SEO slugs */}
               <Route path="/poroke" element={<Navigate to="/wedding-photography-slovenia" replace />} />

@@ -20,6 +20,7 @@ export function Navigation() {
     { label: "Studio", href: "/studio" },
     { label: t('nav.travels'), href: "/potovanja" },
     { label: t('nav.reviews'), href: "/reviews" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (

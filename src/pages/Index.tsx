@@ -19,8 +19,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Proflipp | Wedding Photographer Slovenia & Austria"
-        description="Proflipp offers timeless wedding photography in Slovenia and Austria, capturing authentic moments with elegance, emotion and style."
+        title="Poročni fotograf Slovenija & Austria | Wedding Photographer Europe | Proflipp"
+        description="Poročni fotograf za Slovenijo in Avstrijo. Wedding photographer za destination weddings po Evropi. Ujamemo pristne trenutke in ustvarimo brezčasne fotografije."
         canonical="/"
       />
       <Navigation />
@@ -28,6 +28,7 @@ const Index = () => {
         <HeroSection />
         {/* SEO content – visually hidden, accessible to search engines */}
         <div className="sr-only" aria-hidden="true">
+          <h1>Poročni fotograf Slovenija, Avstrija & Evropa</h1>
           <p>Proflipp je profesionalni poročni fotograf v Sloveniji in Avstriji, specializiran za dokumentarno poročno fotografijo, ki ujame pristne trenutke in čustva. Fotografiramo poroke po Sloveniji, Avstriji in Evropi.</p>
           <p>If you are looking for a wedding photographer in Austria, Slovenia or anywhere in Europe, we create timeless and emotional wedding photography that tells your story.</p>
           <p>Če iščete poročnega fotografa v Ljubljani, Mariboru, Gradcu (Graz), Dunaju (Vienna) ali za destination wedding, ustvarjamo brezčasne fotografije, ki pripovedujejo vašo zgodbo.</p>
