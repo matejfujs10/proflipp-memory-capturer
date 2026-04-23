@@ -19,8 +19,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.events': 'Dogodki',
     'nav.families': 'Družine',
     'nav.newborns': 'Novorojenčki',
-    'nav.travels': 'Potovanja',
+    'nav.business': 'Poslovno',
     'nav.reviews': 'Mnenja',
+    'nav.social_cta': 'Odkrijte več naših projektov na FB in IG',
     'nav.contact': 'Kontaktirajte nas',
     
     // Baptism page
@@ -209,8 +210,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.events': 'Events',
     'nav.families': 'Families',
     'nav.newborns': 'Newborns',
-    'nav.travels': 'Travel',
+    'nav.business': 'Business',
     'nav.reviews': 'Reviews',
+    'nav.social_cta': 'Discover more of our projects on FB and IG',
     'nav.contact': 'Contact us',
     
     // Baptism page
@@ -399,8 +401,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.events': 'Veranstaltungen',
     'nav.families': 'Familien',
     'nav.newborns': 'Neugeborene',
-    'nav.travels': 'Reisen',
+    'nav.business': 'Business',
     'nav.reviews': 'Bewertungen',
+    'nav.social_cta': 'Entdecken Sie mehr unserer Projekte auf FB und IG',
     'nav.contact': 'Kontaktieren Sie uns',
     
     // Baptism page
@@ -589,8 +592,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.events': 'Događaji',
     'nav.families': 'Obitelji',
     'nav.newborns': 'Novorođenčad',
-    'nav.travels': 'Putovanja',
+    'nav.business': 'Poslovno',
     'nav.reviews': 'Recenzije',
+    'nav.social_cta': 'Otkrijte više naših projekata na FB i IG',
     'nav.contact': 'Kontaktirajte nas',
     
     // Baptism page
