@@ -59,7 +59,7 @@ const Poslovno = () => {
       <SEOHead
         title="Poslovno fotografiranje & video za podjetja | PROFLIPP B2B"
         description="Strateške vizualne vsebine za podjetja: Reels & TikTok, poslovni portreti, dogodki, predstavitve izdelkov. Hitra odzivnost, tehnična dovršenost, strateški pristop."
-        canonical="https://proflipp.com/poslovno"
+        canonical="/poslovno"
       />
       <Navigation />
 
