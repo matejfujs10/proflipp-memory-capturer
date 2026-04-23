@@ -12,8 +12,8 @@ export function FeaturesSection() {
   ];
 
   const stats = [
-    { number: "500+", label: t('features.weddings') },
-    { number: "10+", label: t('features.years') },
+    { number: "100+", label: t('features.weddings') },
+    { number: "15+", label: t('features.years') },
     { number: "1000+", label: t('features.clients') },
     { number: "50k+", label: t('features.photos') },
   ];
