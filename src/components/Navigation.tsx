@@ -18,7 +18,7 @@ export function Navigation() {
     { label: t('nav.families'), href: "/family-photography" },
     { label: t('nav.newborns'), href: "/newborn-photography" },
     { label: "Studio", href: "/studio" },
-    { label: t('nav.travels'), href: "/potovanja" },
+    { label: t('nav.business'), href: "/poslovno" },
     { label: t('nav.reviews'), href: "/reviews" },
     { label: "Blog", href: "/blog" },
   ];
@@ -97,22 +97,26 @@ export function Navigation() {
               </button>
             </div>
 
-            {/* Social Icons */}
+            {/* Social Icons + CTA */}
+            <a
+              href="https://www.facebook.com/proflippfotovideo"
+              target="_blank"
+              rel="noopener noreferrer"
+              title={t('nav.social_cta')}
+              aria-label={t('nav.social_cta')}
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
             <a
               href="https://www.instagram.com/proflippcom/"
               target="_blank"
               rel="noopener noreferrer"
+              title={t('nav.social_cta')}
+              aria-label={t('nav.social_cta')}
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.facebook.com/proflippfotovideo/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Facebook className="w-5 h-5" />
             </a>
 
             <Button asChild>

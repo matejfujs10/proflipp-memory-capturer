@@ -33,6 +33,7 @@ const CouplesPhotography = lazy(() => import("./pages/CouplesPhotography"));
 const DestinationWedding = lazy(() => import("./pages/DestinationWedding"));
 const WeddingVideography = lazy(() => import("./pages/WeddingVideography"));
 const Combi = lazy(() => import("./pages/Combi"));
+const Poslovno = lazy(() => import("./pages/Poslovno"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPorocniCena = lazy(() => import("./pages/blog/PorocniFotografCena2026"));
 const BlogAustriaPrice = lazy(() => import("./pages/blog/WeddingPhotographerAustria2026"));
@@ -82,6 +83,7 @@ const App = () => (
               <Route path="/mnenja" element={<Navigate to="/reviews" replace />} />
               <Route path="/potovanja" element={<Potovanja />} />
               <Route path="/combi" element={<Combi />} />
+              <Route path="/poslovno" element={<Poslovno />} />
 
               {/* Legal pages (keep original slugs) */}
               <Route path="/splosni-pogoji" element={<SplosniPogoji />} />
