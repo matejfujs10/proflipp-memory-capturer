@@ -38,6 +38,9 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPorocniCena = lazy(() => import("./pages/blog/PorocniFotografCena2026"));
 const BlogAustriaPrice = lazy(() => import("./pages/blog/WeddingPhotographerAustria2026"));
 const BlogLokacije = lazy(() => import("./pages/blog/NajlepsePorocneLokacije"));
+const BlogEarlyBird2027 = lazy(() => import("./pages/blog/EarlyBird2027"));
+const BlogZadnjiTermini2026 = lazy(() => import("./pages/blog/ZadnjiTermini2026"));
+const BlogFlippGoldDiamant = lazy(() => import("./pages/blog/FlippGoldDiamant"));
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -71,6 +74,9 @@ const App = () => (
               <Route path="/blog/koliko-stane-porocni-fotograf-slovenija-2026" element={<BlogPorocniCena />} />
               <Route path="/blog/wedding-photographer-austria-price-guide-2026" element={<BlogAustriaPrice />} />
               <Route path="/blog/najlepse-porocne-lokacije-slovenija-avstrija" element={<BlogLokacije />} />
+              <Route path="/blog/early-bird-porocni-fotograf-2027" element={<BlogEarlyBird2027 />} />
+              <Route path="/blog/zadnji-prosti-termini-poroka-2026" element={<BlogZadnjiTermini2026 />} />
+              <Route path="/blog/flippgold-ali-flippdiamant-porocni-paket" element={<BlogFlippGoldDiamant />} />
 
               {/* Legacy Slovenian routes → redirect to new SEO slugs */}
               <Route path="/poroke" element={<Navigate to="/wedding-photography-slovenia" replace />} />
