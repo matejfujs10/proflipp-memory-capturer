@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { PromoBanner, EarlyBird2027Section } from "@/components/PromoBanner";
 import { SEOHead } from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
