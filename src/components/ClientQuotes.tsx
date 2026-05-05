@@ -7,7 +7,7 @@ interface ClientQuote {
 
 const defaultQuotes: ClientQuote[] = [
   {
-    text: "Najboljša odločitev za najino poroko! Filip je ujel vsak pomemben trenutek, slike pa so naravnost magične.",
+    text: "Najboljša odločitev za najino poroko! PROFLIPP je ujel vsak pomemben trenutek, fotografije pa so naravnost magične.",
     author: "Maja & Luka",
   },
   {
