@@ -300,6 +300,8 @@ export default function Poroke() {
         </div>
       </section>
 
+      <ClientQuotes />
+
       <section className="py-10 bg-cream">
         <div className="container-wide">
           <div className="text-center mb-8">
