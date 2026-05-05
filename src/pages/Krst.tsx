@@ -158,6 +158,13 @@ export default function Krst() {
         </div>
       </section>
 
+      <ClientQuotes
+        quotes={[
+          { text: "Čudovite fotografije krsta, polne čustev in topline. Hvala za nepozabne spomine!", author: "Družina Novak" },
+          { text: "Profesionalno, prijazno in nevsiljivo. Slike so prekrasne!", author: "Ana & Jure" },
+        ]}
+      />
+
       {/* Additional Options */}
       <section className="py-8 bg-background">
         <div className="container-wide">
