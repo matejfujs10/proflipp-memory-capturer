@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 export interface PackageCardProps {
   name: string;
   price: string;
+  originalPrice?: string;
   description: string;
   features: string[];
   duration?: string;
@@ -12,7 +13,7 @@ export interface PackageCardProps {
   onSelect?: () => void;
 }
 
-export function PackageCard({ name, price, description, features, duration, popular, onSelect }: PackageCardProps) {
+export function PackageCard({ name, price, originalPrice, description, features, duration, popular, onSelect }: PackageCardProps) {
   return (
     <div className={cn(
       "relative bg-card rounded-2xl p-6 lg:p-8 shadow-card hover:shadow-glow transition-all duration-300 flex flex-col",
