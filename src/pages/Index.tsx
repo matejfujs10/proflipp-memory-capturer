@@ -27,6 +27,8 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <PromoBanner />
+        <EarlyBird2027Section />
         {/* SEO content – visually hidden, accessible to search engines */}
         <div className="sr-only" aria-hidden="true">
           <h1>Poročni fotograf Slovenija, Avstrija & Evropa</h1>
