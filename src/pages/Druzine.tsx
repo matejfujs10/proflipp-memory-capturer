@@ -224,6 +224,13 @@ export function Druzine() {
         </div>
       </section>
 
+      <ClientQuotes
+        quotes={[
+          { text: "Sproščeno družinsko fotografiranje, otroci so se odlično počutili. Slike so čudovite!", author: "Družina Horvat" },
+          { text: "Naravni, pristni trenutki naše družine. Hvala za prekrasne spomine!", author: "Maja & Tomaž" },
+        ]}
+      />
+
       {/* Why Choose Proflipp Section */}
       <section className="py-8 bg-background">
         <div className="container-wide">
