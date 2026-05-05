@@ -7,6 +7,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { ClientQuotes } from "@/components/ClientQuotes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide-react";
