@@ -6,6 +6,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
+import { ClientQuotes } from "@/components/ClientQuotes";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 import krstHero from "@/assets/krst-1.webp";
@@ -156,6 +157,13 @@ export default function Krst() {
           </div>
         </div>
       </section>
+
+      <ClientQuotes
+        quotes={[
+          { text: "Čudovite fotografije krsta, polne čustev in topline. Hvala za nepozabne spomine!", author: "Družina Novak" },
+          { text: "Profesionalno, prijazno in nevsiljivo. Slike so prekrasne!", author: "Ana & Jure" },
+        ]}
+      />
 
       {/* Additional Options */}
       <section className="py-8 bg-background">

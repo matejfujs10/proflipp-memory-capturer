@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { PromoBanner, EarlyBird2027Section } from "@/components/PromoBanner";
 import { SEOHead } from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
@@ -26,6 +27,8 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <PromoBanner />
+        <EarlyBird2027Section />
         {/* SEO content – visually hidden, accessible to search engines */}
         <div className="sr-only" aria-hidden="true">
           <h1>Poročni fotograf Slovenija, Avstrija & Evropa</h1>

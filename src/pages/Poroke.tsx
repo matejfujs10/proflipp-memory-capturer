@@ -7,6 +7,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
+import { ClientQuotes } from "@/components/ClientQuotes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Heart, Camera, Clock, Shield } from "lucide-react";
@@ -109,7 +110,8 @@ const packages = [
   },
   {
     name: "FLIPPgold",
-    price: "882",
+    price: "1.250",
+    originalPrice: "1.850",
     duration: "8 ur prisotnosti",
     description: "Najbolj uravnotežena izbira za 'klasičen' poročni dan.",
     features: ["Profesionalno, sproščeno fotografiranje", "Spontani trenutki v iskrenih čustvih", "Personaliziran digitalni foto album", "Izbrane printane fotografije", "Posebno DARILO za mladoporočenca"],
@@ -117,7 +119,8 @@ const packages = [
   },
   {
     name: "FLIPPdiamant",
-    price: "1.470",
+    price: "1.790",
+    originalPrice: "2.450",
     duration: "12 ur prisotnosti",
     description: "Za pare, ki želijo maksimalno pokritost in top rezultat.",
     features: ["Razširjena ponudba za popolno zgodbo", "ONLINE fotoalbum + Slide Show", "Printane fotografije", "Posebno DARILO za mladoporočenca", "Premium obdelava + 'best of' izbor"],
@@ -128,7 +131,7 @@ const videoPackages = [
   { name: "FLIPP Content video", price: "250", duration: "2-6x kratki Content Video", description: "Dodatek k fotografiji: kratek, čustven povzetek dneva.", features: ["Kratki video povzetki", "Dinamičen 'social' format", "Dostava digitalno"] },
   { name: "FLIPPvideo MINI", price: "350", duration: "Do 3 ure snemanja", description: "Za civilni obred / krajšo poroko.", features: ["Highlight film (3–5 min)", "Dostava digitalno"] },
   { name: "FLIPPvideo CLASSIC", price: "550", duration: "Do 12 ur prisotnosti", description: "Zgodba dneva v lepem tempu, čustva in vsi pomembni trenutki.", features: ["1 snemalec", "Highlight film + daljši film", "Barvna korekcija"] },
-  { name: "FLIPPvideo PREMIUM", price: "850", duration: "Do 13 ur prisotnosti", description: "Ko želiš več dinamike in bolj 'filmski' občutek.", features: ["Kreativni film (15–25 min)", "Snemanje v 4K", "Naprednejši 'grading'"] },
+  { name: "FLIPPvideo PREMIUM", price: "1.150", originalPrice: "1.650", duration: "Do 13 ur prisotnosti", description: "Ko želiš več dinamike in bolj 'filmski' občutek.", features: ["Kreativni film (15–25 min)", "Snemanje v 4K", "Naprednejši 'grading'"] },
 ];
 
 const weddingGalleries = [
@@ -296,6 +299,8 @@ export default function Poroke() {
           </div>
         </div>
       </section>
+
+      <ClientQuotes />
 
       <section className="py-10 bg-cream">
         <div className="container-wide">

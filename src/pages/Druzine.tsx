@@ -6,6 +6,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
+import { ClientQuotes } from "@/components/ClientQuotes";
 import { Check } from "lucide-react";
 
 // Hero image
@@ -222,6 +223,13 @@ export function Druzine() {
           </div>
         </div>
       </section>
+
+      <ClientQuotes
+        quotes={[
+          { text: "Sproščeno družinsko fotografiranje, otroci so se odlično počutili. Slike so čudovite!", author: "Družina Horvat" },
+          { text: "Naravni, pristni trenutki naše družine. Hvala za prekrasne spomine!", author: "Maja & Tomaž" },
+        ]}
+      />
 
       {/* Why Choose Proflipp Section */}
       <section className="py-8 bg-background">
