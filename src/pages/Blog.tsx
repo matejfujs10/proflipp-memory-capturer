@@ -6,8 +6,35 @@ import heroImage from "@/assets/hero-slide-1.webp";
 import postCover1 from "@/assets/hero-slide-12.webp";
 import postCover2 from "@/assets/hero-slide-7.webp";
 import postCover3 from "@/assets/hero-slide-22.webp";
+import postCover4 from "@/assets/hero-slide-5.webp";
+import postCover5 from "@/assets/hero-slide-9.webp";
+import postCover6 from "@/assets/hero-slide-15.webp";
 
 const posts = [
+  {
+    slug: "/blog/early-bird-porocni-fotograf-2027",
+    title: "Zakaj rezervirati poročnega fotografa za 2027 že danes?",
+    excerpt:
+      "Early Bird 2027: gratis predporočno fotografiranje ali 10 % popust za rezervacije, sklenjene do konca leta 2026.",
+    cover: postCover4,
+    alt: "Early Bird 2027 – rezervacija poročnega fotografa",
+  },
+  {
+    slug: "/blog/zadnji-prosti-termini-poroka-2026",
+    title: "Zadnja priložnost: še nekaj prostih terminov 2026",
+    excerpt:
+      "Še nekaj sobot je prostih v sezoni 2026. Izkoristite 10 % popust na vse poročne pakete.",
+    cover: postCover5,
+    alt: "Zadnji prosti termini za poroko 2026",
+  },
+  {
+    slug: "/blog/flippgold-ali-flippdiamant-porocni-paket",
+    title: "FLIPPgold ali FLIPPdiamant: kateri paket izbrati?",
+    excerpt:
+      "Primerjava paketov FLIPPgold (8 ur) in FLIPPdiamant (12 ur) – kateri najbolje ustreza vajini zgodbi.",
+    cover: postCover6,
+    alt: "Poročna paketa FLIPPgold in FLIPPdiamant",
+  },
   {
     slug: "/blog/koliko-stane-porocni-fotograf-slovenija-2026",
     title: "Koliko stane poročni fotograf v Sloveniji (2026 vodič)",
