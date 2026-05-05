@@ -109,7 +109,8 @@ const packages = [
   },
   {
     name: "FLIPPgold",
-    price: "882",
+    price: "1.250",
+    originalPrice: "1.850",
     duration: "8 ur prisotnosti",
     description: "Najbolj uravnotežena izbira za 'klasičen' poročni dan.",
     features: ["Profesionalno, sproščeno fotografiranje", "Spontani trenutki v iskrenih čustvih", "Personaliziran digitalni foto album", "Izbrane printane fotografije", "Posebno DARILO za mladoporočenca"],
@@ -117,7 +118,8 @@ const packages = [
   },
   {
     name: "FLIPPdiamant",
-    price: "1.470",
+    price: "1.790",
+    originalPrice: "2.450",
     duration: "12 ur prisotnosti",
     description: "Za pare, ki želijo maksimalno pokritost in top rezultat.",
     features: ["Razširjena ponudba za popolno zgodbo", "ONLINE fotoalbum + Slide Show", "Printane fotografije", "Posebno DARILO za mladoporočenca", "Premium obdelava + 'best of' izbor"],
