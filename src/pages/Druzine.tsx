@@ -6,6 +6,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { ContactFormModal } from "@/components/ContactSection";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
 import { Lightbox } from "@/components/Lightbox";
+import { ClientQuotes } from "@/components/ClientQuotes";
 import { Check } from "lucide-react";
 
 // Hero image
