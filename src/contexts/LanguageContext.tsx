@@ -52,6 +52,12 @@ const translations: Record<Language, Record<string, string>> = {
     'services.events_desc': 'Neopazna ekipa, pravi trenutek ob pravem času, profesionalne fotografije z zgodbo.',
     'services.families': 'Družine',
     'services.families_desc': 'Sproščeni sessioni za pristne spomine – vi uživate, mi ujamemo zgodbo.',
+    'services.cta_weddings': 'Oglejte si poročno fotografijo',
+    'services.cta_events': 'Oglejte si fotografijo dogodkov',
+    'services.cta_families': 'Oglejte si družinsko fotografijo',
+    'services.alt_weddings': 'Pristna poročna fotografija para – Proflipp',
+    'services.alt_events': 'Profesionalna fotografija dogodka – Proflipp',
+    'services.alt_families': 'Sproščena družinska fotografija na prostem – Proflipp',
     
     // Gallery Section
     'gallery.title': 'Galerija',
@@ -243,6 +249,12 @@ const translations: Record<Language, Record<string, string>> = {
     'services.events_desc': 'Unobtrusive team, the right moment at the right time, professional photos with a story.',
     'services.families': 'Families',
     'services.families_desc': 'Relaxed sessions for authentic memories – you enjoy, we capture the story.',
+    'services.cta_weddings': 'Explore wedding photography',
+    'services.cta_events': 'Explore event photography',
+    'services.cta_families': 'Explore family photography',
+    'services.alt_weddings': 'Authentic wedding photography of a couple – Proflipp',
+    'services.alt_events': 'Professional event photography coverage – Proflipp',
+    'services.alt_families': 'Relaxed outdoor family photography session – Proflipp',
     
     // Gallery Section
     'gallery.title': 'Gallery',
@@ -434,6 +446,12 @@ const translations: Record<Language, Record<string, string>> = {
     'services.events_desc': 'Unauffälliges Team, der richtige Moment zur richtigen Zeit, professionelle Fotos mit einer Geschichte.',
     'services.families': 'Familien',
     'services.families_desc': 'Entspannte Sessions für authentische Erinnerungen – Sie genießen, wir halten die Geschichte fest.',
+    'services.cta_weddings': 'Hochzeitsfotografie entdecken',
+    'services.cta_events': 'Eventfotografie entdecken',
+    'services.cta_families': 'Familienfotografie entdecken',
+    'services.alt_weddings': 'Authentische Hochzeitsfotografie eines Paares – Proflipp',
+    'services.alt_events': 'Professionelle Eventfotografie – Proflipp',
+    'services.alt_families': 'Entspannte Familienfotografie im Freien – Proflipp',
     
     // Gallery Section
     'gallery.title': 'Galerie',
@@ -625,6 +643,12 @@ const translations: Record<Language, Record<string, string>> = {
     'services.events_desc': 'Neprimjetni tim, pravi trenutak u pravo vrijeme, profesionalne fotografije s pričom.',
     'services.families': 'Obitelji',
     'services.families_desc': 'Opuštene sesije za autentična sjećanja – vi uživate, mi hvatamo priču.',
+    'services.cta_weddings': 'Istražite vjenčanu fotografiju',
+    'services.cta_events': 'Istražite fotografiju događaja',
+    'services.cta_families': 'Istražite obiteljsku fotografiju',
+    'services.alt_weddings': 'Autentična vjenčana fotografija para – Proflipp',
+    'services.alt_events': 'Profesionalna fotografija događaja – Proflipp',
+    'services.alt_families': 'Opuštena obiteljska fotografija na otvorenom – Proflipp',
     
     // Gallery Section
     'gallery.title': 'Galerija',

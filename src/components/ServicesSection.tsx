@@ -13,18 +13,24 @@ export function ServicesSection() {
       title: t('services.weddings'),
       description: t('services.weddings_desc'),
       image: weddingImage,
+      alt: t('services.alt_weddings'),
+      cta: t('services.cta_weddings'),
       href: "/wedding-photography-slovenia",
     },
     {
       title: t('services.events'),
       description: t('services.events_desc'),
       image: eventsImage,
+      alt: t('services.alt_events'),
+      cta: t('services.cta_events'),
       href: "/event-photography",
     },
     {
       title: t('services.families'),
       description: t('services.families_desc'),
       image: familyImage,
+      alt: t('services.alt_families'),
+      cta: t('services.cta_families'),
       href: "/family-photography",
     },
   ];
@@ -47,17 +53,18 @@ export function ServicesSection() {
             <Link
               key={service.title}
               to={service.href}
+              aria-label={service.cta}
               className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-glow transition-all duration-500"
             >
               <div className="aspect-[4/5] overflow-hidden">
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={service.image} alt={service.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                 <h3 className="font-display text-2xl lg:text-3xl font-semibold text-card mb-2">{service.title}</h3>
                 <p className="text-card/80 text-sm mb-4 line-clamp-2">{service.description}</p>
                 <div className="flex items-center gap-2 text-gold font-medium text-sm group-hover:gap-3 transition-all">
-                  <span>{t('services.more')}</span>
+                  <span>{service.cta}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
