@@ -128,10 +128,62 @@ const packages = [
 ];
 
 const videoPackages = [
-  { name: "FLIPP Content video", price: "250", duration: "2-6x kratki Content Video", description: "Dodatek k fotografiji: kratek, čustven povzetek dneva.", features: ["Kratki video povzetki", "Dinamičen 'social' format", "Dostava digitalno"] },
-  { name: "FLIPPvideo MINI", price: "350", duration: "Do 3 ure snemanja", description: "Za civilni obred / krajšo poroko.", features: ["Highlight film (3–5 min)", "Dostava digitalno"] },
-  { name: "FLIPPvideo CLASSIC", price: "550", duration: "Do 12 ur prisotnosti", description: "Zgodba dneva v lepem tempu, čustva in vsi pomembni trenutki.", features: ["1 snemalec", "Highlight film + daljši film", "Barvna korekcija"] },
-  { name: "FLIPPvideo PREMIUM", price: "1.150", originalPrice: "1.650", duration: "Do 13 ur prisotnosti", description: "Ko želiš več dinamike in bolj 'filmski' občutek.", features: ["Kreativni film (15–25 min)", "Snemanje v 4K", "Naprednejši 'grading'"] },
+  {
+    name: "FLIPP Content Video",
+    price: "290",
+    originalPrice: "420",
+    duration: "2–6x kratki Content Video",
+    description: "Kratek, čustven povzetek dneva za social media.",
+    features: [
+      "2–6 kratkih video povzetkov za Instagram / Reels",
+      "Dinamičen vertical format, optimiziran za social",
+      "Čustven, avtentičen občutek dneva v 15–30 sekundah",
+      "Dostava digitalno v 10 dneh",
+    ],
+  },
+  {
+    name: "FLIPPvideo MINI",
+    price: "490",
+    originalPrice: "790",
+    duration: "Do 3 ure snemanja",
+    description: "Manjša poroka, velika čustva. Vse bistveno, nič odvečnega.",
+    features: [
+      "Do 3 ure snemanja (civilni obred / kratka slovesnost)",
+      "Highlight film 3–5 min",
+      "Barvna korekcija",
+      "Dostava digitalno",
+    ],
+  },
+  {
+    name: "FLIPPvideo CLASSIC",
+    price: "890",
+    originalPrice: "1.390",
+    duration: "Do 12 ur prisotnosti",
+    description: "Tvoj dan, posnet v celoti. Od jutra do zadnjega plesa.",
+    popular: true,
+    features: [
+      "Do 12 ur prisotnosti",
+      "1 snemalec",
+      "Highlight film (4–6 min) + daljši celodnevni film",
+      "Profesionalna barvna korekcija",
+      "Dostava digitalno v 3–4 tednih",
+    ],
+  },
+  {
+    name: "FLIPPvideo PREMIUM",
+    price: "1.490",
+    originalPrice: "2.200",
+    duration: "Do 13 ur prisotnosti",
+    description: "Filmska izkušnja za tiste, ki ne želijo kompromisov.",
+    features: [
+      "Do 13 ur prisotnosti",
+      "Snemanje v 4K s cinema opremo",
+      "Kreativni film 15–25 min + highlight film",
+      "Napredni color grading",
+      "Drone posnetek (+150 €)",
+      "Dostava digitalno + možnost USB",
+    ],
+  },
 ];
 
 const weddingGalleries = [
