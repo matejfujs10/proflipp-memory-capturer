@@ -127,63 +127,11 @@ const packages = [
   },
 ];
 
-const videoPackages = [
-  {
-    name: "FLIPP Content Video",
-    price: "290",
-    originalPrice: "420",
-    duration: "2–6x kratki Content Video",
-    description: "Kratek, čustven povzetek dneva za social media.",
-    features: [
-      "2–6 kratkih video povzetkov za Instagram / Reels",
-      "Dinamičen vertical format, optimiziran za social",
-      "Čustven, avtentičen občutek dneva v 15–30 sekundah",
-      "Dostava digitalno v 10 dneh",
-    ],
-  },
-  {
-    name: "FLIPPvideo MINI",
-    price: "490",
-    originalPrice: "790",
-    duration: "Do 3 ure snemanja",
-    description: "Manjša poroka, velika čustva. Vse bistveno, nič odvečnega.",
-    features: [
-      "Do 3 ure snemanja (civilni obred / kratka slovesnost)",
-      "Highlight film 3–5 min",
-      "Barvna korekcija",
-      "Dostava digitalno",
-    ],
-  },
-  {
-    name: "FLIPPvideo CLASSIC",
-    price: "890",
-    originalPrice: "1.390",
-    duration: "Do 12 ur prisotnosti",
-    description: "Tvoj dan, posnet v celoti. Od jutra do zadnjega plesa.",
-    popular: true,
-    features: [
-      "Do 12 ur prisotnosti",
-      "1 snemalec",
-      "Highlight film (4–6 min) + daljši celodnevni film",
-      "Profesionalna barvna korekcija",
-      "Dostava digitalno v 3–4 tednih",
-    ],
-  },
-  {
-    name: "FLIPPvideo PREMIUM",
-    price: "1.490",
-    originalPrice: "2.200",
-    duration: "Do 13 ur prisotnosti",
-    description: "Filmska izkušnja za tiste, ki ne želijo kompromisov.",
-    features: [
-      "Do 13 ur prisotnosti",
-      "Snemanje v 4K s cinema opremo",
-      "Kreativni film 15–25 min + highlight film",
-      "Napredni color grading",
-      "Drone posnetek (+150 €)",
-      "Dostava digitalno + možnost USB",
-    ],
-  },
+const videoPackagesBase = [
+  { name: "FLIPP Content Video", price: "290", originalPrice: "420", key: "video1" },
+  { name: "FLIPPvideo MINI", price: "490", originalPrice: "790", key: "video2" },
+  { name: "FLIPPvideo CLASSIC", price: "890", originalPrice: "1.390", key: "video3", popular: true },
+  { name: "FLIPPvideo PREMIUM", price: "1.490", originalPrice: "2.200", key: "video4" },
 ];
 
 const weddingGalleries = [
@@ -384,7 +332,22 @@ export default function Poroke() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }} />)}
+            {videoPackagesBase.map((pkg) => {
+              const featuresStr = t(`weddings.${pkg.key}.features`);
+              return (
+                <PackageCard
+                  key={pkg.name}
+                  name={pkg.name}
+                  price={pkg.price}
+                  originalPrice={pkg.originalPrice}
+                  popular={pkg.popular}
+                  duration={t(`weddings.${pkg.key}.duration`)}
+                  description={t(`weddings.${pkg.key}.description`)}
+                  features={featuresStr.split('|')}
+                  onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
