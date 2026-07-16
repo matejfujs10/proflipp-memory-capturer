@@ -332,7 +332,22 @@ export default function Poroke() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videoPackages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }} />)}
+            {videoPackagesBase.map((pkg) => {
+              const featuresStr = t(`weddings.${pkg.key}.features`);
+              return (
+                <PackageCard
+                  key={pkg.name}
+                  name={pkg.name}
+                  price={pkg.price}
+                  originalPrice={pkg.originalPrice}
+                  popular={pkg.popular}
+                  duration={t(`weddings.${pkg.key}.duration`)}
+                  description={t(`weddings.${pkg.key}.description`)}
+                  features={featuresStr.split('|')}
+                  onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
