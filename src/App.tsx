@@ -41,6 +41,9 @@ const BlogLokacije = lazy(() => import("./pages/blog/NajlepsePorocneLokacije"));
 const BlogEarlyBird2027 = lazy(() => import("./pages/blog/EarlyBird2027"));
 const BlogZadnjiTermini2026 = lazy(() => import("./pages/blog/ZadnjiTermini2026"));
 const BlogFlippGoldDiamant = lazy(() => import("./pages/blog/FlippGoldDiamant"));
+const BlogPopolnCasovnik = lazy(() => import("./pages/blog/PopolnPorocniCasovnik"));
+const BlogPremagatiTremo = lazy(() => import("./pages/blog/KakoPremagatiTremo"));
+const BlogVideoInvesticija = lazy(() => import("./pages/blog/PorocniVideoInvesticija"));
 const queryClient = new QueryClient();
 
 const App = () => (
