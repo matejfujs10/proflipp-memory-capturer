@@ -15,6 +15,30 @@ import postCover9 from "@/assets/hero-slide-14.webp";
 
 const posts = [
   {
+    slug: "/blog/popoln-porocni-casovnik",
+    title: "Popoln poročni časovnik: Kako načrtovati dan brez stresa",
+    excerpt:
+      "Idealna časovnica z zlato uro, getting ready in 30-minutnimi buffer trenutki – za sproščen poročni dan.",
+    cover: postCover7,
+    alt: "Popoln poročni časovnik – zlata ura in premium portreti",
+  },
+  {
+    slug: "/blog/kako-premagati-tremo-pred-objektivom",
+    title: "Kako premagati tremo pred objektivom",
+    excerpt:
+      "Zakaj je »nefotogeničnost« mit, magija reportaže in kako predporočno fotkanje ubije tremo.",
+    cover: postCover8,
+    alt: "Sproščene poročne fotografije – nasveti pred objektivom",
+  },
+  {
+    slug: "/blog/porocni-video-investicija",
+    title: "Poročni video: Investicija, ki je ne boste obžalovali",
+    excerpt:
+      "70 % parov obžaluje, da niso najeli videografa. Kaj video ujame, česar fotografija ne more.",
+    cover: postCover9,
+    alt: "Poročni video – kinematska poročna produkcija",
+  },
+  {
     slug: "/blog/early-bird-porocni-fotograf-2027",
     title: "Zakaj rezervirati poročnega fotografa za 2027 že danes?",
     excerpt:
