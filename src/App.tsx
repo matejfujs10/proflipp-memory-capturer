@@ -80,6 +80,9 @@ const App = () => (
               <Route path="/blog/early-bird-porocni-fotograf-2027" element={<BlogEarlyBird2027 />} />
               <Route path="/blog/zadnji-prosti-termini-poroka-2026" element={<BlogZadnjiTermini2026 />} />
               <Route path="/blog/flippgold-ali-flippdiamant-porocni-paket" element={<BlogFlippGoldDiamant />} />
+              <Route path="/blog/popoln-porocni-casovnik" element={<BlogPopolnCasovnik />} />
+              <Route path="/blog/kako-premagati-tremo-pred-objektivom" element={<BlogPremagatiTremo />} />
+              <Route path="/blog/porocni-video-investicija" element={<BlogVideoInvesticija />} />
 
               {/* Legacy Slovenian routes → redirect to new SEO slugs */}
               <Route path="/poroke" element={<Navigate to="/wedding-photography-slovenia" replace />} />
