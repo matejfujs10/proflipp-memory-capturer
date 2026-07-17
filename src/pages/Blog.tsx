@@ -9,6 +9,9 @@ import postCover3 from "@/assets/hero-slide-22.webp";
 import postCover4 from "@/assets/hero-slide-5.webp";
 import postCover5 from "@/assets/hero-slide-9.webp";
 import postCover6 from "@/assets/hero-slide-15.webp";
+import postCover7 from "@/assets/hero-slide-8.webp";
+import postCover8 from "@/assets/hero-slide-11.webp";
+import postCover9 from "@/assets/hero-slide-14.webp";
 
 const posts = [
   {
