@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { ArticleSchema } from "@/components/blog/ArticleSchema";
+import { BlogTOC } from "@/components/blog/BlogTOC";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +13,17 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-slide-8.webp";
+
+const SLUG = "/blog/popoln-porocni-casovnik";
+const TOC = [
+  { id: "zakaj-casovnica", label: "Zakaj je časovnica dejavnik št. 1" },
+  { id: "getting-ready", label: "1. Getting Ready (1,5 ure)" },
+  { id: "obred-logistika", label: "2. Obred in logistika" },
+  { id: "zlata-ura", label: "3. Zlata ura – absolutni ključ" },
+  { id: "buffer", label: "4. Pravilo 30-minutnega buffer-ja" },
+  { id: "primer", label: "Idealna časovnica – zgled" },
+  { id: "posvet", label: "Rezerviraj brezplačen posvet" },
+];
 
 const timeline = [
   { time: "13:00", title: "Getting Ready", desc: "1,5 ure mirnega dokumentiranja priprav neveste in ženina – detajli, obleka, prstani, čustva staršev.", duration: "90 min" },
@@ -34,7 +48,7 @@ export default function PopolnPorocniCasovnik() {
     }
     const subject = encodeURIComponent("Brezplačen posvet – poročna časovnica");
     const body = encodeURIComponent(
-      `Ime: ${form.name}\nEmail: ${form.email}\nDatum poroke: ${form.date}\n\nSporočilo:\n${form.message}`
+      `Ime: ${form.name}\nEmail: ${form.email}\nDatum poroke: ${form.date}\n\nSporočilo:\n${form.message}\n\n—\nVir: blog članek ${SLUG}\nTema: timeline`
     );
     window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
     toast.success("Odpiramo vaš e-poštni odjemalec ...");
@@ -47,6 +61,13 @@ export default function PopolnPorocniCasovnik() {
         description="Idealna poročna časovnica z zlato uro, getting ready in buffer trenutki. Praktičen vodič za sproščen poročni dan in premium poročne fotografije."
         canonical="/blog/popoln-porocni-casovnik"
         ogType="article"
+      />
+      <ArticleSchema
+        headline="Popoln poročni časovnik: Kako načrtovati dan brez stresa"
+        description="Idealna poročna časovnica z zlato uro, getting ready in buffer trenutki."
+        slug={SLUG}
+        image="/og-image.jpg"
+        datePublished="2026-05-10"
       />
       <Navigation />
 
@@ -75,8 +96,10 @@ export default function PopolnPorocniCasovnik() {
               Če obstaja ena skrivnost, ki ločuje sproščene, filmske poročne fotografije od nervoznih, hitrih posnetkov – je to <strong>časovnica</strong>. Ne oprema. Ne lokacija. Ne vreme. Časovnica je enkratni najpomembnejši dejavnik, ki bo določil, ali boste na svoj poročni dan uživali – ali ves čas gledali na uro.
             </p>
 
+            <BlogTOC items={TOC} />
+
             <div className="blog-content space-y-8 md:space-y-10 text-base md:text-lg font-light leading-relaxed text-foreground/90">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Zakaj je časovnica dejavnik št. 1</h2>
+              <h2 id="zakaj-casovnica" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Zakaj je časovnica dejavnik št. 1</h2>
               <p>
                 V desetletju dokumentiranja porok smo videli isti vzorec: pari, ki so vložili čas v premišljen urnik, imajo lepše fotografije – ne zato, ker so bolj fotogenični, ampak zato, ker <em>imajo čas dihati</em>. Ko je časovnica preveč strnjena, se stres bere na obrazu. Ko ima prostor, se pojavijo iskreni nasmehi, prave solze in tisti mehki pogledi, ki jih ne moreš odigrati.
               </p>
@@ -84,7 +107,7 @@ export default function PopolnPorocniCasovnik() {
                 Poročna časovnica ni birokracija – je tvoj darilni papir za spomine. Dober fotograf jo bo pomagal sestaviti skupaj s tabo, mesece pred dogodkom.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">1. Getting Ready (1,5 ure)</h2>
+              <h2 id="getting-ready" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">1. Getting Ready (1,5 ure)</h2>
               <p>
                 Priprave so kraj, kjer se zgodba začne. Priporočamo <strong>vsaj 90 minut</strong> dokumentiranja: obleka na obešalniku ob mehki svetlobi okna, čevlji, parfum, prstani, pismo od partnerja, mama, ki zapenja hrbet obleke. To so kadri, ki jih boste čez dvajset let gledali najbolj dolgo.
               </p>
@@ -92,12 +115,12 @@ export default function PopolnPorocniCasovnik() {
                 Praktični nasvet: rezervirajte svetlo sobo z velikim oknom in poskrbite, da make-up konča vsaj 30 minut pred odhodom. Panika zadnjih minut je vidna v očeh.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">2. Obred in logistika</h2>
+              <h2 id="obred-logistika" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">2. Obred in logistika</h2>
               <p>
                 Za obredom praviloma sledijo čestitke in aperitiv – najlepši, a hkrati logistično najbolj kaotični del dneva. <strong>Vnaprej pripravljen seznam skupinskih fotografij</strong> (10–12 skupin, ne več) prihrani 30–45 minut zmede. En družinski član naj bo »klicatelj« – oseba, ki po imenu kliče naslednje družine pred objektiv.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">3. Zlata ura – absolutni ključ</h2>
+              <h2 id="zlata-ura" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">3. Zlata ura – absolutni ključ</h2>
               <p>
                 Če si smete zapomniti eno stvar iz tega članka, naj bo ta: <strong>rezervirajte 30–45 minut portretne seje 30–45 minut pred sončnim zahodom</strong>. Poznamo jo kot »zlata ura« (Golden Hour) – čas, ko sonce visi nizko in ustvarja mehko, topo, kinematografsko svetlobo, ki ji ni para.
               </p>
@@ -105,7 +128,7 @@ export default function PopolnPorocniCasovnik() {
                 Ni umetnega osvetljevalca, ki bi lahko posnemal to svetlobo. Portreti, posneti v tem oknu, izgledajo kot filmski kader. Portreti, posneti eno uro prej, na ostrem opoldanskem soncu, izgledajo kot slikanje osebnih dokumentov. Razlika je ogromna – in stane samo 30 minut skrbnega planiranja.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">4. Pravilo 30-minutnega buffer-ja</h2>
+              <h2 id="buffer" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">4. Pravilo 30-minutnega buffer-ja</h2>
               <p>
                 Med vsakim večjim dogodkom (getting ready → obred, obred → lokacija, večerja → prvi ples) vstavite <strong>30-minutni buffer</strong>. Ne za fotografije – za življenje. Za promet, za solzo, ki jo je treba obrisati, za očeta, ki bi rad na hitro objel hčerko preden se začne prvi ples.
               </p>
@@ -116,7 +139,7 @@ export default function PopolnPorocniCasovnik() {
 
             {/* Timeline component */}
             <div className="my-16 md:my-20">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-10 text-center">Idealna časovnica – zgled</h2>
+              <h2 id="primer" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mb-10 text-center">Idealna časovnica – zgled</h2>
               <div className="relative border-l-2 border-primary/30 pl-6 md:pl-10 space-y-8">
                 {timeline.map((item) => (
                   <div key={item.time} className="relative">
@@ -135,7 +158,7 @@ export default function PopolnPorocniCasovnik() {
             </div>
 
             {/* CTA form */}
-            <div className="mt-16 md:mt-20 pt-10 border-t border-border/50">
+            <div id="posvet" className="scroll-mt-24 mt-16 md:mt-20 pt-10 border-t border-border/50">
               <div className="text-center mb-10">
                 <h2 className="text-2xl md:text-4xl font-light tracking-tight mb-4">Načrtujmo vajino časovnico skupaj</h2>
                 <p className="text-muted-foreground font-light">Rezerviraj brezplačen 30-minutni posvet – pomagamo vama sestaviti urnik, ki diha.</p>
@@ -169,6 +192,8 @@ export default function PopolnPorocniCasovnik() {
                 <Button type="submit" size="lg" className="w-full rounded-none">Rezerviraj brezplačen posvet</Button>
               </form>
             </div>
+
+            <RelatedPosts currentSlug={SLUG} />
 
             <div className="mt-16 pt-10 border-t border-border/50 text-center space-y-2">
               <p className="text-xs tracking-[0.3em] uppercase text-primary">We Capture Emotions!</p>

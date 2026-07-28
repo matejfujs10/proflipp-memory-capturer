@@ -2,9 +2,22 @@ import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { ArticleSchema } from "@/components/blog/ArticleSchema";
+import { BlogTOC } from "@/components/blog/BlogTOC";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { buildBlogMailto } from "@/lib/blogCta";
 import heroImage from "@/assets/hero-slide-11.webp";
+
+const SLUG = "/blog/kako-premagati-tremo-pred-objektivom";
+const TOC = [
+  { id: "mit", label: "Mit o »nefotogeničnosti«" },
+  { id: "reportaza", label: "Magija reportaže" },
+  { id: "engagement", label: "Predporočno fotkanje – najboljša vaja" },
+  { id: "faq", label: "Pogosto zastavljena vprašanja" },
+  { id: "kontakt", label: "Rezerviraj klepet" },
+];
 
 const faqs = [
   {
@@ -42,6 +55,13 @@ export default function KakoPremagatiTremo() {
         canonical="/blog/kako-premagati-tremo-pred-objektivom"
         ogType="article"
       />
+      <ArticleSchema
+        headline="Kako premagati tremo pred objektivom"
+        description="Nasveti profesionalnega poročnega fotografa, kako se sprostiti pred kamero."
+        slug={SLUG}
+        image="/og-image.jpg"
+        datePublished="2026-05-15"
+      />
       <Navigation />
 
       <main>
@@ -68,8 +88,10 @@ export default function KakoPremagatiTremo() {
               »Nisem fotogenična.« »Grozen sem pred kamero.« »Vedno se mi zapre grlo.« Če sta si na katero od teh povedali »da« – pozdravljena med 95 % ljudmi na svetu. Dobra novica: to nima nobene zveze s tvojim obrazom. Vse ima zvezo s tem, <em>kako te nekdo vodi</em> pred objektivom.
             </p>
 
+            <BlogTOC items={TOC} />
+
             <div className="blog-content space-y-8 md:space-y-10 text-base md:text-lg font-light leading-relaxed text-foreground/90">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Mit o »nefotogeničnosti«</h2>
+              <h2 id="mit" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Mit o »nefotogeničnosti«</h2>
               <p>
                 Fotogeničnost ni gen. Ni ličnica, ni čeljust, ni popoln nasmeh. Je <strong>zaupanje v osebo za kamero</strong>. Ko se pred objektivom počutiš varno, se tvoje telo spomni, kako se drži. Ko se sprostiš, se oči zasvetijo. Ko oči zasvetijo – nastane fotografija.
               </p>
@@ -77,7 +99,7 @@ export default function KakoPremagatiTremo() {
                 Profesionalno vodenje ni »reci sir«. Je subtilna režija: šepetamo v uho, sprožamo smeh, prosim za korak v levo, za pogled skozi tvojega partnerja, ne v kamero. V eni uri se nauči tudi najbolj sramežljiv par držati se in gledati tako, da bi rekli: »Kje si se to naučila?«
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Magija reportaže</h2>
+              <h2 id="reportaza" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Magija reportaže</h2>
               <p>
                 Naš pristop je <strong>dokumentarna, reportažna poročna fotografija</strong>. Namesto da vas postavljamo v statične poze, dokumentiramo, kar se zgodi samo od sebe: očetov tresoč se glas med zdravico, sestrino solzo, ki jo obriše z rokavom, poljub, ki traja pol sekunde dlje, kot ste ga načrtovali.
               </p>
@@ -85,7 +107,7 @@ export default function KakoPremagatiTremo() {
                 Poze zbledijo. Čustva ostanejo. Zato je 80 % naše galerije posneto brez tega, da bi kdo od gostov opazil, da smo v prostoru. Ta »nevidna« prisotnost je razlog, zakaj so kadri tako iskreni.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Predporočno fotkanje – najboljša vaja</h2>
+              <h2 id="engagement" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Predporočno fotkanje – najboljša vaja</h2>
               <p>
                 Če je le eno orodje, ki ubije poročno tremo, je to <strong>engagement shoot</strong>. 60–90 minut sproščenega fotografiranja na lokaciji po vaši izbiri – morda tam, kjer sta se spoznala. Cilj ni portfolio. Cilj je, da se pred poroko že enkrat srečata s kamero in s fotografom.
               </p>
@@ -110,7 +132,7 @@ export default function KakoPremagatiTremo() {
             </div>
 
             {/* FAQ */}
-            <div className="my-16 md:my-20">
+            <div id="faq" className="scroll-mt-24 my-16 md:my-20">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-8 text-center">Pogosto zastavljena vprašanja</h2>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((item, i) => (
@@ -123,13 +145,15 @@ export default function KakoPremagatiTremo() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 md:mt-20 pt-10 border-t border-border/50 text-center">
+            <div id="kontakt" className="scroll-mt-24 mt-16 md:mt-20 pt-10 border-t border-border/50 text-center">
               <h2 className="text-2xl md:text-4xl font-light tracking-tight mb-4">Pripravljena stopiti pred kamero – sproščeno?</h2>
               <p className="text-muted-foreground font-light mb-8">Rezerviraj klepet in skupaj se pogovorimo o vajinem dnevu.</p>
               <Button asChild size="lg" className="rounded-none">
-                <Link to="/contact">Pišite nam</Link>
+                <a href={buildBlogMailto("trema", SLUG)}>Pišite nam</a>
               </Button>
             </div>
+
+            <RelatedPosts currentSlug={SLUG} />
 
             <div className="mt-16 pt-10 border-t border-border/50 text-center space-y-2">
               <p className="text-xs tracking-[0.3em] uppercase text-primary">We Capture Emotions!</p>
