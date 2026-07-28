@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { ArticleSchema } from "@/components/blog/ArticleSchema";
+import { BlogTOC } from "@/components/blog/BlogTOC";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +13,17 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-slide-8.webp";
+
+const SLUG = "/blog/popoln-porocni-casovnik";
+const TOC = [
+  { id: "zakaj-casovnica", label: "Zakaj je časovnica dejavnik št. 1" },
+  { id: "getting-ready", label: "1. Getting Ready (1,5 ure)" },
+  { id: "obred-logistika", label: "2. Obred in logistika" },
+  { id: "zlata-ura", label: "3. Zlata ura – absolutni ključ" },
+  { id: "buffer", label: "4. Pravilo 30-minutnega buffer-ja" },
+  { id: "primer", label: "Idealna časovnica – zgled" },
+  { id: "posvet", label: "Rezerviraj brezplačen posvet" },
+];
 
 const timeline = [
   { time: "13:00", title: "Getting Ready", desc: "1,5 ure mirnega dokumentiranja priprav neveste in ženina – detajli, obleka, prstani, čustva staršev.", duration: "90 min" },
