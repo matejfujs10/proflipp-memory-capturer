@@ -3,12 +3,26 @@ import { Play } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { ArticleSchema } from "@/components/blog/ArticleSchema";
+import { BlogTOC } from "@/components/blog/BlogTOC";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { Button } from "@/components/ui/button";
+import { buildBlogMailto } from "@/lib/blogCta";
 import heroImage from "@/assets/hero-slide-14.webp";
 import thumb1 from "@/assets/hero-slide-3.webp";
 import thumb2 from "@/assets/hero-slide-9.webp";
 import thumb3 from "@/assets/hero-slide-16.webp";
 import thumb4 from "@/assets/hero-slide-22.webp";
+
+const SLUG = "/blog/porocni-video-investicija";
+const TOC = [
+  { id: "statistika", label: "Statistika, ki šokira" },
+  { id: "kaj-ne-more", label: "Kar fotografija ne more ujeti" },
+  { id: "dediscina", label: "Družinska dediščina" },
+  { id: "filmi", label: "Iz naših filmov" },
+  { id: "paketi", label: "Investicija v smislu vrednosti" },
+  { id: "kontakt", label: "Preveri razpoložljivost" },
+];
 
 const videos = [
   { thumb: thumb1, title: "Ana & Luka", location: "Bled · Highlight film", duration: "5:12" },
@@ -32,6 +46,13 @@ export default function PorocniVideoInvesticija() {
         description="70 % parov obžaluje, da niso najeli poročnega videografa. Zakaj je poročni film emocionalna dediščina in kaj vključujejo naši FLIPPvideo paketi."
         canonical="/blog/porocni-video-investicija"
         ogType="article"
+      />
+      <ArticleSchema
+        headline="Poročni video: Investicija, ki je ne boste obžalovali"
+        description="70 % parov obžaluje, da niso najeli videografa. Kaj video ujame, česar fotografija ne more."
+        slug={SLUG}
+        image="/og-image.jpg"
+        datePublished="2026-05-20"
       />
       <Navigation />
 
@@ -59,8 +80,10 @@ export default function PorocniVideoInvesticija() {
               Obstaja ena samo odločitev pri poroki, ki je pari po dogodku najpogosteje obžalujejo – in ni katering, ni cvetje, ni obleka. Je <strong>odsotnost poročnega videa</strong>. Ko čustva zbledijo iz spomina, fotografije ostanejo, a film je edini, ki v resnici <em>oživi</em> vajino zgodbo.
             </p>
 
+            <BlogTOC items={TOC} />
+
             <div className="blog-content space-y-8 md:space-y-10 text-base md:text-lg font-light leading-relaxed text-foreground/90">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Statistika, ki šokira</h2>
+              <h2 id="statistika" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Statistika, ki šokira</h2>
               <p>
                 Neodvisne raziskave WeddingWire, The Knot in Brides Magazine soglasno kažejo: <strong>več kot 70 % parov, ki niso najeli videografa, to obžaluje</strong> – v povprečju že v prvem letu po poroki. In številka narašča z leti. Med tistimi, ki so film imeli, ga <em>96 %</em> označuje kot »ena od najboljših odločitev celotnega načrtovanja«.
               </p>
@@ -68,7 +91,7 @@ export default function PorocniVideoInvesticija() {
                 Razlog je preprost: dan poroke traja 14 ur in mine v 14 minutah spomina. Fotografija zamrzne trenutek. Film zamrzne <em>čas</em>.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Kar fotografija ne more ujeti</h2>
+              <h2 id="kaj-ne-more" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Kar fotografija ne more ujeti</h2>
               <p>
                 Poglejmo pošteno: dober fotograf bo ujel objem, poljub, solze v očeh. Ampak fotografija je tiha. Ne bo nikoli ujela:
               </p>
@@ -81,7 +104,7 @@ export default function PorocniVideoInvesticija() {
               </ul>
               <p>Vse to je zvok. Vse to je gibanje. Vse to živi samo v videu.</p>
 
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Družinska dediščina za prihodnje generacije</h2>
+              <h2 id="dediscina" className="scroll-mt-24 text-2xl md:text-3xl font-light tracking-tight mt-12 mb-4">Družinska dediščina za prihodnje generacije</h2>
               <p>
                 Predstavljajta si: čez 30 let sedita z otroki in vnuki. Prižgeta film. Vidijo babico in dedka, kot sta se poznala <em>tisti dan</em> – mlada, zaljubljena, s tresočimi rokami pred oltarjem. To ni video. To je <strong>družinska dediščina</strong>.
               </p>
@@ -91,7 +114,7 @@ export default function PorocniVideoInvesticija() {
             </div>
 
             {/* Video portfolio grid */}
-            <div className="my-16 md:my-20">
+            <div id="filmi" className="scroll-mt-24 my-16 md:my-20">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-3 text-center">Iz naših filmov</h2>
               <p className="text-center text-muted-foreground font-light mb-10">Vzorčni highlight filmi – celotne različice na kontakt.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -119,7 +142,7 @@ export default function PorocniVideoInvesticija() {
             </div>
 
             {/* Value tiers */}
-            <div className="my-16 md:my-20">
+            <div id="paketi" className="scroll-mt-24 my-16 md:my-20">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-3 text-center">Investicija v smislu vrednosti</h2>
               <p className="text-center text-muted-foreground font-light mb-10">Kaj dobita za vsak paket – transparentno in brez skritih stroškov.</p>
               <div className="space-y-3">
@@ -140,20 +163,22 @@ export default function PorocniVideoInvesticija() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 md:mt-20 pt-10 border-t border-border/50 text-center">
+            <div id="kontakt" className="scroll-mt-24 mt-16 md:mt-20 pt-10 border-t border-border/50 text-center">
               <h2 className="text-2xl md:text-4xl font-light tracking-tight mb-4">Preverita razpoložljivost video paketov</h2>
               <p className="text-muted-foreground font-light mb-8 max-w-xl mx-auto">
                 Termini za sezono se hitro zapolnijo. Pišita nam in v 24 urah prejmeta ponudbo, prilagojeno vajinemu dnevu.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg" className="rounded-none">
-                  <Link to="/contact">Preveri razpoložljivost</Link>
+                  <a href={buildBlogMailto("video", SLUG)}>Preveri razpoložljivost</a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-none">
                   <Link to="/wedding-videography">Vsi video paketi</Link>
                 </Button>
               </div>
             </div>
+
+            <RelatedPosts currentSlug={SLUG} />
 
             <div className="mt-16 pt-10 border-t border-border/50 text-center space-y-2">
               <p className="text-xs tracking-[0.3em] uppercase text-primary">We Capture Emotions!</p>
