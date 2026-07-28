@@ -96,7 +96,6 @@ export default function PopolnPorocniCasovnik() {
               Če obstaja ena skrivnost, ki ločuje sproščene, filmske poročne fotografije od nervoznih, hitrih posnetkov – je to <strong>časovnica</strong>. Ne oprema. Ne lokacija. Ne vreme. Časovnica je enkratni najpomembnejši dejavnik, ki bo določil, ali boste na svoj poročni dan uživali – ali ves čas gledali na uro.
             </p>
 
-            <div className="blog-content space-y-8 md:space-y-10 text-base md:text-lg font-light leading-relaxed text-foreground/90">
             <BlogTOC items={TOC} />
 
             <div className="blog-content space-y-8 md:space-y-10 text-base md:text-lg font-light leading-relaxed text-foreground/90">
