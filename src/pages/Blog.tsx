@@ -92,7 +92,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Blog | Poročna fotografija – nasveti, cene in lokacije | Proflipp"
+        title="Blog o poročni fotografiji – nasveti in cene | Proflipp"
         description="Blog o poročni fotografiji: cene poročnih fotografov v Sloveniji in Avstriji, najlepše poročne lokacije in nasveti za destination weddings."
         canonical="/blog"
       />

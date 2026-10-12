@@ -39,9 +39,20 @@ export function ArticleSchema({
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://proflipp.com/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://proflipp.com/blog" },
+      { "@type": "ListItem", position: 3, name: headline, item: url },
+    ],
+  };
+
   return (
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(data)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
     </Helmet>
   );
 }

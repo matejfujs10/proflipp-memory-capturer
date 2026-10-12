@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { ArticleSchema } from "@/components/blog/ArticleSchema";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,8 +14,10 @@ interface BlogPostLayoutProps {
 }
 
 export function BlogPostLayout({ heroImage, heroAlt, title, intro, children }: BlogPostLayoutProps) {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen">
+      <ArticleSchema headline={title} description={intro} slug={pathname} image={heroImage} datePublished="2026-05-31" />
       <Navigation />
 
       <main>
