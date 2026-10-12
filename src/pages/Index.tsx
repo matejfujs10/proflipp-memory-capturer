@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Poročni fotograf Slovenija & Austria | Wedding Photographer Europe | Proflipp"
+        title="Poročni fotograf Slovenija & Avstrija | Proflipp"
         description="Poročni fotograf za Slovenijo in Avstrijo. Wedding photographer za destination weddings po Evropi. Ujamemo pristne trenutke in ustvarimo brezčasne fotografije."
         canonical="/"
       />

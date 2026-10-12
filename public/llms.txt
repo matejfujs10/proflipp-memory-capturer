@@ -1,0 +1,24 @@
+# Proflipp
+
+> Proflipp is a wedding and portrait photography and videography studio based in Slovenia, working across Slovenia, Austria and Europe.
+
+## Pages
+
+- [Home](https://proflipp.com/): Wedding photographer Slovenia & Austria.
+- [Wedding photography Slovenia](https://proflipp.com/wedding-photography-slovenia): Wedding photo and video packages and prices.
+- [Wedding photographer Austria](https://proflipp.com/wedding-photographer-austria): Weddings in Austria.
+- [Wedding packages](https://proflipp.com/wedding-photography-packages): Package overview.
+- [Destination weddings](https://proflipp.com/destination-wedding-photography): Weddings across Europe.
+- [Wedding videography](https://proflipp.com/wedding-videography): FLIPPvideo packages.
+- [Portfolio](https://proflipp.com/portfolio): Selected work.
+- [Family](https://proflipp.com/family-photography), [Newborn](https://proflipp.com/newborn-photography), [Baptism](https://proflipp.com/baptism-photography), [Couples](https://proflipp.com/couples-photography), [Events](https://proflipp.com/event-photography), [Studio](https://proflipp.com/studio): Other photography services.
+- [Business](https://proflipp.com/poslovno): B2B photo and video.
+- [Reviews](https://proflipp.com/reviews): Client reviews.
+- [About](https://proflipp.com/about): About Proflipp.
+- [Contact](https://proflipp.com/contact): Booking inquiries, info@proflipp.com.
+
+## Blog
+
+- [Koliko stane poročni fotograf (2026)](https://proflipp.com/blog/koliko-stane-porocni-fotograf-slovenija-2026): Price guide Slovenia.
+- [Wedding Photographer Austria Price Guide](https://proflipp.com/blog/wedding-photographer-austria-price-guide-2026): Price guide Austria.
+- [Popoln poročni časovnik](https://proflipp.com/blog/popoln-porocni-casovnik): Wedding day timeline.
