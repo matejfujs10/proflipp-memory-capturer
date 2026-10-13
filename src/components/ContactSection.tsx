@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,13 +12,18 @@ import { trackEvent, trackCTA } from "@/lib/analytics";
 interface ContactFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  selectedPackage?: string;
 }
 
-export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
+export function ContactFormModal({ isOpen, onClose, selectedPackage }: ContactFormModalProps) {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false,
+    name: "", email: "", pkg: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false,
   });
+
+  useEffect(() => {
+    if (isOpen && selectedPackage) setFormData((f) => ({ ...f, pkg: selectedPackage }));
+  }, [isOpen, selectedPackage]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +46,8 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
     const subject = encodeURIComponent(`Povpraševanje za fotografiranje - ${name}`);
     const body = encodeURIComponent(
       `Ime: ${name}\n` +
+      `E-pošta: ${formData.email.trim().slice(0, 255)}\n` +
+      (formData.pkg ? `Izbrani paket: ${formData.pkg.trim().slice(0, 100)}\n` : "") +
       `Kraj: ${location}\n` +
       `Datum: ${date}\n` +
       `Število ljudi: ${guests}\n` +
@@ -54,7 +61,7 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
     
     toast.success(t('contact.opening_email'));
     onClose();
-    setFormData({ name: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false });
+    setFormData({ name: "", email: "", pkg: "", location: "", date: "", guests: "", duration: "", video: false, notes: "", termsAccepted: false });
   };
 
   if (!isOpen) return null;
@@ -76,6 +83,18 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
               <label className="text-sm font-medium text-foreground mb-1.5 block">{t('contact.form.name')} *</label>
               <Input required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Janez Novak" maxLength={100} />
             </div>
+
+            <div>
+              <label className="text-sm font-medium text-foreground mb-1.5 block">E-pošta *</label>
+              <Input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="vajin@email.com" maxLength={255} />
+            </div>
+
+            {formData.pkg && (
+              <div>
+                <label className="text-sm font-medium text-foreground mb-1.5 block">Izbrani paket</label>
+                <Input value={formData.pkg} onChange={(e) => setFormData({ ...formData, pkg: e.target.value })} maxLength={100} />
+              </div>
+            )}
 
             <div className="grid grid-cols-2 gap-4">
               <div>
