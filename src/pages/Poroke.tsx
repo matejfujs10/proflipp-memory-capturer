@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { PackageCard } from "@/components/PackageCard";
+import { WeddingPhotoPricing } from "@/components/WeddingPhotoPricing";
 import { ContactFormModal } from "@/components/ContactSection";
 import { WeddingGalleryCard } from "@/components/WeddingGalleryCard";
 import { GiftVoucherSection } from "@/components/GiftVoucherSection";
@@ -93,39 +94,6 @@ import mbWedding8 from "@/assets/mb-wedding-8.webp";
 import mbWedding9 from "@/assets/mb-wedding-9.webp";
 import mbWedding10 from "@/assets/mb-wedding-10.webp";
 
-const packages = [
-  {
-    name: "FLIPPmikro",
-    price: "345",
-    duration: "2 uri prisotnosti",
-    description: "Kratek, a močan paket za civilni obred ali krajše poročno dogajanje.",
-    features: ["Reportažni pristop (naravno, brez poziranja)", "Izbor najboljših trenutkov + detajli", "Profesionalno urejene fotografije", "Ekspresna obdelava"],
-  },
-  {
-    name: "FLIPPmini",
-    price: "490",
-    duration: "4 ure prisotnosti",
-    description: "Idealno za manjše poroke ali poročni del dneva, kjer želiš lepo zgodbo brez stresa.",
-    features: ["Celovit mini-reportažni potek", "Skupinske + spontane fotografije", "Urejena online galerija za deljenje z gosti"],
-  },
-  {
-    name: "FLIPPgold",
-    price: "1.250",
-    originalPrice: "1.850",
-    duration: "8 ur prisotnosti",
-    description: "Najbolj uravnotežena izbira za 'klasičen' poročni dan.",
-    features: ["Profesionalno, sproščeno fotografiranje", "Spontani trenutki v iskrenih čustvih", "Personaliziran digitalni foto album", "Izbrane printane fotografije", "Posebno DARILO za mladoporočenca"],
-    popular: true,
-  },
-  {
-    name: "FLIPPdiamant",
-    price: "1.790",
-    originalPrice: "2.450",
-    duration: "12 ur prisotnosti",
-    description: "Za pare, ki želijo maksimalno pokritost in top rezultat.",
-    features: ["Razširjena ponudba za popolno zgodbo", "ONLINE fotoalbum + Slide Show", "Printane fotografije", "Posebno DARILO za mladoporočenca", "Premium obdelava + 'best of' izbor"],
-  },
-];
 
 const videoPackagesBase = [
   { name: "FLIPP Content Video", price: "290", originalPrice: "420", key: "video1" },
@@ -237,6 +205,7 @@ const heroSlideImages = [weddingCollage1, weddingCollage2];
 
 export default function Poroke() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<string | undefined>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const pricingRef = useSectionTracking('pricing_view');
   const { t } = useLanguage();
@@ -284,19 +253,7 @@ export default function Poroke() {
 
       <section ref={pricingRef} className="py-10 bg-background">
         <div className="container-wide">
-          <div className="text-center mb-8">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3">{t('weddings.choose_package')}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">{t('weddings.choose_desc')}</p>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-3 text-sm">
-              {t('weddings.pricing_note')}
-            </p>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-2 text-sm">
-              {t('weddings.follow_promo')}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {packages.map((pkg) => <PackageCard key={pkg.name} {...pkg} onSelect={() => { trackCTA('package_select'); setIsModalOpen(true); }} />)}
-          </div>
+          <WeddingPhotoPricing onSelect={(label) => { trackCTA('package_select'); setSelectedPackage(label); setIsModalOpen(true); }} />
         </div>
       </section>
 
@@ -344,7 +301,7 @@ export default function Poroke() {
                   duration={t(`weddings.${pkg.key}.duration`)}
                   description={t(`weddings.${pkg.key}.description`)}
                   features={featuresStr.split('|')}
-                  onSelect={() => { trackCTA('video_package_select'); setIsModalOpen(true); }}
+                  onSelect={() => { trackCTA('video_package_select'); setSelectedPackage(pkg.name); setIsModalOpen(true); }}
                 />
               );
             })}
@@ -628,7 +585,7 @@ export default function Poroke() {
       </section>
 
       <Footer />
-      <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactFormModal isOpen={isModalOpen} selectedPackage={selectedPackage} onClose={() => { setIsModalOpen(false); setSelectedPackage(undefined); }} />
     </div>
   );
 }
