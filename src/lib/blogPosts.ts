@@ -58,10 +58,10 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "/blog/flippgold-ali-flippdiamant-porocni-paket",
-    title: "FLIPPgold ali FLIPPdiamant: kateri paket izbrati?",
-    excerpt: "Primerjava paketov FLIPPgold (8 ur) in FLIPPdiamant (12 ur) – kateri najbolje ustreza vajini zgodbi.",
+    title: "Kateri poročni paket izbrati? FLIPP paketi 2026",
+    excerpt: "Primerjava petih novih paketov FLIPP (2–12 ur) s cenami −20 % – kateri najbolje ustreza vajini zgodbi.",
     cover: postCover6,
-    alt: "Poročna paketa FLIPPgold in FLIPPdiamant",
+    alt: "Poročni paketi FLIPP – primerjava",
   },
   {
     slug: "/blog/koliko-stane-porocni-fotograf-slovenija-2026",
